@@ -7,7 +7,7 @@ class SubtasksController < ApplicationController
     def create        # POST /restaurants
       @subtask = Subtask.new(subtask_params)
       @task = Trip.find(params[:task_id])
-      @subtask.trip = @trip
+      @subtask.task = @task
       @subtask.status = "open"
       authorize(@subtask)
       if @subtask.save
