@@ -6,24 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-trip_test = Trip.create({start_date: Time.now.to_date,
-                         end_date: (Time.now.to_date + 20),
-                         gender: 'female',
-                         age: 29,
-                         origin: 'Buenos Aires',
-                         purpose: 'pleasure',
-                         location: 'Paris, France'})
+Trip.create({start_date: Time.now.to_date,
+             end_date: (Time.now.to_date + 20),
+             gender: 'female',
+             age: 29,
+             origin: 'Buenos Aires',
+             purpose: 'pleasure',
+             location: 'Paris, France'
+             name: 'my trip to paris'})
 
-first_task = Task.create({
-  trip_id: trip_test.id,
+Task.create({
+  trip_id: 1,
   name: "Visa",
   description: "description",
   status: "open",
   tip: "tip"
 })
 
-second_task = Task.create({
-  trip_id: trip_test.id,
+Task.create({
+  trip_id: 1,
   name: "Prepare bag",
   description: "description",
   status: "open",
