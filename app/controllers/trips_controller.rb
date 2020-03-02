@@ -1,4 +1,4 @@
-class TripsController < ol
+class TripsController < ApplicationController
   before_action :authenticate_user!
 
   def show
@@ -18,7 +18,7 @@ class TripsController < ol
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.user = current_user if user_logged_in?
+    @trip.user = current_user if user_signed_in?
     authorize @trip
     if @trip.save
       redirect_to trip_path @trip
@@ -37,6 +37,6 @@ class TripsController < ol
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location )
+    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location, :name )
   end
 end
