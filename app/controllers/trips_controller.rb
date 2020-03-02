@@ -3,15 +3,18 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     authorize @trip
+
   end
 
   def index
     @trips = Trip.all
+    scope(@trips)
   end
 
   def new
     @trip = Trip.new
     authorize @trip
+
   end
 
   def create
@@ -25,10 +28,11 @@ class TripsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
+    authorize(@trip)
   end
 
   private
