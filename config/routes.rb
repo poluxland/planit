@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :trip, only: [:show, :index, :new, :create, :delete] do
-    resources :task, only: [:new, :create, :edit, :update, :delete ]
+  resources :trips, only: [:show, :index, :new, :create, :delete] do
+    resources :tasks, only: [:new, :create, :edit, :update, :delete ] do
+      resources :subtasks, only: [:new, :create, :edit, :update, :delete ]
+    end
   end
 
   # Dashboard
