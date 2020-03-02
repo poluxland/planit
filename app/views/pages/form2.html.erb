@@ -1,0 +1,212 @@
+<div class="upform">
+
+
+  <form>
+
+    <div class="upform-header"></div>
+
+    <div class="upform-main">
+
+
+      <div class="input-block">
+        <div class="label">Q1. If we give you a proven system to make at least $7,500 per month online, would you follow it to a tee?</div>
+        <div class="input-control">
+          <input id="toggle-on-q1" class="toggle toggle-left" name="q1" value="yes" type="radio">
+          <label for="toggle-on-q1" class="btn"><span>A</span> Yes</label>
+          <input id="toggle-off-q1" class="toggle toggle-right" name="q1" value="no" type="radio">
+          <label for="toggle-off-q1" class="btn"><span>B</span> No</label>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <div class="label">Q2. Would you be willing to invest at least 30 minutes per day to make it work?</div>
+        <div class="input-control">
+          <input id="toggle-on-q2" class="toggle toggle-left" name="q2" value="yes" type="radio">
+          <label for="toggle-on-q2" class="btn"><span>A</span> Yes</label>
+          <input id="toggle-off-q2" class="toggle toggle-right" name="q2" value="no" type="radio">
+          <label for="toggle-off-q2" class="btn"><span>B</span> No</label>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <div class="label">Q3. Would you like to get started NOW?</div>
+        <div class="input-control">
+          <input id="toggle-on-q3" class="toggle toggle-left" name="q3" value="yes" type="radio">
+          <label for="toggle-on-q3" class="btn"><span>A</span> Yes</label>
+          <input id="toggle-off-q3" class="toggle toggle-right" name="q3" value="no" type="radio">
+          <label for="toggle-off-q3" class="btn"><span>B</span> No</label>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <div class="label">What is your name?</div>
+        <div class="input-control">
+          <input type="text" class="required" autocomplete="off">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="upform-footer">
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+
+  </form>
+<script>
+$.fn.upform = function() {
+  var $this = $(this);
+  var container = $this.find(".upform-main");
+
+  $(document).ready(function() {
+    $(container).find(".input-block").first().click();
+  });
+
+  $($this).find("form").submit(function() {
+    return false;
+  });
+
+  $(container)
+    .find(".input-block")
+    .not(".input-block input")
+    .on("click", function() {
+    rescroll(this);
+  });
+
+  $(container).find(".input-block input").keypress(function(e) {
+    if (e.which == 13) {
+      if ($(this).hasClass("required") && $(this).val() == "") {
+      } else moveNext(this);
+    }
+  });
+
+  $(container).find('.input-block input[type="radio"]').change(function(e) {
+    moveNext(this);
+  });
+
+  $(window).on("scroll", function() {
+    $(container).find(".input-block").each(function() {
+      var etop = $(this).offset().top;
+      var diff = etop - $(window).scrollTop();
+
+      if (diff > 100 && diff < 300) {
+        reinitState(this);
+      }
+    });
+  });
+
+  function reinitState(e) {
+    $(container).find(".input-block").removeClass("active");
+
+    $(container).find(".input-block input").each(function() {
+      $(this).blur();
+    });
+    $(e).addClass("active");
+    /*$(e).find('input').focus();*/
+  }
+
+  function rescroll(e) {
+    $(window).scrollTo($(e), 200, {
+      offset: { left: 100, top: -200 },
+      queue: false
+    });
+  }
+
+  function reinit(e) {
+    reinitState(e);
+    rescroll(e);
+  }
+
+  function moveNext(e) {
+    $(e).parent().parent().next().click();
+  }
+
+  function movePrev(e) {
+    $(e).parent().parent().prev().click();
+  }
+};
+
+$(".upform").upform();
+$.fn.upform = function() {
+  var $this = $(this);
+  var container = $this.find(".upform-main");
+
+  $(document).ready(function() {
+    $(container).find(".input-block").first().click();
+  });
+
+  $($this).find("form").submit(function() {
+    return false;
+  });
+
+  $(container)
+    .find(".input-block")
+    .not(".input-block input")
+    .on("click", function() {
+      rescroll(this);
+    });
+
+  $(container).find(".input-block input").keypress(function(e) {
+    if (e.which == 13) {
+      if ($(this).hasClass("required") && $(this).val() == "") {
+      } else moveNext(this);
+    }
+  });
+
+  $(container).find('.input-block input[type="radio"]').change(function(e) {
+    moveNext(this);
+  });
+
+  $(window).on("scroll", function() {
+    $(container).find(".input-block").each(function() {
+      var etop = $(this).offset().top;
+      var diff = etop - $(window).scrollTop();
+
+      if (diff > 100 && diff < 300) {
+        reinitState(this);
+      }
+    });
+  });
+
+  function reinitState(e) {
+    $(container).find(".input-block").removeClass("active");
+
+    $(container).find(".input-block input").each(function() {
+      $(this).blur();
+    });
+    $(e).addClass("active");
+    /*$(e).find('input').focus();*/
+  }
+
+  function rescroll(e) {
+    $(window).scrollTo($(e), 200, {
+      offset: { left: 100, top: -200 },
+      queue: false
+    });
+  }
+
+  function reinit(e) {
+    reinitState(e);
+    rescroll(e);
+  }
+
+  function moveNext(e) {
+    $(e).parent().parent().next().click();
+  }
+
+  function movePrev(e) {
+    $(e).parent().parent().prev().click();
+  }
+};
+
+$(".upform").upform();
+
+
+
+
+
+
+</script>
+
+
+</div>
+
