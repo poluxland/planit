@@ -30,6 +30,7 @@ class TripsController < ApplicationController
 
   def destroy
     @trip = Trip.find(params[:id])
+    authorize @trip
     @trip.destroy
     authorize @trip
   end
