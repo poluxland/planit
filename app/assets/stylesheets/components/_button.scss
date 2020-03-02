@@ -1,0 +1,72 @@
+.btn-brand {
+  color: #1b262c;
+  padding: 4px 8px;
+  margin: 4px 0px 4px 0px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 5px grey;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-brand:hover {
+  box-shadow: 0px 0px 10px grey;
+}
+
+.btn-brand-min {
+  background-color: white;
+  color: #1b262c;
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.btn-brand-min:hover {
+  box-shadow: 0px 0px 10px grey;
+}
+
+.btn-brand-red-min {
+  background-color: #B50103;
+  color: white;
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.btn-brand-red-min:hover {
+  box-shadow: 0px 0px 10px grey;
+}
+
+
+.btn-brand-red {
+  color: white;
+  background-color: #B50103;
+  padding: 4px 8px;
+  margin: 4px 0px 4px 0px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 5px grey;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-brand-red:hover {
+  color: white;
+  box-shadow: 0px 0px 10px grey;
+}
+
+.btn-invisible {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.0);
+  border: none;
+}
