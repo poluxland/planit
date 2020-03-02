@@ -1,131 +1,146 @@
+* { box-sizing: border-box; position:relative;}
+
 body {
-  background: #000;
-  color: #FFF;
+  background: #2D82CB;
+  font-family: "lato", sans-serif;
+  color: rgba(255,255,255,0.7);
 }
 
-.btn {
-  border: 1px solid #808080;
-  display: inline-block;
-  padding: 5px 10px;
-  font-size: 20px;
-  position: relative;
-  text-align: left;
-  border-radius: 3px;
-  -webkit-transition: background 600ms ease, color 600ms ease;
-  transition: background 600ms ease, color 600ms ease;
+#form-wrapper {
+  margin-top: 80px;
+  height:450px;
+  transition: all 1s ease;
+  overflow: hidden;
 }
-.btn span {
-  border: 1px solid #808080;
-  display: inline-block;
-  padding: 1px 6px;
-  font-size: 12px;
-  border-radius: 5px;
-  vertical-align: middle;
-  text-align: center;
-  margin-top: -5px;
+#form-wrapper.answering {
+  height: 150px;
+  overflow: hidden;
 }
 
-input[type="radio"].toggle {
-  display: none;
+.question {
+  width: 400px;
+  margin: 0 auto;
+  height: 30px;
+  overflow: hidden;
 }
-input[type="radio"].toggle + label {
-  cursor: pointer;
-  min-width: 80px;
-}
-input[type="radio"].toggle + label:hover {
-  background: none;
-  color: #FFF;
-}
-input[type="radio"].toggle + label:after {
-  content: "";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  -webkit-transition: left 100ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition: left 100ms cubic-bezier(0.77, 0, 0.175, 1);
-  width: 100%;
-  z-index: -1;
-}
-input[type="radio"].toggle.toggle-left + label {
-}
-input[type="radio"].toggle.toggle-left + label:after {
-  left: 100%;
-}
-input[type="radio"].toggle.toggle-right + label {
-  margin-left: 10px;
-}
-input[type="radio"].toggle.toggle-right + label:after {
-  left: -100%;
-}
-input[type="radio"].toggle:checked + label {
-  background: #FFF;
-  cursor: default;
-  color: #000;
-}
-input[type="radio"].toggle:checked + label:after {
-  left: 0;
-}
+.question, .question * {transition: all 0.3s ease;}
+.question .q-back {opacity:1;}
+.question label {font-size: 20px; padding-left:20px;}
+.question input, .question .q-next {display: none;}
+.question .q-text {height:30px;line-height:30px;}
+.question .q-answer {display:inline; color: rgba(0,0,0,.8);}
 
-/* ENDS */
+.question.open {height: 90px; margin-bottom: 150px;}
+.question.open label {font-size: 30px;}
+.question.open .q-back {opacity: 0;}
+.question.open input {display: block;}
+.question.open .q-next {display: block;}
+.question.open .q-text {height:40px;line-height:40px;}
+.question.open .q-answer {display:none;}
 
-/* UPFORM STYLE STARTS*/
-.upform input:focus, select:focus, textarea:focus, button:focus {
-  outline: none;
-  border-color: blue !important;
-}
-.upform input, select, textarea {
-  background-color: #000 !important;
-  color: #FFF;
-}
-.upform {
-  font-family: 'Open Sans', sans-serif;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                supported by Chrome and Opera */
-  max-width: 900px;
-  margin: 300px auto;
-  margin-bottom: 500px;
-  padding: 0 20px;
-}
-
-.upform .upform-main {
-}
-.upform .upform-main .input-block {
-  padding: 30px 0;
-  opacity: 0.25;
-  cursor: default;
-}
-.upform .upform-main .input-block .label {
+.q-next {
   display: block;
-  font-size: 1.1em;
-  line-height: 30px;
-}
-.upform .upform-main .input-block .input-control {
-  margin: 20px 0;
-}
-.upform .upform-main .input-block .input-control input[type=text] {
-  border: none;
-  outline-width: 0;
-  border-bottom: 2px solid #CCC;
+  position: absolute;
+  bottom: 5px;
+  right:0px;
+  padding: 0 10px;
+  height: 45px;
+  line-height:45px;
+  text-align:center;
+  font-size: 30px;
+  cursor: pointer;
+} .q-next:hover {background: rgba(255,255,255,.1);}
+
+.q-back {
+  position:absolute;
+  top:0px;
+  left:0px;
+  color:rgba(0,0,0,.8);
   width: 100%;
-  font-size: 35px;
-  padding-bottom: 10px;
+  cursor: pointer;
+  font-size:20px;
+  line-height: 30px;
+  padding-left: 4px;
+} .q-back:hover {background: rgba(255,255,255,.1);}
+
+.q-text {
+  max-height: 40px;
+  overflow:hidden;
+  display:block;
 }
 
-.upform .upform-main .input-block.active {
-  opacity: 1;
+label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
 }
 
-.upform .upform-footer {
-  margin-top: 60px;
+input {
+  border: 0px;
+  outline: 0;
+  box-shadow: 0;
+  background: rgba(0,0,0,.15);
+  border-bottom: 5px solid rgba(0,0,0,.05);
+  color: black;
+  width:100%;
+  height:50px;
+  line-height:50px;
+  padding: 0 10px;
+  font-size: 30px;
 }
-.upform .upform-footer .btn {
-  font-size: 24px;
+
+
+.q-title {
+  text-align: center;
+  line-height: 150px;
+  font-size: 40px;
   font-weight: bold;
-  padding: 5px 20px;
 }
-/* UPFORM STYLE ENDS*/
+
+.q-after {
+  width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.q-confirm-text {
+  font-size: 20px;
+  padding: 20px 0;
+}
+.q-confirm-button {
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0 10px;
+  padding-left: 50px;
+  height: 40px;
+  line-height:40px;
+  width: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(255,255,255,.3);
+  text-transform: uppercase;
+  color: white;
+} .q-confirm-button:hover {background: rgba(255,255,255,.1);}
+.q-confirm-button:before {
+  content: '>';
+  display: block;
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 100%;
+  background: rgba(255,255,255,.1);
+  text-align:center;
+  line-height: 40px;
+  font-size: 25px;
+  color: white;
+}
+
+hr {
+  box-shadow: 0px;
+  outline: 0px; border:0px;
+  height: 1px;
+  background: rgba(255,255,255,.2);
+}
+
