@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
   belongs_to :trip
-  as_many :subtasks
+  has_many :subtasks
 end
