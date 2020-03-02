@@ -1,6 +1,5 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!
 
   def show
     @trip = Trip.find(params[:id])
