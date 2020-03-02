@@ -2,6 +2,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    authorize @trip
   end
 
   def index
@@ -10,12 +11,13 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    authorize @trip
   end
 
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user if user_logded_in?
-    authorise(@trip)
+    authorize(@trip)
     if @trip.save
       redirect_to trip_path(@trip)
     else
@@ -25,6 +27,7 @@ class TripsController < ApplicationController
 
   def delete
     @trip = Trip.find(params[:id])
+    authorize @trip
     @trip.destroy
   end
 
