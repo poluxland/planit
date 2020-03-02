@@ -1,17 +1,17 @@
 class TasksController < ApplicationController
 
     def new           # GET /restaurants/new
-      @task = Task.new
-      authorize(@task)
+      @subtask = Subtask.new
+      authorize(@subtask)
     end
 
     def create        # POST /restaurants
-      @task = Task.new(task_params)
-      @trip = Trip.find(params[:trip_id])
-      @task.trip = @trip
-      @task.status = "open"
-      authorize(@task)
-      if @task.save
+      @subtask = Subtask.new(subtask_params)
+      @task = Trip.find(params[:task_id])
+      @subtask.trip = @trip
+      @subtask.status = "open"
+      authorize(@subtask)
+      if @subtask.save
         redirect_to trip_path(@trip)
       else
         render :new
@@ -19,26 +19,26 @@ class TasksController < ApplicationController
     end
 
     def edit          # GET /restaurants/:id/edit
-      @task = Task.find(params[:task_id])
-      authorize(@task)
+      @subtask = Subtask.find(params[:subtask_id])
+      authorize(@subtask)
     end
 
     def update        # PATCH /restaurants/:id
-      @task = Task.find(task_params)
-      @task.update(params[:task])
-      authorize(@task)
+      @subtask = Subtask.find(subtask_params)
+      @subtask.update(params[:subtask])
+      authorize(@subtask)
     end
 
     def destroy       # DELETE /restaurants/:id
-     @task = Task.find(params[:id])
-     @task.destroy
-     authorize(@task)
+     @subtask = Subtask.find(params[:id])
+     @subtask.destroy
+     authorize(@subtask)
    end
 
    private
 
-   def task_params
-    params.require(:task).permit(:name, :description)
+   def subtask_params
+    params.require(:subtask).permit(:name, :description)
   end
 
 end
