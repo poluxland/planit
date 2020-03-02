@@ -6,13 +6,26 @@ data-markers="<%= @markers.to_json %>"
 data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
-<div class="container ">
-  <div class="row">
-    <h1>This is a list</h1>
-    <ul>
-      <li>This is an item</li>
-      <li>This is an item</li>
-      <li>This is an item</li>
-    </ul>
+<div class="container">
+  <div class ="row justify-content-center mt-5">
+    <div class="col-12 col-lg-8">
+      <% @trip.tasks.each do |task| %>
+        <div class="card-product">
+          <%= cl_image_tag "#{@trip.location}" %>
+          <div class="card-product-infos">
+            <h2>Task</h2>
+            <p>This is a nice <strong>Task</strong> only.</p>
+          </div>
+          <div class="buttons">
+              <%= link_to edit_task_path(task), class: 'btn' do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to task_path(task), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
