@@ -1,3 +1,3 @@
 class Trip < ApplicationRecord
-  as_many :tasks
+  has_many :tasks
 end
