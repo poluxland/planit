@@ -3,17 +3,17 @@ class TaskPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def create?
-      return true # Anyone can view a task?
-    end
+  def create?
+    return true # Anyone can view a task?
+  end
 
-    def update?
-      record.user == user
-    end
+  def update?
+    record.user == user
+  end
 
-    def destroy?
-      record.user == user
-    end
+  def destroy?
+    record.user == user
   end
 end
