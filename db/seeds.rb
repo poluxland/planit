@@ -12,7 +12,24 @@ Trip.create({start_date: Time.now.to_date,
              age: 29,
              origin: 'Buenos Aires',
              purpose: 'pleasure',
-             location: 'Paris, France'})
+             location: 'Paris, France'
+             name: 'my trip to paris'})
+
+Task.create({
+  trip_id: 1,
+  name: "Visa",
+  description: "description",
+  status: "open",
+  tip: "tip"
+})
+
+Task.create({
+  trip_id: 1,
+  name: "Prepare bag",
+  description: "description",
+  status: "open",
+  tip: "tip"
+})
 
 morgan = User.create(email: "morgan@planit.wtf", password: "testtest", first_name: "Morgan")
 jose = User.create(email: "jose@planit.wtf", password: "testtest", first_name: "Jose")
