@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
     def new           # GET /restaurants/new
       @task = Task.new
+      @trip = Trip.find(params[:trip_id])
       authorize @task
     end
 
     def create        # POST /restaurants
       @task = Task.new(task_params)
-      @task = Trip.find(params[:trip_id])
+      @trip = Trip.find(params[:trip_id])
       @task.trip = @trip
       @task.status = "open"
       authorize @task
