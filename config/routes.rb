@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :trip, :only [:show, :index, :new, :create, :delete]
   # Dashboard
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get 'form', to: 'pages#form', as: 'form'
+
 end
