@@ -1,26 +1,28 @@
 class TripsController < ApplicationController
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def show
     @trip = Trip.find(params[:id])
-    authorize(@trip)
+    authorize @trip
   end
 
   def index
     @trips = Trip.all
-    scope(@trips)
+    scope @trips
   end
 
   def new
     @trip = Trip.new
-    authorize(@trip)
+    authorize @trip
   end
 
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user if user_logded_in?
-    authorize(@trip)
+    authorize @trip
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to trip_path @trip
     else
       render :new
     end
@@ -29,7 +31,7 @@ class TripsController < ApplicationController
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
-    authorize(@trip)
+    authorize @trip
   end
 
   private
