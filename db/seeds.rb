@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Trip.create({start_date: Time.now.to_date,
+             end_date: (Time.now.to_date + 20),
+             gender: 'female',
+             age: 29,
+             origin: 'Buenos Aires',
+             purpose: 'pleasure',
+             location: 'Paris, France'})
+
+morgan = User.create(email: "morgan@planit.wtf", password: "testtest", first_name: "Morgan")
+jose = User.create(email: "jose@planit.wtf", password: "testtest", first_name: "Jose")
+ben = User.create(email: "ben@planit.wtf", password: "testtest", first_name: "Ben")
+manuel = User.create(email: "manuel@planit.wtf", password: "testtest", first_name: "Manuel")
