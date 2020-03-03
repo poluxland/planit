@@ -68,3 +68,16 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 <br>
 <br>
 <br>
+
+<script>
+    const tasks = document.querySelectorAll('.task-container');
+  // const subtasks = document.querySelectorAll('.subtask');
+
+  // if (tasks) {
+    tasks.forEach((task) => {
+      task.addEventListener('click', () => {
+        console.log(task.lastElementChild)
+        task.lastElementChild.classList.toggle("active");
+      });
+    });
+</script>

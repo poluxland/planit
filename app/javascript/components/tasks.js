@@ -1,15 +1,14 @@
-const initOpenTaskOnClick = () => {
+// const initOpenTaskOnClick = () => {
   const tasks = document.querySelectorAll('.task-container');
-  const subtasks = document.querySelectorAll('.subtask');
+  // const subtasks = document.querySelectorAll('.subtask');
 
-  if (tasks) {
+  // if (tasks) {
     tasks.forEach((task) => {
       task.addEventListener('click', () => {
-        task.classList.toggle('active');
-
+        alert(task)
       });
     });
-  }
-}
+  // }
+// }
 
 export { initOpenTaskOnClick };
