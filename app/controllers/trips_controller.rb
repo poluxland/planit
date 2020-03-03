@@ -36,6 +36,18 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+    authorize @trip
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    authorize @trip
+    redirect_to trips_path
+  end
+
   def destroy
     @trip = Trip.find(params[:id])
     authorize @trip
@@ -45,6 +57,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location, :name, :description )
+    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location, :name, :description, :photo )
   end
 end
