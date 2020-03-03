@@ -1,10 +1,10 @@
 class SubtasksController < ApplicationController
    def new           # GET /restaurants/new
-      @subtask = Subtask.new
-      authorize @subtask
-      @task = Task.find(params[:task_id])
-      @trip = @task.trip
-    end
+    @subtask = Subtask.new
+    authorize @subtask
+    @task = Task.find(params[:task_id])
+    @trip = @task.trip
+  end
 
     def create        # POST /restaurants
       @subtask = Subtask.new(subtask_params)

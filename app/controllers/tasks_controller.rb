@@ -38,12 +38,13 @@ class TasksController < ApplicationController
    authorize @task
    @task.destroy
    redirect_to trip_path(@task.trip)
-  end
+ end
 
-  private
+ private
 
-    params.require(:task).permit(:name, :description, :task_id, :status)
+ def task_params
+  params.require(:task).permit(:name, :description, :task_id, :status)
 
-  end
+end
 
 end
