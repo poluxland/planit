@@ -17,16 +17,17 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           <p><%= task.description %></p>
         </div>
         <div class="buttons">
-          <%= link_to edit_trip_task_path(task.trip, task), class: 'btn' do %>
+          <%= link_to edit_task_path(task), class: 'btn' do %>
           <i class="far fa-edit"></i>
           <% end %>
-          <%= link_to trip_task_path(task.trip, task), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+          <%= link_to task_path(task), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
       </div>
 
       <% end %>
+      <%= link_to 'Add New Task', new_trip_task_path(@trip), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>

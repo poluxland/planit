@@ -37,9 +37,8 @@ class TasksController < ApplicationController
     def destroy       # DELETE /restaurants/:id
      @task = Task.find(params[:id])
      authorize @task
-     @trip = @task.trip
      @task.destroy
-     redirect_to trip_path(@trip)
+     redirect_to trip_path(@task.trip)
    end
 
    private
