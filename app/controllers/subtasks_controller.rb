@@ -1,18 +1,18 @@
 class SubtasksController < ApplicationController
    def new           # GET /restaurants/new
       @subtask = Subtask.new
+      authorize @subtask
       @task = Task.find(params[:task_id])
-      @trip = Trip.find(params[:trip_id])
-      authorize(@subtask)
+      @trip = @task.trip
     end
 
     def create        # POST /restaurants
       @subtask = Subtask.new(subtask_params)
       @task = Task.find(params[:task_id])
-      @trip = Trip.find(params[:trip_id])
+      @trip = @task.trip
       @subtask.task = @task
       @subtask.status = "open"
-      authorize(@subtask)
+      authorize @subtask
       if @subtask.save
         redirect_to trip_path(@trip)
       else
@@ -21,20 +21,25 @@ class SubtasksController < ApplicationController
     end
 
     def edit          # GET /restaurants/:id/edit
-      @subtask = Subtask.find(params[:subtask_id])
-      authorize(@subtask)
+      @subtask = Subtask.find(params[:id])
+      authorize @subtask
     end
 
     def update        # PATCH /restaurants/:id
-      @subtask = Subtask.find(subtask_params)
-      @subtask.update(params[:subtask])
-      authorize(@subtask)
+      @subtask = Subtask.find(params[:id])
+      authorize @subtask
+      if @subtask.update(subtask_params)
+        redirect_to trip_path(@subtask.task.trip)
+      else
+        render :edit
+      end
     end
 
     def destroy       # DELETE /restaurants/:id
      @subtask = Subtask.find(params[:id])
+     authorize @subtask
      @subtask.destroy
-     authorize(@subtask)
+     redirect_to trip_path(@subtask.task.trip)
    end
 
    private

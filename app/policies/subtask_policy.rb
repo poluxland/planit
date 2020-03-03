@@ -10,10 +10,10 @@ class SubtaskPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.task.trip.user == user
   end
 
   def destroy?
-    record.user == user
+    record.task.trip.user == user
   end
 end

@@ -1,12 +1,14 @@
-const initOpenTaskOnClick = () => {
-  const tasks = document.querySelectorAll('.card-product');
-  if (tasks) {
+// const initOpenTaskOnClick = () => {
+  const tasks = document.querySelectorAll('.task-container');
+  // const subtasks = document.querySelectorAll('.subtask');
+
+  // if (tasks) {
     tasks.forEach((task) => {
       task.addEventListener('click', () => {
-        task.classList.toggle('active');
+        alert(task)
       });
     });
-  }
-}
+  // }
+// }
 
 export { initOpenTaskOnClick };

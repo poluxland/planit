@@ -1,4 +1,4 @@
-<%= simple_form_for [@trip, @task, @subtask] do |f| %>
+<%= simple_form_for [@task, @subtask] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.submit "Submit", class: "btn btn-secondary" %>
