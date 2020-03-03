@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :trips, dependent: :delete_all
 
+  # Validation
+  validates :email,  presence: :true
+  validates :first_name,  presence: :true
+
   def avatar_key
     if self.avatar.attached?
       self.avatar.key
