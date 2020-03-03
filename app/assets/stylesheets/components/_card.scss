@@ -58,10 +58,6 @@
   }
 }
 
-.task-card.active {
-  height: 140px;
-}
-
 .buttons {
   position: absolute;
   bottom: 10px;
@@ -81,7 +77,6 @@
   padding-left: 50px;
 }
 
-.subtasks .active{
+.active{
   display: block;
 }
-
