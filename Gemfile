@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
+gem "algoliasearch-rails"
 gem 'geocoder'
 
 group :development do
