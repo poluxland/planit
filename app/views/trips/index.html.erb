@@ -4,23 +4,19 @@
     style="width: 100%;
     height: 100vh;
     top: 0px;
-    z-index: -1;
     left: 0px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
-  <div style="position: absolute; top: 100px; left: 40px;">
-    <h2>Welcome to your Dashboard</h2>
-  </div>
-  <div style="position: absolute; bottom: 130px; left: calc(50% - 70px);">
+  <div style="position: relative; bottom: 200px;">
     <a href="#section2" class="arrow-down animate"></a>
   </div>
 
 </div>
 
 <div class="container" style="min-height: 95vh" id="section2">
-  <div style="position: absolute; top: 20px; left: calc(50% - 70px);">
+  <div style="position: relative; top: 20px">
     <a href="#section1" class="arrow-up animate"></a>
   </div>
   <br>
@@ -43,9 +39,8 @@
       <% end %>
     </div>
   </div>
+
 </div>
-
-
 
 
 <script>
