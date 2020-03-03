@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'pundit'
 gem "algoliasearch-rails"
 gem 'geocoder'
+gem "animate-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
