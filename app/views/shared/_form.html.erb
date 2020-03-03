@@ -11,15 +11,14 @@ input, button {
   transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
 input {
-  padding: 0.25rem 0;
   border: 0;
   border-bottom: 1px solid white;
   outline: 0;
   background-color:rgba(0, 0, 0, 0.5);
   color: #fff;
-  font-size: 3rem;
+  font-size: 2rem;
+  padding: 8px;
   line-height: 4rem;
-  letter-spacing: 0.125rem;
   transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
 input::selection {
@@ -29,13 +28,11 @@ button, .signup-button {
   padding: 0.25em 0;
   border: 0;
   outline: 0;
-  background: #bb1515;
-  color: rgba(255, 255, 255, 0.85);
+  background: white;
   font-size: 2rem;
+  border-radius: 8px;
   line-height: 3.6rem;
-  letter-spacing: 0.0625rem;
-  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
-  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 5px gray;
 }
 input:focus, button:focus {
   opacity: 1;
@@ -76,9 +73,6 @@ input:focus + label .nav-dot:before {
   opacity: 0;
   color: #fff;
   font-size: 0.875rem;
-  font-weight: 300;
-  letter-spacing: 0.125rem;
-  text-transform: uppercase;
   text-align: right;
   transition: opacity 0.25s 0.5s;
 }
@@ -106,12 +100,11 @@ input:focus + label .nav-dot:before {
   transform: translate(-50%, -300%);
   width: 70vw;
   padding: 3.125rem 0 1.5rem;
-  text-transform: uppercase;
-  color: #fff;
+  color: white;
+  font-weight: 800;
+  text-shadow: 0px 0px 5px gray;
   opacity: 0;
   font-size: 1.125rem;
-  font-weight: 300;
-  letter-spacing: 0.125rem;
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
 }
@@ -139,7 +132,7 @@ input:focus + label .nav-dot:before {
   height: 0.625rem;
   margin-top: -0.125rem;
   margin-left: -0.125rem;
-  background-color: #a41212;
+  background-color: white;
 }
 label[for="input-1"] .nav-dot {
   margin-top: -125px;
@@ -182,24 +175,53 @@ form {
 
 </style>
 
-<form accept-charset="UTF-8" action='/auto_create' class="auto_create" id="auto_create" method="get">
-  <input id="input-1" type="text" placeholder=" Destination" required autofocus />
+<form accept-charset="UTF-8" action='auto_create' class="auto_create" id="auto_create" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <input id="input-1" type="text" placeholder="Where are you going?" name="destination" required autofocus />
   <label for="input-1">
-    <span class="label-text"> </span>
+    <span class="label-text">Destination</span>
     <span class="nav-dot"></span>
    <div class="signup-button-trigger">Sign Up</div>
   </label>
-  <input id="input-2" type="text" placeholder=" From" required />
+
+  <input id="input-2" type="date" placeholder="When are you leaving?" name="start_date" required />
   <label for="input-2">
-    <span class="label-text"> </span>
+    <span class="label-text">Start date</span>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-3" type="date" placeholder="date" required />
+
+    <input id="input-3" type="date" placeholder="When are you coming back?" name="end_date" required />
   <label for="input-3">
-    <span class="label-text"> </span>
+    <span class="label-text">End date</span>
     <span class="nav-dot"></span>
   </label>
-  <button type="submit">Let´s see what you need!</button>
+
+  <input id="input-4" type="text" placeholder="What is the purpose of your trip?" name="purpose" required />
+  <label for="input-4">
+    <span class="label-text">Purpose</span>
+    <span class="nav-dot"></span>
+  </label>
+
+  <input id="input-5" type="text" placeholder="Where are you from?" name="origin" required />
+  <label for="input-5">
+    <span class="label-text">Origin</span>
+    <span class="nav-dot"></span>
+  </label>
+
+  <input id="input-6" type="date" placeholder="When were you born?" name="birth" required />
+  <label for="input-6">
+    <span class="label-text">Birth</span>
+    <span class="nav-dot"></span>
+  </label>
+
+  <input id="input-7" type="text" placeholder="What is your gender?" name="gender" required />
+  <label for="input-7">
+    <span class="label-text">Gender</span>
+    <span class="nav-dot"></span>
+  </label>
+
+  <button type="submit">Let´s go</button>
   <p class="tip">Press Tab</p>
   <div class="signup-button">Let´s Travel!</div>
 </form>

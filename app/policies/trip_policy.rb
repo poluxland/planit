@@ -13,6 +13,10 @@ class TripPolicy < ApplicationPolicy
     true
   end
 
+  def confirmation?
+    true
+  end
+
   def update?
     record.user == user
   end

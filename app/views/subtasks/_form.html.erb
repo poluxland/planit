@@ -1,5 +1,7 @@
 <%= simple_form_for [@task, @subtask] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+
+  <%= f.input :status, as: :boolean %>
   <%= f.submit "Submit", class: "btn btn-secondary" %>
 <% end %>
