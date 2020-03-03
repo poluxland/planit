@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_154313) do
+ActiveRecord::Schema.define(version: 2020_03_03_201425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 2020_03_03_154313) do
 
   create_table "subtasks", force: :cascade do |t|
     t.string "name"
-    t.string "status"
     t.string "description"
     t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false
     t.index ["task_id"], name: "index_subtasks_on_task_id"
   end
 
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2020_03_03_154313) do
     t.bigint "trip_id", null: false
     t.string "name"
     t.string "description"
-    t.string "status"
     t.string "tip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false
     t.index ["trip_id"], name: "index_tasks_on_trip_id"
   end
 
