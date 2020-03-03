@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   get 'form', to: 'pages#form', as: 'form'
   get 'form2', to: 'pages#form2', as: 'form2'
+  get 'confirmation', to: 'pages#confirmation', as: 'confirmation'
 
 end
