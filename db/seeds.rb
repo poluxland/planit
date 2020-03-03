@@ -22,6 +22,7 @@ Trip.create!({start_date: Time.now.to_date,
              purpose: 'pleasure',
              location: 'Paris, France',
              name: 'my trip to paris',
+             description: 'This is my trip to paris, I am going next year',
              user_id: User.first.id})
 
 Task.create!({
