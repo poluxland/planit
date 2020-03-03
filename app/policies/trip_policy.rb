@@ -13,11 +13,19 @@ class TripPolicy < ApplicationPolicy
     true
   end
 
+  def confirmation?
+    true
+  end
+
   def update?
     record.user == user
   end
 
   def destroy?
     record.user == user
+  end
+
+  def auto_create?
+    true
   end
 end
