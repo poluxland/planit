@@ -1,38 +1,7 @@
 <div class="d-flex justify-content-around">
-<!--   <div class="start">
-    <h1 class="logo-font display-3 m-0 p-0">Planit</h1>
-    <div class="start-box">
 
-    <h6 class="my-0 mr-1">Where are you going?</h6>
-      FORM HERE
-    </div>
 
-    <button class="logo-font btn-invisible" data-toggle="modal" data-target="#login-modal">or log into your existing account</button>
-
-  </div> -->
-
-<form accept-charset="UTF-8" action="/trips" class="new_trip" id="new_trip" method="get">>
-
-  <input id="input-1" type="text" placeholder="Argentina" required autofocus />
-  <label for="input-1">
-    <span class="label-text">Destination</span>
-    <span class="nav-dot"></span>
-    <div class="signup-button-trigger">Sign Up</div>
-  </label>
-  <input id="input-2" type="text" placeholder="Paris" required />
-  <label for="input-2">
-    <span class="label-text">From</span>
-    <span class="nav-dot"></span>
-  </label>
-  <input id="input-4" type="date" placeholder="date" required />
-  <label for="input-4">
-    <span class="label-text">When</span>
-    <span class="nav-dot"></span>
-  </label>
-  <button type="submit">Let´s see what you need!</button>
-  <p class="tip">Press Tab</p>
-  <div class="signup-button">Let´s Travel!</div>
-</form>
+<%= render 'shared/form' %>
 
 
 </div>
