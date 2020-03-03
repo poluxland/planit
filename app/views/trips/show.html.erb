@@ -6,13 +6,14 @@ data-markers="<%= @markers.to_json %>"
 data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div> -->
 
-<div class="container">
-  <div class ="row justify-content-center mt-5">
-    <div class="col-12 col-lg-8">
-      <% @trip.tasks.each do |task| %>
 
-      <div class="card-product">
-        <div class="card-product-infos ml-2">
+<div class="row justify-content-center mt-5">
+  <div class="col-12 col-lg-8">
+    <% @trip.tasks.each do |task| %>
+    <div class="task-container">
+
+      <div class="task-card">
+        <div>
           <h2><%= task.name %></h2>
           <p><%= task.description %></p>
         </div>
@@ -26,8 +27,44 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         </div>
       </div>
 
-      <% end %>
-      <%= link_to 'Add New Task', new_trip_task_path(@trip), class: 'btn btn-primary' %>
+      <div class="subtasks">
+        <% task.subtasks.each do |subtask| %>
+
+        <div class="subtask-card">
+          <div>
+            <h2><%= subtask.name %></h2>
+            <p><%= subtask.description %></p>
+          </div>
+          <div class="buttons">
+            <%= link_to edit_subtask_path(subtask), class: 'btn' do %>
+            <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to subtask_path(subtask), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+
+        <% end %>
+        <%= link_to new_task_subtask_path(task), class: 'btn' do %>
+        <i class="fas fa-plus">  Add Subtask</i>
+        <% end %>
+      </div>
+
     </div>
+    <% end %>
+    <%= link_to new_trip_task_path(@trip), class: 'btn btn-light' do %>
+    <i class="fas fa-plus">  Add Subtask</i>
+    <% end %>
   </div>
 </div>
+<!--   -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
