@@ -1,10 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 2;
-  // color: white !important;
-  // text-decoration: none !important;
+  font-family: $headers-font;
 }
 
 .navbar-lewagon .navbar-collapse {
