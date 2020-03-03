@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,7 @@
   <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 
-<body>
+<body class="d-flex flex-column h-100" style="background-image: url('<%= cl_image_path("background", height: 300, width: 1920)%>');">
 
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
