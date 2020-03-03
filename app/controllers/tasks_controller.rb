@@ -19,26 +19,33 @@ class TasksController < ApplicationController
     end
 
     def edit          # GET /restaurants/:id/edit
-      @task = Task.find(params[:task_id])
+      @task = Task.find(params[:id])
       authorize @task
     end
 
     def update        # PATCH /restaurants/:id
-      @task = Task.find(task_params)
-      @task.update(params[:task])
+      @task = Task.find(params[:id])
       authorize @task
+      if @task.update(task_params)
+        redirect_to trip_path(@task.trip)
+      else
+        render :edit
+      end
+
     end
 
     def destroy       # DELETE /restaurants/:id
      @task = Task.find(params[:id])
-     @task.destroy
      authorize @task
+     @trip = @task.trip
+     @task.destroy
+     redirect_to trip_path(@trip)
    end
 
    private
 
    def task_params
-    params.require(:task).permit(:name, :description)
+    params.require(:task).permit(:name, :description, :task_id)
   end
 
 end

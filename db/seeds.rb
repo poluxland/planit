@@ -5,33 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Task.delete_all
+Trip.delete_all
+User.delete_all
 
-Trip.create({start_date: Time.now.to_date,
+morgan = User.create!(email: "morgan@planit.wtf", password: "testtest", first_name: "Morgan")
+jose = User.create!(email: "jose@planit.wtf", password: "testtest", first_name: "Jose")
+ben = User.create!(email: "ben@planit.wtf", password: "testtest", first_name: "Ben")
+manuel = User.create!(email: "manuel@planit.wtf", password: "testtest", first_name: "Manuel")
+
+Trip.create!({start_date: Time.now.to_date,
              end_date: (Time.now.to_date + 20),
              gender: 'female',
              age: 29,
              origin: 'Buenos Aires',
              purpose: 'pleasure',
-             location: 'Paris, France'
-             name: 'my trip to paris'})
+             location: 'Paris, France',
+             name: 'my trip to paris',
+             user_id: User.first.id})
 
-Task.create({
-  trip_id: 1,
+Task.create!({
+  trip_id: Trip.first.id,
   name: "Visa",
-  description: "description",
+  description: "Go get that Visa!",
   status: "open",
   tip: "tip"
 })
 
-Task.create({
-  trip_id: 1,
+Task.create!({
+  trip_id: Trip.first.id,
   name: "Prepare bag",
-  description: "description",
+  description: "What are you waiting for? The last minute?",
   status: "open",
   tip: "tip"
 })
 
-morgan = User.create(email: "morgan@planit.wtf", password: "testtest", first_name: "Morgan")
-jose = User.create(email: "jose@planit.wtf", password: "testtest", first_name: "Jose")
-ben = User.create(email: "ben@planit.wtf", password: "testtest", first_name: "Ben")
-manuel = User.create(email: "manuel@planit.wtf", password: "testtest", first_name: "Manuel")

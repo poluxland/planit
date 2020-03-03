@@ -1,12 +1,15 @@
 .card-product {
-  overflow: hidden;
-  height: 120px;
+  height: 80px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 30px;
   margin-bottom: 20px;
+}
+
+.card-product.active {
+  height: 140px;
 }
 
 .card-product img {
@@ -31,10 +34,15 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+
 }
 
 .buttons {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  .btn {
+    border: 0;
+  }
 }
