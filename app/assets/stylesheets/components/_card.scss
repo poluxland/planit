@@ -1,48 +1,87 @@
-.card-product {
+.task-card{
   height: 80px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 30px;
   margin-bottom: 20px;
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .task-card-infos {
+    padding: 16px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
 }
 
-.card-product.active {
+.subtask-card{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .subtask-card-infos {
+    padding: 16px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+.task-card.active {
   height: 140px;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-
-}
-
 .buttons {
-  margin-left: auto;
-  margin-right: 20px;
-  margin-top: auto;
-  margin-bottom: 10px;
-  .btn {
-    border: 0;
-  }
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
+
+.task-container {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.subtasks {
+  display: none;
+  padding-left: 50px;
+}
+
+.subtasks .active{
+  display: block;
+}
+
