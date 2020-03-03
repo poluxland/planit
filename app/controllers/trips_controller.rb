@@ -1,3 +1,5 @@
+require_relative 'create_trips/packinglist'
+
 class TripsController < ApplicationController
   before_action :authenticate_user!
 
@@ -66,6 +68,9 @@ class TripsController < ApplicationController
     @trip = Trip.create(name: "Testtrip", description: "Test Description", location: @destination)
     authorize @trip
     # This is the start of the magic
+
+    packinglist(@trip)
+
 
     redirect_to confirmation_path(@trip)
   end
