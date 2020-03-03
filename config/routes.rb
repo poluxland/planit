@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :tasks, only: [:edit, :update, :destroy]
   resources :subtasks, only: [:edit, :update, :destroy]
 
-  # Dashboard
-  get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   get 'form', to: 'pages#form', as: 'form'
   get 'form2', to: 'pages#form2', as: 'form2'
 
