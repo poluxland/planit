@@ -65,8 +65,6 @@ class TripsController < ApplicationController
     @start_date = params[:origin]
     @start_date = params[:age]
 
-
-
     raise
     # This is the start of the magic
 
