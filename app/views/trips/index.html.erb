@@ -29,7 +29,7 @@
 
 
     <div class="trip-overview">
-      <% current_user.trips.each do |trip| %>
+      <% @trips.each do |trip| %>
         <%= link_to trip_path(trip) do %>
           <div class="card-trip">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
