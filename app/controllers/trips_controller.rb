@@ -18,8 +18,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.user = current_user if user_signed_in?
     authorize @trip
+    @trip.user = current_user if user_signed_in?
     if @trip.save
       redirect_to trip_path @trip
     else
@@ -31,7 +31,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
-    authorize @trip
   end
 
   private
