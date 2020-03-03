@@ -20,4 +20,8 @@ class TripPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def auto_create?
+    true
+  end
 end

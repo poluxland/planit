@@ -54,9 +54,32 @@ class TripsController < ApplicationController
     @trip.destroy
   end
 
+  def auto_create
+    @trip = Trip.new
+    authorize @trip
+
+    @start_date = params[:start_date]
+    @start_date = params[:end_date]
+    @start_date = params[:location]
+    @start_date = params[:purpose]
+    @start_date = params[:origin]
+    @start_date = params[:age]
+
+
+
+    raise
+    # This is the start of the magic
+
+    redirect_to confirmation_path(@trip)
+  end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location, :name, :description, :photo )
+    params.require(:trip).permit(:location, :name, :description, :photo )
+  end
+
+  def auto_trip_params
+    params.require(:trip).permit(:start_date, :end_date, :gender, :age, :origin, :purpose, :location)
   end
 end

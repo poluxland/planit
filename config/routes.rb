@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     resources :subtasks, only: [:new, :create]
   end
 
+  get 'confirmation', to: 'pages#confirmation', as: 'confirmation'
+
   resources :subtasks, only: [:edit, :update, :destroy]
+
+  get 'auto_create', to: 'trips#auto_create', as: 'auto_create'
 
   get 'form', to: 'pages#form', as: 'form'
   get 'form2', to: 'pages#form2', as: 'form2'
-  get 'confirmation', to: 'pages#confirmation', as: 'confirmation'
 
 end
