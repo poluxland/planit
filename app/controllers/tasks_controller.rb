@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @trip = Trip.find(params[:trip_id])
     @task.trip = @trip
-    @task.status = "open"
+    @task.status = false
     authorize @task
     if @task.save
       redirect_to trip_path(@trip)
@@ -25,11 +25,26 @@ class TasksController < ApplicationController
 
   def update        # PATCH /restaurants/:id
     @task = Task.find(params[:id])
-    authorize @task
-    if @task.update(task_params)
-      redirect_to trip_path(@task.trip)
+    unless @task.status
+      @task.status = true
     else
-      render :edit
+      @task.status = false
+    end
+    authorize @task
+
+    respond_to do |format|
+
+      if params[:ajax].present?
+        if @task.save
+          format.js
+        end
+      else
+        if @task.update(task_params)
+          format.html { redirect_to trip_path(@task.trip) }
+        else
+          format.html { redirect_to :edit }
+        end
+      end
     end
   end
 
@@ -40,11 +55,18 @@ class TasksController < ApplicationController
    redirect_to trip_path(@task.trip)
  end
 
- private
+ def toggle_status(task)
+   if task.status
+    task.status = false
+  else
+    task.status = true
+  end
+end
 
- def task_params
-  params.require(:task).permit(:name, :description, :task_id, :status)
+private
 
+def task_params
+  params.require(:task).permit(:name, :description, :status)
 end
 
 end

@@ -5,14 +5,14 @@
   border-radius: 4px;
   font-weight: bold;
   transition: 0.3s ease;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 0px 0px 5px gray;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .btn-brand:hover {
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: 0px 0px 10px gray;
 }
 
 .btn-brand-min {
@@ -23,11 +23,11 @@
   height: 30px;
   border-radius: 4px;
   transition: 0.3s ease;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 0px 0px 5px gray;
 }
 
 .btn-brand-min:hover {
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: 0px 0px 10px gray;
 }
 
 .btn-brand-red-min {
@@ -38,11 +38,11 @@
   height: 30px;
   border-radius: 4px;
   transition: 0.3s ease;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 0px 0px 5px gray;
 }
 
 .btn-brand-red-min:hover {
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: 0px 0px 10px gray;
 }
 
 
@@ -54,7 +54,7 @@
   border-radius: 4px;
   font-weight: bold;
   transition: 0.3s ease;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 0px 0px 5px gray;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -62,11 +62,39 @@
 
 .btn-brand-red:hover {
   color: white;
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: 0px 0px 10px gray;
 }
 
 .btn-invisible {
   color: white;
   background-color: rgba(255, 0, 0, 0.0);
   border: none;
+}
+
+h2.btn-lbl {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+a#new-task-btn {
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(gray,0.5);
+}
+
+.task-buttons {
+  position: absolute;
+  bottom: 3px;
+  right: 10px;
+}
+
+.subtask-buttons {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.check-btn {
+  color: black;
+  text-decoration: none;
 }
