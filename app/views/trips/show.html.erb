@@ -13,11 +13,11 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       <div class="task-container">
 
         <div class="task-card">
-          <div class='d-flex'>
-            <div class='check d-flex align-items-center mx-3'>
-              <i class="far fa-square"></i>
+          <div class='task-header d-flex'>
+            <div class='check'>
+              <i class='far fa-<%= task.status == true ? 'check-' : '' %>square'></i>
             </div>
-            <div>
+            <div class='info'>
               <h2><%= task.name %></h2>
               <p><%= task.description %></p>
             </div>
@@ -36,11 +36,11 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           <% task.subtasks.each do |subtask| %>
 
           <div class="subtask-card">
-            <div class='d-flex'>
-              <div class='check d-flex align-items-center mx-3'>
-                <i class="far fa-square"></i>
+            <div class='subtask-header d-flex'>
+              <div class='check'>
+                <i class='far fa-<%= subtask.status == true ? 'check-' : '' %>square'></i>
               </div>
-              <div>
+              <div class='info'>
                 <h2><%= subtask.name %></h2>
                 <p><%= subtask.description %></p>
               </div>
@@ -57,14 +57,14 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 
           <% end %>
           <%= link_to new_task_subtask_path(task), class: 'btn' do %>
-          <i class="fas fa-plus">  Add Subtask</i>
+          <div class="d-flex align-items-center text-center"><i class="fas fa-plus py-auto"></i><h2 class='btn-lbl pl-2'>Add Subtask</h2></div>
           <% end %>
         </div>
 
       </div>
       <% end %>
-      <%= link_to new_trip_task_path(@trip), class: 'btn btn-light' do %>
-      <i class="fas fa-plus">  Add task</i>
+      <%= link_to new_trip_task_path(@trip), id: 'new-task-btn', class: 'btn btn-light' do %>
+      <div class="d-flex align-items-center text-center"><i class="fas fa-plus py-auto"></i><h2 class='btn-lbl pl-2'>Add Task</h2></div>
       <% end %>
     </div>
   </div>
@@ -82,13 +82,27 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 
 <script>
   const tasks = document.querySelectorAll('.task-container');
-  // const subtasks = document.querySelectorAll('.subtask');
 
-  // if (tasks) {
+  if (tasks) {
     tasks.forEach((task) => {
       task.addEventListener('click', () => {
-        console.log(task.lastElementChild)
         task.lastElementChild.classList.toggle("active");
+      });
+    });
+}
+
+    const checkboxes = document.querySelectorAll('.far');
+  // if (tasks) {
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('click', (event) => {
+        event.stopPropagation()
+        if (checkbox.classList.value == 'far fa-check-square') {
+          checkbox.classList.remove('fa-check-square')
+          checkbox.classList.add('fa-square')
+        } else {
+          checkbox.classList.remove('fa-square')
+          checkbox.classList.add('fa-check-square')
+        }
       });
     });
   </script>
