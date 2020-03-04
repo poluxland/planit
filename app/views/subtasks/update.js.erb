@@ -1,0 +1,11 @@
+checkbox = document.querySelector('[data-subtask-id="<%= @subtask.id %>"]');
+console.log("<%= @subtask.id %>")
+console.log(checkbox)
+
+if (checkbox.classList.value == 'far fa-check-square') {
+  checkbox.classList.remove('fa-check-square')
+  checkbox.classList.add('fa-square')
+} else {
+  checkbox.classList.remove('fa-square')
+  checkbox.classList.add('fa-check-square')
+}
