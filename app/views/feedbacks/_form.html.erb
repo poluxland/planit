@@ -1,0 +1,6 @@
+<p>Thank you for giving feedback!
+
+<%= simple_form_for [@feedback] do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
