@@ -5,6 +5,7 @@ require_relative 'create_trips/packinglist'
 require_relative 'create_trips/visa'
 require_relative 'create_trips/vaccinations'
 require_relative 'create_trips/last_minute'
+require_relative 'create_trips/weatherdata'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
@@ -91,10 +92,16 @@ class TripsController < ApplicationController
     # @age = Date.today.year - birthday
     # @age -= 1 if Date.today < birthday + @age.years
 
+
     # Create Trip
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "Planit suggests the following preparation steps for your trip. We hope it helps. Have a great trip!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
     @trip.user = current_user if user_signed_in?
+    @trip.save
     authorize @trip
+
+    # Get Weather
+    @weather = get_weather
+    @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"]
 
     # Create Tasks
     accomodation(@trip)

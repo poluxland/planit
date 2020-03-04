@@ -11,9 +11,22 @@
             <span id="loading"></span>
             <div id="load"></div>
           </div>
-          <div class="text-center" id="btn-apear">
-            <%= link_to "See my checklist", trip_path(@trip), class:"btn btn-primary w-50 mt-5" %>
-          </div>
+
+          <% if user_signed_in? %>
+            <div class="text-center" id="btn-apear">
+              <h3 class="mt-5">Thank you for already beeing a member!</h3>
+              <%= link_to "See my checklist", trip_path(@trip), class:"btn btn-primary w-50 mt-2" %>
+            </div>
+
+          <% else %>
+
+            <div class="text-center" id="btn-apear">
+              <h3 class="mt-5">We found <%= @trip.tasks.length %> tasks for you! Please log in or register to see your tasks!</h3>
+              <%= link_to "Login or Register", trip_path(@trip), class:"btn btn-primary w-50 mt-2" %>
+            </div>
+
+          <% end %>
+
         </div>
       </div>
     </div>

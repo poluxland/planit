@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'trips/:id/confirmation', to: 'trips#confirmation', as: 'confirmation'
-
+  resources :feedbacks, only: [:new, :create]
   resources :subtasks, only: [:edit, :update, :destroy]
 
   post 'auto_create', to: 'trips#auto_create', as: 'auto_create'
