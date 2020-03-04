@@ -1,7 +1,14 @@
+require_relative 'create_trips/accomodation'
+require_relative 'create_trips/apps'
+require_relative 'create_trips/transportation'
 require_relative 'create_trips/packinglist'
+require_relative 'create_trips/visa'
+require_relative 'create_trips/vaccinations'
+require_relative 'create_trips/last_minute'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:auto_create, :confirmation]
 
   def show
     @trip = Trip.find(params[:id])
@@ -57,21 +64,38 @@ class TripsController < ApplicationController
   end
 
   def auto_create
+    # Calculate all available variables
 
-    @start_date = params[:start_date]
-    @end_date = params[:end_date]
+    @start_date = params[:start_date].to_date
+    @end_date = params[:end_date].to_date
     @destination = params[:destination]
     @purpose = params[:purpose]
     @origin = params[:origin]
-    @birth = params[:birth]
+    @birth = params[:birth].to_date
+    @gender = params[:gender]
 
-    @trip = Trip.create(name: "Testtrip", description: "Test Description", location: @destination)
+    birthday = @birth.year
+    @age = Date.today.year - birthday
+
+    @age -= 1 if Date.today < birthday + @age.years
+    @trip_length = (@end_date - @start_date).to_i
+
+    # Create Trip
+    @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "Planit suggests the following preparation steps for your trip. We hope it helps. Have a great trip!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
+    @trip.user = current_user if user_signed_in?
     authorize @trip
-    # This is the start of the magic
 
+    # Create Tasks
+    accomodation(@trip)
+    apps(@trip)
+    transportation(@trip)
     packinglist(@trip)
+    visa(@trip)
+    vaccinations(@trip)
+    last_minute(@trip)
 
-
+    raise
+    # Redirect
     redirect_to confirmation_path(@trip)
   end
 
