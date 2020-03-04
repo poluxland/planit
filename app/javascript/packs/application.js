@@ -12,5 +12,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import { initOpenTaskOnClick } from '../components/tasks';
-initOpenTaskOnClick();
+// import { initOpenTaskOnClick } from '../components/tasks';
+// initOpenTaskOnClick();

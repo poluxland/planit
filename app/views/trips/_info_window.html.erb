@@ -1,2 +1,10 @@
-<h2><%= trip.name %></h2>
-<%= link_to "More Info", trip_path(trip), class:"btn btn-primary" %>
+ <%= link_to trip_path(trip) do %>
+   <div class="card-trip">
+    <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= trip.name %></h2>
+      </div>
+    </div>
+  </div>
+<% end %>
