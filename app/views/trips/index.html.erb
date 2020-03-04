@@ -6,11 +6,13 @@
     top: 0px;
     left: 0px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>"
   ></div>
 
-  <div style="position: relative; bottom: 150px;">
-    <a href="#section2" class="arrow-down animate"></a>
+  <div style="position: relative; bottom: 150px" class="d-flex justify-content-center">
+    <a href="#section2">
+      <i class="fas fa-angle-down" style="font-size: 100px"></i>
+    </a>
   </div>
 
   <div style="position: absolute; top: 100px; left:100px; color: white; text-shadow: 0px 0px 5px black;">
@@ -19,8 +21,11 @@
 </div>
 
 <div class="container" style="min-height: 95vh" id="section2">
-  <div style="position: relative; top: 80px">
-    <a href="#section1" class="arrow-up animate"></a>
+
+  <div style="position: relative; top: 80px" class="d-flex justify-content-center">
+    <a href="#section1" class="">
+      <i class="fas fa-angle-up" style="font-size: 100px"></i>
+    </a>
   </div>
   <br>
   <h2 style="color: white; margin-top: 80px">Your trips</h2>
@@ -40,7 +45,12 @@
       <% end %>
     <% end %>
   </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
 
 

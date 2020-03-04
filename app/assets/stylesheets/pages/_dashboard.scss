@@ -1,28 +1,28 @@
-.arrow-up {
-  display: block;
-  width: 140px;
-  margin-left: calc(50% - 70px);
-  height: 40px;
-  clip-path: polygon(0 0, 50% 34%, 100% 0, 50% 100%);
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
+// .arrow-up {
+//   display: block;
+//   width: 140px;
+//   margin-left: calc(50% - 70px);
+//   height: 40px;
+//   clip-path: polygon(0 0, 50% 34%, 100% 0, 50% 100%);
+//     -webkit-transform: rotate(180deg);
+//     -moz-transform: rotate(180deg);
+//     -o-transform: rotate(180deg);
+//     -ms-transform: rotate(180deg);
+//     transform: rotate(180deg);
+// }
 
-.arrow-down {
-  display: block;
-  width: 140px;
-  margin-left: calc(50% - 70px);
-  height: 40px;
-  clip-path: polygon(0 0, 50% 34%, 100% 0, 50% 100%);
-}
+// .arrow-down {
+//   display: block;
+//   width: 140px;
+//   margin-left: calc(50% - 70px);
+//   height: 40px;
+//   clip-path: polygon(0 0, 50% 34%, 100% 0, 50% 100%);
+// }
 
-.animate {
-  // animation: pulse 5s infinite;
-  background-color: $blue;
-}
+// .animate {
+//   animation: pulse 5s infinite;
+//   background-color: $blue;
+// }
 
 @keyframes pulse {
   0% {
@@ -44,7 +44,7 @@
   border-radius: 8px;
 
   &:hover {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
 
   img {
