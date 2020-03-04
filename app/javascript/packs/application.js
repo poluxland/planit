@@ -17,6 +17,7 @@ initMapbox();
 // import { initOpenTaskOnClick } from '../components/tasks';
 // initOpenTaskOnClick();
 
+
 import { initAutocomplete } from "../plugins/init_autocomplete";
 initAutocomplete();
 
