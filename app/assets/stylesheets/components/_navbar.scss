@@ -5,6 +5,10 @@
   top: 0;
   z-index: 2;
   font-family: $headers-font;
+
+  a {
+    font-size: 120%;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
