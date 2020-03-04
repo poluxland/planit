@@ -1,16 +1,17 @@
 .task-card{
   position: relative;
-  height: 50px;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   border-bottom: 1px solid black;
+  padding-bottom: 5px;
   p {
     font-size: 16px;
     line-height: 1.4;
     opacity: .7;
-    margin-bottom: 3px;
+    margin-bottom: 0px;
     margin-top: 8px;
+    width: 550px;
   }
   img {
     height: 100%;
@@ -28,21 +29,26 @@
     top: 0px;
     left: 0px;
   }
-
+  .task-header .info {
+  }
 }
 
+
 .subtask-card{
-  height: 50px;
+  position: relative;
+  height: content;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(black, 0.2);
+  padding: 5px;
   p {
     font-size: 12px;
     line-height: 1.4;
     opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    width: 450px;
   }
   img {
     height: 100%;
@@ -60,6 +66,20 @@
     top: 0px;
     left: 0px;
   }
+  .subtask-header .info {
+    margin-top: 6px;
+  }
+}
+
+h2.btn-lbl {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+a#new-task-btn {
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(gray,0.5);
 }
 
 .task-buttons {
@@ -69,7 +89,7 @@
 }
 
 .subtask-buttons {
-  position: relative;
+  position: absolute;
   bottom: 0px;
   right: 10px;
 }
@@ -80,6 +100,7 @@
   border-radius: 8px;
   margin-bottom: 30px;
   padding: 20px;
+  height: content;
   &:hover {
     background-color: rgba(white,1);
   }
@@ -98,4 +119,7 @@
 
 .check {
   font-size: 30px;
+  display: flex;
+  align-items: top;
+  margin: 0 10px;
 }
