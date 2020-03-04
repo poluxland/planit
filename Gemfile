@@ -21,6 +21,7 @@ gem 'pundit'
 gem "algoliasearch-rails"
 gem 'geocoder'
 gem "animate-rails"
+gem 'algolia-places-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

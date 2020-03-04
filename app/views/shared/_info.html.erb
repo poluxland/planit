@@ -1,0 +1,86 @@
+
+<div class="container">
+  <form class="needs-validation" novalidate>
+    <div class="alert alert-danger d-none">Please review the problems below:</div>
+
+    <div class="form-group">
+      <label for="start">Start date</label>
+      <input type="date" class="form-control" id="start" placeholder="Start date" required>
+      <div class="invalid-feedback">Date can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">We'll never share your information with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="start">End date</label>
+      <input type="date" class="form-control" id="end" placeholder="End date" required>
+      <div class="invalid-feedback">Date can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">We'll never share your information with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" id="gender" required>
+        <option value="">Select your gender</option>
+        <option value="en">Male</option>
+        <option value="de">Female</option>
+        <option value="es">Other</option>
+        <option value="ru">Prefer not to disclose</option>
+      </select>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">To give you the top choices</small>
+    </div>
+
+    <fieldset class="form-group">
+      <legend class="col-form-label pt-0">Purpose</legend>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="Business" id="Business" value="business" required>
+        <label class="form-check-label" for="exampleRadiosPillRed">
+          Business
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="Vacations" id="vacations" value="vacations" required>
+        <label class="form-check-label" for="exampleRadiosPillBlue">
+          Vacations
+        </label>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Differents suggestions</small>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="origin">Origin</label>
+      <input type="text" class="form-control" id="input-0" placeholder="Origin" required>
+      <div class="invalid-feedback">Name can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">For possible legal requirements</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputFriends">Friends</label>
+      <input type="number" class="form-control" id="friends" placeholder="Number of Friends" required>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Number counts</small>
+    </div>
+
+    <div class="form-group">
+      <label for="start">Birth</label>
+      <input type="date" class="form-control" id="birth" placeholder="birth" required>
+      <div class="invalid-feedback">Date can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">We'll never share your information with anyone else.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create trip!</button>
+  </form>
+</div>
+
+
+
+
+
