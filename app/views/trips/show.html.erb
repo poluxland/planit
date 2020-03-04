@@ -1,10 +1,12 @@
-<!-- <div
-id="map"
-style="width: 100%;
-height: 300px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div> -->
+<div
+    id="map"
+    style="width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;"
+    data-markers="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
 <div class="container">
   <div class="row justify-content-center mt-5">
@@ -80,29 +82,3 @@ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 <br>
 <br>
 
-<script>
-  const tasks = document.querySelectorAll('.task-container');
-
-  if (tasks) {
-    tasks.forEach((task) => {
-      task.addEventListener('click', () => {
-        task.lastElementChild.classList.toggle("active");
-      });
-    });
-}
-
-    const checkboxes = document.querySelectorAll('.far');
-  // if (tasks) {
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener('click', (event) => {
-        event.stopPropagation()
-        if (checkbox.classList.value == 'far fa-check-square') {
-          checkbox.classList.remove('fa-check-square')
-          checkbox.classList.add('fa-square')
-        } else {
-          checkbox.classList.remove('fa-square')
-          checkbox.classList.add('fa-check-square')
-        }
-      });
-    });
-  </script>

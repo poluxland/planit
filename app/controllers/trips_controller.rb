@@ -13,6 +13,13 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     authorize @trip
+
+    @marker =
+      {
+        lat: @trip.latitude,
+        lng: @trip.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { trip: @trip })
+      }
   end
 
   def index
