@@ -68,17 +68,20 @@ class TripsController < ApplicationController
 
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date
-    @destination = params[:destination]
-    @purpose = params[:purpose]
-    @origin = params[:origin]
-    @birth = params[:birth].to_date
-    @gender = params[:gender]
-
-    birthday = @birth.year
-    @age = Date.today.year - birthday
-
-    @age -= 1 if Date.today < birthday + @age.years
     @trip_length = (@end_date - @start_date).to_i
+
+    @destination = params[:destination]
+
+    # @origin = params[:origin]
+
+    # @purpose = params[:purpose]
+
+    # @gender = params[:gender]
+
+    # @birth = params[:birth].to_date
+    # birthday = @birth.year
+    # @age = Date.today.year - birthday
+    # @age -= 1 if Date.today < birthday + @age.years
 
     # Create Trip
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "Planit suggests the following preparation steps for your trip. We hope it helps. Have a great trip!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
@@ -94,7 +97,6 @@ class TripsController < ApplicationController
     vaccinations(@trip)
     last_minute(@trip)
 
-    raise
     # Redirect
     redirect_to confirmation_path(@trip)
   end
