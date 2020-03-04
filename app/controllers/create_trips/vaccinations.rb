@@ -1,6 +1,6 @@
 def vaccinations(trip)
   # Create Task
-  @task = Task.new(name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}. Check with your doctor.")
+  @task = Task.new(tip: nil, name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}. Check with your doctor.")
   @task.trip = trip
   @task.save
 

@@ -1,6 +1,6 @@
 def packinglist(trip)
   # Create Task
-  @task = Task.new(name: "Packing List", description: "Your personal packing list for #{@gender} travellers and a trip lasting #{@trip_length} days.")
+  @task = Task.new(tip: nil, name: "Packing List", description: "Your personal packing list for #{@gender} travellers and a trip lasting #{@trip_length} days.")
   @task.trip = trip
   @task.save
 

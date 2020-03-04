@@ -1,6 +1,6 @@
 def transportation(trip)
   # Create Task
-  @task = Task.new(name: "Book your ship/flight/bus/train", description: "Book your transportaiton to get from #{@origin} to #{@destination}.")
+  @task = Task.new(tip: nil, name: "Book your ship/flight/bus/train", description: "Book your transportaiton to get from #{@origin} to #{@destination}.")
   @task.trip = trip
   @task.save
 

@@ -1,6 +1,6 @@
 def apps(trip)
   # Create Task
-  @task = Task.new(name: "Some helpful apps", description: "We have prepared some helpful apps for your trip.")
+  @task = Task.new(tip: nil, name: "Some helpful apps", description: "We have prepared some helpful apps for your trip.")
   @task.trip = trip
   @task.save
 
