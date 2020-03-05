@@ -1,7 +1,6 @@
 require 'json'
 require 'open-uri'
 require "nokogiri"
-require 'byebug'
 
 
 def money(trip)
