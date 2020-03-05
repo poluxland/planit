@@ -1,6 +1,4 @@
 checkbox = document.querySelector('[data-task-id="<%= @task.id %>"]');
-console.log("<%= @task.id %>")
-console.log(checkbox)
 
 if (checkbox.classList.value == 'far fa-check-square') {
   checkbox.classList.remove('fa-check-square')
