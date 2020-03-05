@@ -11,8 +11,6 @@ class TripsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:auto_create, :confirmation]
 
-
-
   def show
     @trip = Trip.find(params[:id])
     authorize @trip
