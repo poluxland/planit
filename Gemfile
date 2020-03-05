@@ -8,7 +8,6 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 
 gem 'autoprefixer-rails'
@@ -18,10 +17,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
-gem "algoliasearch-rails"
 gem 'geocoder'
 gem "animate-rails"
+
 gem 'algolia-places-rails'
+# gem "algoliasearch-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
