@@ -6,6 +6,7 @@ require_relative 'create_trips/visa'
 require_relative 'create_trips/vaccinations'
 require_relative 'create_trips/last_minute'
 require_relative 'create_trips/weatherdata'
+require_relative 'create_trips/money'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
@@ -81,7 +82,7 @@ class TripsController < ApplicationController
 
     @destination = params[:destination]
 
-    # @origin = params[:origin]
+    @origin = params[:origin]
 
     # @purpose = params[:purpose]
 
@@ -104,12 +105,13 @@ class TripsController < ApplicationController
     @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"]
 
     # Create Tasks
-    accomodation(@trip)
-    apps(@trip)
-    transportation(@trip)
-    packinglist(@trip)
-    visa(@trip)
-    vaccinations(@trip)
+    # accomodation(@trip)
+    # apps(@trip)
+    # transportation(@trip)
+    # packinglist(@trip)
+    # visa(@trip)
+    # vaccinations(@trip)
+    money(@trip)
     last_minute(@trip)
 
     # Redirect
