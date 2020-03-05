@@ -1,15 +1,16 @@
+require_relative './create_trips/accomodation'
+require_relative './create_trips/apps'
+require_relative './create_trips/transportation'
+require_relative './create_trips/packinglist'
+require_relative './create_trips/visa'
+require_relative './create_trips/vaccinations'
+require_relative './create_trips/last_minute'
+require_relative './create_trips/weatherdata'
+require_relative './create_trips/money'
+
 class TripsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:auto_create, :confirmation, :background_create]
-
-  require_relative './create_trips/accomodation'
-  require_relative './create_trips/apps'
-  require_relative './create_trips/transportation'
-  require_relative './create_trips/packinglist'
-  require_relative './create_trips/visa'
-  require_relative './create_trips/vaccinations'
-  require_relative './create_trips/last_minute'
-  require_relative './create_trips/weatherdata'
 
   def show
     @trip = Trip.find(params[:id])
@@ -93,7 +94,7 @@ class TripsController < ApplicationController
 
     @destination = params[:destination]
 
-    # @origin = params[:origin]
+    @origin = params[:origin]
 
     # @purpose = params[:purpose]
 
@@ -115,12 +116,14 @@ class TripsController < ApplicationController
     @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"].to_i
 
     # Create Tasks
+
     accomodation(@trip)
     apps(@trip)
     transportation(@trip)
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
+    money(@trip)
     last_minute(@trip)
 
     # Redirect
