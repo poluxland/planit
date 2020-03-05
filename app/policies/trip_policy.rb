@@ -28,4 +28,8 @@ class TripPolicy < ApplicationPolicy
   def auto_create?
     true
   end
+
+  def background_create?
+    true
+  end
 end
