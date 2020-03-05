@@ -44,7 +44,6 @@ def money(trip)
     city_page_url = "https://nomadlist.com/cost-of-living/in/#{destination}"
     unparsed_page = open(city_page_url).read
     parsed_page = Nokogiri::HTML(unparsed_page)
-    byebug
     cost_of_living = parsed_page.css
   end
 
