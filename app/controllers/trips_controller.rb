@@ -1,12 +1,12 @@
-require_relative 'create_trips/accomodation'
-require_relative 'create_trips/apps'
-require_relative 'create_trips/transportation'
-require_relative 'create_trips/packinglist'
-require_relative 'create_trips/visa'
-require_relative 'create_trips/vaccinations'
-require_relative 'create_trips/last_minute'
-require_relative 'create_trips/weatherdata'
-require_relative 'create_trips/money'
+require_relative './create_trips/accomodation'
+require_relative './create_trips/apps'
+require_relative './create_trips/transportation'
+require_relative './create_trips/packinglist'
+require_relative './create_trips/visa'
+require_relative './create_trips/vaccinations'
+require_relative './create_trips/last_minute'
+require_relative './create_trips/weatherdata'
+require_relative './create_trips/money'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
@@ -57,11 +57,13 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    @trip.session = false
     authorize @trip
   end
 
   def update
     @trip = Trip.find(params[:id])
+    @trip.session = false
     @trip.update(trip_params)
     authorize @trip
     redirect_to trips_path
@@ -71,6 +73,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
+
+    redirect_to trips_path
   end
 
   def auto_create
@@ -93,7 +97,6 @@ class TripsController < ApplicationController
     # @age = Date.today.year - birthday
     # @age -= 1 if Date.today < birthday + @age.years
 
-
     # Create Trip
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "Planit suggests the following preparation steps for your trip. We hope it helps. Have a great trip!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
     @trip.user = current_user if user_signed_in?
@@ -105,12 +108,13 @@ class TripsController < ApplicationController
     @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"]
 
     # Create Tasks
-    # accomodation(@trip)
-    # apps(@trip)
-    # transportation(@trip)
-    # packinglist(@trip)
-    # visa(@trip)
-    # vaccinations(@trip)
+
+    accomodation(@trip)
+    apps(@trip)
+    transportation(@trip)
+    packinglist(@trip)
+    visa(@trip)
+    vaccinations(@trip)
     money(@trip)
     last_minute(@trip)
 
@@ -123,6 +127,8 @@ class TripsController < ApplicationController
     @trip.user = current_user
     @trip.save
     authorize @trip
+    session[:temporary_trip] = @trip.id unless user_signed_in?
+    @trip.session = true unless user_signed_in?
   end
 
   private

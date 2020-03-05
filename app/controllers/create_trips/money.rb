@@ -67,27 +67,13 @@ def money(trip)
 
 end
 
-# def language(destination)
-#   language = JSON.parse(curency_serialized).first["languages"].first["name"]
-# end
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#   # Create Subtask S
-
+#   # @name = "MapsMe"
+#   # @description = "Great offlien maps for your trip - You can download #{@destination} before"
+#   # save_subtask
 
 #   # @name = "Uber"
 #   # @description = "Works like a charm in #{@destination}"
