@@ -17,15 +17,7 @@ def packinglist(trip)
     @description = "Recommendation: 2x pairs"
     save_subtask
 
-    @name = "Belt"
-    @description = "Recommendation: 1x"
-    save_subtask
-
     @name = "Underwear"
-    @description = "Recommendation: #{@trip_length}x"
-    save_subtask
-
-    @name = "Socks"
     @description = "Recommendation: #{@trip_length}x"
     save_subtask
 
@@ -37,9 +29,6 @@ def packinglist(trip)
     @description = "Recommendation: #{@trip_length}x"
     save_subtask
 
-    @name = "Pullover"
-    @description = "Recommendation: #{@trip_length / 3}x"
-    save_subtask
 
     @name = "Passport"
     @description = "Highly important"
@@ -61,16 +50,9 @@ def packinglist(trip)
     @description = "Usually helpful (e.g. for filling out immigration"
     save_subtask
 
-    @name = "Sunglases"
-    @description = "It might be sunny :)"
-    save_subtask
 
     @name = "Glases (if required)"
     @description = "Highly important"
-    save_subtask
-
-    @name = "Beach towel"
-    @description = "Helpful for daytrips"
     save_subtask
 
     @name = "Books / eBook reader"
@@ -88,4 +70,35 @@ def packinglist(trip)
     @name = "Toiletries"
     @description = "Toothpase, toothbrush, suncreen, shampoo, soap and all the other stuff you might need"
     save_subtask
+
+
+    if @max_temp > 20
+
+      @name = "Sunglases"
+      @description = "We expect warm weather"
+      save_subtask
+
+      @name = "Beach towel"
+      @description = "We expect warm weather"
+      save_subtask
+
+      @name = "Bathing suit"
+      @description = "We expect warm weather"
+      save_subtask
+
+    elsif @max_temp < 10
+
+      @name = "Snowsuit"
+      @description = "We expect cold weather"
+      save_subtask
+
+      @name = "Winter jacket"
+      @description = "We expect cold weather"
+      save_subtask
+
+      @name = "Pullover"
+      @description = "Recommendation: #{@trip_length / 3}x"
+      save_subtask
+    end
+
 end
