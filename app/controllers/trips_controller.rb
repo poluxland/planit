@@ -6,6 +6,7 @@ require_relative './create_trips/visa'
 require_relative './create_trips/vaccinations'
 require_relative './create_trips/last_minute'
 require_relative './create_trips/weatherdata'
+require_relative './create_trips/money'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
@@ -85,7 +86,7 @@ class TripsController < ApplicationController
 
     @destination = params[:destination]
 
-    # @origin = params[:origin]
+    @origin = params[:origin]
 
     # @purpose = params[:purpose]
 

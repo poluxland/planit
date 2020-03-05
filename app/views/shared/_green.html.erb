@@ -4,7 +4,7 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <div class="tab"><h4>Destination:</h4>
-      <input type="search" class="form-control bounce" id="input-0"  placeholder="Where are you going?" style="opacity: 0.75">
+      <input type="search" class="form-control bounce" id="input-0" name="destination" placeholder="Where are you going?" style="opacity: 0.75">
 
     </div>
 
@@ -35,7 +35,9 @@
 
 
     <div class="tab"><h4>Origin:</h4>
+
       <input type="search" class="form-control" id="input-00" name="origin" style="opacity: 0.75"  placeholder="From where are you traveling?" style="opacity: 0.75"oninput="this.className = ''">
+
 
     </div>
 
