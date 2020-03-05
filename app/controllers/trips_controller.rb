@@ -1,15 +1,15 @@
-require_relative './create_trips/accomodation'
-require_relative './create_trips/apps'
-require_relative './create_trips/transportation'
-require_relative './create_trips/packinglist'
-require_relative './create_trips/visa'
-require_relative './create_trips/vaccinations'
-require_relative './create_trips/last_minute'
-require_relative './create_trips/weatherdata'
-
 class TripsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:auto_create, :confirmation]
+
+  require_relative './create_trips/accomodation'
+  require_relative './create_trips/apps'
+  require_relative './create_trips/transportation'
+  require_relative './create_trips/packinglist'
+  require_relative './create_trips/visa'
+  require_relative './create_trips/vaccinations'
+  require_relative './create_trips/last_minute'
+  require_relative './create_trips/weatherdata'
 
   def show
     @trip = Trip.find(params[:id])
