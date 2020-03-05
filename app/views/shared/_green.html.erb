@@ -3,7 +3,7 @@
 <form accept-charset="UTF-8" id="regForm" action='auto_create' class="auto_create" id="auto_create" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-    <div class="tab">Destination:
+    <div class="tab"><h4>Destination:</h4>
       <input type="search" class="form-control bounce" id="input-0"  placeholder="Where are you going?" style="opacity: 0.75">
 
     </div>
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="tab">Contact Info:
+    <div class="tab"><h4>Contact Info:</h4>
       <p><select class="form-control" placeholder="Gender" name="gender" readonly style="opacity: 0.75" oninput="this.className = ''"></p>
         <option>Male</option>
         <option>Female</option>
@@ -27,25 +27,24 @@
       </select>
     </div>
 
-    <div class="tab">Destination:
+    <div class="tab"><h4>Origin:</h4>
       <input type="search" class="form-control bounce" id="input-00" name="destination" style="opacity: 0.75"  placeholder="From where are you traveling?" style="opacity: 0.75"oninput="this.className = ''">
 
     </div>
 
-    <div class="tab">
+    <div class="tab"><h4>Birthday:</h4>
       <input type="date" class="datepicker" placeholder="Birthday" name="name" style="opacity: 0.75;" oninput="this.className = ''">
     </div>
 
 
     <div style="overflow:auto;">
       <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-brand">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-brand">Next</button>
       </div>
     </div>
 
     <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>

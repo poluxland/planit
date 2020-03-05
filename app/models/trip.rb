@@ -1,5 +1,5 @@
 class Trip < ApplicationRecord
-  has_many :tasks, dependent: :delete_all
+  has_many :tasks, dependent: :destroy
   belongs_to :user, optional: true
   has_one_attached :photo
 

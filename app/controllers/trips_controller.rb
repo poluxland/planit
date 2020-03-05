@@ -56,11 +56,13 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    @trip.session = false
     authorize @trip
   end
 
   def update
     @trip = Trip.find(params[:id])
+    @trip.session = false
     @trip.update(trip_params)
     authorize @trip
     redirect_to trips_path
@@ -70,6 +72,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
+
+    redirect_to trips_path
   end
 
   def auto_create
@@ -91,7 +95,6 @@ class TripsController < ApplicationController
     # birthday = @birth.year
     # @age = Date.today.year - birthday
     # @age -= 1 if Date.today < birthday + @age.years
-
 
     # Create Trip
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "Planit suggests the following preparation steps for your trip. We hope it helps. Have a great trip!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
@@ -121,6 +124,8 @@ class TripsController < ApplicationController
     @trip.user = current_user
     @trip.save
     authorize @trip
+    session[:temporary_trip] = @trip.id unless user_signed_in?
+    @trip.session = true unless user_signed_in?
   end
 
   private
