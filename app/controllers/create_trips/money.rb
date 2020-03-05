@@ -1,7 +1,6 @@
 require 'json'
 require 'open-uri'
 require "nokogiri"
-require 'byebug'
 
 
 def money(trip)
@@ -9,8 +8,8 @@ def money(trip)
   @task = Task.new(tip: nil, name: "Let's speak monney ", description: "We have prepared some helpful apps for your trip.")
   @task.trip = trip
   @task.save
-  @departure_destination = @trip.origin.split(',')[-1]
-  @arival_destination = @trip.location.split(',')[-1]
+  @arival_destination = @trip.location.split(', ')[-1].downcase
+  @departure_destination = @trip.origin.split(', ')[-1].downcase
 
 
   # What is the curency
@@ -32,7 +31,6 @@ def money(trip)
   def exchange_rate(departure_currency, arival_curency)
     url_rate = "http://data.fixer.io/api/latest?access_key=458ca856b29f0fd8bb9eaefbc162d361&format=1"
     exchange_rate_serialized = open(url_rate).read
-    byebug
     rate_departure_currency = JSON.parse(exchange_rate_serialized)["rates"][departure_currency]
     rate_arrival_currency = JSON.parse(exchange_rate_serialized)["rates"][arival_curency]
     # 1 unity of the initial currency is = to x of the arri
@@ -40,12 +38,12 @@ def money(trip)
     return rate
   end
 
-  def how_much_cash(destination)
-    city_page_url = "https://nomadlist.com/cost-of-living/in/#{destination}"
-    unparsed_page = open(city_page_url).read
-    parsed_page = Nokogiri::HTML(unparsed_page)
-    cost_of_living = parsed_page.css
-  end
+  # def how_much_cash(destination)
+  #   city_page_url = "https://nomadlist.com/cost-of-living/in/#{destination}"
+  #   unparsed_page = open(city_page_url).read
+  #   parsed_page = Nokogiri::HTML(unparsed_page)
+  #   cost_of_living = parsed_page.css
+  # end
 
   def save_subtask
     subtask = Subtask.new(name: @name,description: @description)
@@ -58,11 +56,11 @@ def money(trip)
   @cureny_name_description_arrival = currency_finder(@arival_destination)[:name]
   @cureny_symbol_description_arrival = currency_finder(@arival_destination)[:symbol]
 
-  @rate = exchange_rate(cureny_code_description_departure, cureny_code_description_arrival)
+  @rate = exchange_rate(@cureny_code_description_departure, @cureny_code_description_arrival)
 
   @name = "Make sure to change some money"
-  @description = "In #{@arival_destination}, they use the #{@cureny_name_description_arrival} (#{cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
-  Today for for 10 #{cureny_code_description_departure} you will have #{rate * 10}"
+  @description = "In #{@arival_destination}, they use the #{@cureny_name_description_arrival} (#{@cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
+  Today for for 10 #{@cureny_code_description_departure} you will have #{(@rate * 10).round(2)}"
   save_subtask
 
 end
