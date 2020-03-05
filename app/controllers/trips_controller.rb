@@ -108,6 +108,7 @@ class TripsController < ApplicationController
     @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"]
 
     # Create Tasks
+
     accomodation(@trip)
     apps(@trip)
     transportation(@trip)

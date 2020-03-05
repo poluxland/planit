@@ -9,8 +9,8 @@ def money(trip)
   @task = Task.new(tip: nil, name: "Let's speak monney ", description: "We have prepared some helpful apps for your trip.")
   @task.trip = trip
   @task.save
-  @departure_destination = "argentina"
-  @arival_destination = "switzerland"
+  @departure_destination = @trip.origin.split(',')[-1]
+  @arival_destination = @trip.location.split(',')[-1]
 
 
   # What is the curency
@@ -47,34 +47,29 @@ def money(trip)
     cost_of_living = parsed_page.css
   end
 
+  def save_subtask
+    subtask = Subtask.new(name: @name,description: @description)
+    subtask.task = @task
+    subtask.save
+  end
+
+  @cureny_code_description_arrival = currency_finder(@arival_destination)[:code]
+  @cureny_code_description_departure = currency_finder(@departure_destination)[:code]
+  @cureny_name_description_arrival = currency_finder(@arival_destination)[:name]
+  @cureny_symbol_description_arrival = currency_finder(@arival_destination)[:symbol]
+
+  @rate = exchange_rate(cureny_code_description_departure, cureny_code_description_arrival)
+
+  @name = "Make sure to change some money"
+  @description = "In #{@arival_destination}, they use the #{@cureny_name_description_arrival} (#{cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
+  Today for for 10 #{cureny_code_description_departure} you will have #{rate * 10}"
+  save_subtask
 
 end
 
-# def language(destination)
-#   language = JSON.parse(curency_serialized).first["languages"].first["name"]
-# end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#   def save_subtask
-#     subtask = Subtask.new(name: @name,description: @description)
-#     subtask.task = @task
-#     subtask.save
-#   end
-
-#   # Create Subtask S
 
 #   # @name = "MapsMe"
 #   # @description = "Great offlien maps for your trip - You can download #{@destination} before"
