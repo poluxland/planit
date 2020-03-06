@@ -1,0 +1,16 @@
+newSubTaskBtn = document.querySelector('.new-subtask-btn')
+newSubTaskForm = document.querySelector('.new-subtask-form')
+
+function addSubTask(taskHTML) {
+  const subtasks = document.querySelector('.subtasks-col');
+  subtasks.insertAdjacentHTML('beforeend', taskHTML);
+}
+
+<% if @subtask.errors.any? %>
+newSubTaskBtn.classList.toggle('active')
+newSubTaskForm.classList.toggle('active')
+<% else %>
+addSubTask('<%= j render "subtasks/subtask", task: @task, subtask: @subtask %>');
+newSubTaskBtn.classList.toggle('active')
+newSubTaskForm.classList.toggle('active')
+<% end %>

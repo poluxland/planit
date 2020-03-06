@@ -1,4 +1,4 @@
-<%= simple_form_for [@trip, @task] do |f| %>
+<%= simple_form_for([trip, task], remote: :true) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :status, as: :boolean %>

@@ -14,6 +14,8 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @task = Task.new
+    @subtask = Subtask.new
     authorize @trip
 
     @markers = [
