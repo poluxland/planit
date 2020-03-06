@@ -1,16 +1,26 @@
-newSubTaskBtn = document.querySelector('.new-subtask-btn')
-newSubTaskForm = document.querySelector('.new-subtask-form')
+newSubTaskBtn = document.querySelector('.submit-btn')
+newSubTaskForm = document.querySelector('.submit-form')
 
 function addSubTask(taskHTML) {
-  const subtasks = document.querySelector('.subtasks-col');
-  subtasks.insertAdjacentHTML('beforeend', taskHTML);
+  newSubTaskBtn.parentElement.firstElementChild.insertAdjacentHTML('beforeend', taskHTML);
 }
 
 <% if @subtask.errors.any? %>
 newSubTaskBtn.classList.toggle('active')
+newSubTaskBtn.classList.toggle('submit-btn')
+
 newSubTaskForm.classList.toggle('active')
+newSubTaskForm.classList.toggle('submit-form')
 <% else %>
 addSubTask('<%= j render "subtasks/subtask", task: @task, subtask: @subtask %>');
 newSubTaskBtn.classList.toggle('active')
+newSubTaskBtn.classList.toggle('submit-btn')
 newSubTaskForm.classList.toggle('active')
+newSubTaskForm.classList.toggle('submit-form')
 <% end %>
+
+submitBtn = document.querySelector('.submit-btn')
+submitBtn.classList.remove('submit-btn')
+submitForm = document.querySelector('.submit-form')
+submitForm.firstElementChild.reset()
+submitForm.classList.remove('submit-form')

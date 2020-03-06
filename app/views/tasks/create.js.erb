@@ -6,8 +6,6 @@ function addTask(taskHTML) {
   tasks.insertAdjacentHTML('beforeend', taskHTML);
 }
 
-html = '<%= j render "tasks/task", trip: @trip, task: @task %>'
-
 <% if @task.errors.any? %>
 newTaskBtn.classList.toggle('active')
 newTaskForm.classList.toggle('active')

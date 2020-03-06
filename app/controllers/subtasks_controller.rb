@@ -12,15 +12,15 @@ class SubtasksController < ApplicationController
       @task = Task.find(params[:task_id])
       @subtask.task = @task
       @trip = @task.trip
-      if @subtask.save
+      if @subtask.save!
         respond_to do |format|
-          format.html { redirect_to trip_path(@trip) }
           format.js
+          format.html { redirect_to trip_path(@trip) }
         end
       else
         respond_to do |format|
-          format.html { redirect_to :new }
           format.js
+          format.html { redirect_to :new }
         end
       end
     end
