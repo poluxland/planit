@@ -1,0 +1,69 @@
+newTaskBtn = document.querySelector('.new-task-btn')
+newTaskForm = document.querySelector('.new-task-form')
+
+function addTask(taskHTML) {
+  const tasks = document.querySelector('.tasks-col');
+  tasks.insertAdjacentHTML('beforeend', taskHTML);
+}
+
+html = '<%= j render "tasks/task", trip: @trip, task: @task %>'
+
+<% if @task.errors.any? %>
+newTaskBtn.classList.toggle('active')
+newTaskForm.classList.toggle('active')
+<% else %>
+addTask('<%= j render "tasks/task", task: @task %>');
+newTaskBtn.classList.toggle('active')
+newTaskForm.classList.toggle('active')
+<% end %>
+
+// function OpenTasksOnClick() {
+//  taskDowns = document.querySelectorAll('.task-down');
+//  console.log(taskDowns)
+//   if (taskDowns) {
+//     taskDowns.forEach((taskDown) => {
+//       taskDown.removeEventListener('click', test)
+//       taskDown.addEventListener('click', const test = () => {
+//         taskDown.parentElement.children[1].classList.toggle("active");
+//         taskDown.classList.toggle('flip')
+//         Array.from(taskDown.children).forEach((child) => {
+//           if (taskDown.classList.contains('flip')) {
+//             child.classList.remove('fa-chevron-down')
+//             child.classList.add('fa-chevron-up')
+//           } else {
+//             child.classList.remove('fa-chevron-up')
+//             child.classList.add('fa-chevron-down')
+//           }
+
+//         });
+//       });
+//     });
+//   }
+// };
+
+// function OpenTasksOnClick() {
+//  taskDowns = document.querySelectorAll('.task-down');
+//  console.log(taskDowns)
+//   if (taskDowns) {
+//     taskDowns.forEach((taskDown) => {
+//       taskDown.removeEventListener('click', test)
+//       taskDown.addEventListener('click', const test = () => {
+//         taskDown.parentElement.children[1].classList.toggle("active");
+//         taskDown.classList.toggle('flip')
+//         Array.from(taskDown.children).forEach((child) => {
+//           if (taskDown.classList.contains('flip')) {
+//             child.classList.remove('fa-chevron-down')
+//             child.classList.add('fa-chevron-up')
+//           } else {
+//             child.classList.remove('fa-chevron-up')
+//             child.classList.add('fa-chevron-down')
+//           }
+
+//         });
+//       });
+//     });
+//   }
+// };
+
+// import { initOpenTaskOnClick } from '../../javascript/components/tasks';
+// OpenTasksOnClick();

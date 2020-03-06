@@ -1,0 +1,23 @@
+
+  <div class="subtask-card">
+    <div class='subtask-header d-flex'>
+      <div class='check'>
+        <%= link_to subtask_path(subtask, ajax: true), class: 'check-btn', remote: true, method: :patch do %>
+        <i class='far fa-<%= subtask.status == true ? 'check-' : '' %>square' data-subtask-id = '<%= subtask.id %>'></i>
+        <% end %>
+      </div>
+      <div class='info'>
+        <h2><%= subtask.name %></h2>
+        <p><%= subtask.description %></p>
+      </div>
+    </div>
+    <div class="subtask-buttons">
+      <%= link_to edit_subtask_path(subtask), class: 'btn' do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to subtask_path(subtask), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+

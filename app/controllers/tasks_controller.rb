@@ -7,14 +7,20 @@ class TasksController < ApplicationController
 
   def create        # POST /restaurants
     @task = Task.new(task_params)
+    authorize @task
     @trip = Trip.find(params[:trip_id])
     @task.trip = @trip
-    @task.status = false
-    authorize @task
+
     if @task.save
-      redirect_to trip_path(@trip)
+      respond_to do |format|
+        format.html { redirect_to trip_path(@trip) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { redirect_to :new }
+        format.js
+      end
     end
   end
 
@@ -53,20 +59,20 @@ class TasksController < ApplicationController
    authorize @task
    @task.destroy
    redirect_to trip_path(@task.trip)
- end
-
- def toggle_status(task)
-   if task.status
-    task.status = false
-  else
-    task.status = true
   end
-end
 
-private
+  private
 
-def task_params
-  params.require(:task).permit(:name, :description, :status)
-end
+  def toggle_status(task)
+    if task.status
+      task.status = false
+    else
+      task.status = true
+    end
+  end
+
+  def task_params
+    params.require(:task).permit(:name, :description, :status)
+  end
 
 end

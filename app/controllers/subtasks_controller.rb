@@ -8,15 +8,20 @@ class SubtasksController < ApplicationController
 
     def create        # POST /restaurants
       @subtask = Subtask.new(subtask_params)
-      @task = Task.find(params[:task_id])
-      @trip = @task.trip
-      @subtask.task = @task
-      @subtask.status = "open"
       authorize @subtask
+      @task = Task.find(params[:task_id])
+      @subtask.task = @task
+      @trip = @task.trip
       if @subtask.save
-        redirect_to trip_path(@trip)
+        respond_to do |format|
+          format.html { redirect_to trip_path(@trip) }
+          format.js
+        end
       else
-        render :new
+        respond_to do |format|
+          format.html { redirect_to :new }
+          format.js
+        end
       end
     end
 

@@ -1,0 +1,46 @@
+<div class="task-container">
+  <div class="task-card">
+    <div class='task-header d-flex'>
+      <div class='check'>
+        <%= link_to task_path(task, ajax: true), class: 'check-btn', remote: true, method: :patch do %>
+        <i class='far fa-<%= task.status == true ? 'check-' : '' %>square' data-task-id = '<%= task.id %>'></i>
+        <% end %>
+      </div>
+      <div class='info'>
+        <h2><%= task.name %></h2>
+        <p><%= task.description %></p>
+      </div>
+    </div>
+    <div class="task-buttons">
+      <%= link_to edit_task_path(task), class: 'btn' do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to task_path(task), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="subtasks">
+    <div class="subtasks-col">
+      <% task.subtasks.each do |subtask| %>
+
+      <%= render "subtasks/subtask", task: task, subtask: subtask %>
+
+      <% end %>
+    </div>
+    <div class="new-subtask-btn active">
+      <%= link_to new_task_subtask_path(task, ajax: true), id: 'new-subtask-btn', class: 'btn', remote: :true, method: :get do %>
+      <div class="d-flex align-items-center text-center"><i class="fas fa-plus py-auto"></i><h2 class='btn-lbl pl-2'>Add Subtask</h2></div>
+      <% end %>
+    </div>
+    <div class="new-subtask-form">
+      <%= render 'subtasks/form', task: task, subtask: subtask %>
+    </div>
+  </div>
+
+  <div class="task-down">
+    <i class="first chevron fas fa-chevron-down"></i>
+    <i class="second chevron fas fa-chevron-down"></i>
+  </div>
+
+</div>
