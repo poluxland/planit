@@ -58,9 +58,10 @@
 
 @media (min-width: 992px) {
   .map-col {
+
     position: fixed;
     right: 40px ;
-    top: 100px;
+    top: 162px;
 
     .tasks-map {
       height: 500px;
@@ -87,7 +88,7 @@
 
 .map-col {
   .tasks-map {
-    height: 500px;
+    height: 300px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(gray,0.5);
 
