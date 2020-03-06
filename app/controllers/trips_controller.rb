@@ -119,14 +119,14 @@ class TripsController < ApplicationController
 
     # Create Tasks
 
-    accomodation(@trip)
-    apps(@trip)
-    transportation(@trip)
-    packinglist(@trip)
-    visa(@trip)
-    vaccinations(@trip)
-    money(@trip)
-    last_minute(@trip)
+    # accomodation(@trip)
+    # apps(@trip)
+    # transportation(@trip)
+    # packinglist(@trip)
+    # visa(@trip)
+    # vaccinations(@trip)
+    # money(@trip)
+    # last_minute(@trip)
 
     # Redirect
     redirect_to confirmation_path(@trip)
