@@ -122,7 +122,7 @@ class TripsController < ApplicationController
     # accomodation(@trip)
     # apps(@trip)
     # transportation(@trip)
-    # packinglist(@trip)
+    packinglist(@trip)
     # visa(@trip)
     # vaccinations(@trip)
     # money(@trip)
