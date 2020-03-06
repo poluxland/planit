@@ -37,9 +37,17 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
-      <div class="tasks-overview mt-3 p-3">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quaerat minus suscipit eveniet, numquam ab nisi, quos ea ut, quae necessitatibus aliquid, nulla sequi autem non ducimus. Ipsam, soluta sequi!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quaerat minus suscipit eveniet, numquam ab nisi, quos ea ut, quae necessitatibus aliquid, nulla sequi autem non ducimus. Ipsam, soluta sequi!</p>
+      <div class="d-flex tasks-overview mt-3 p-3 justify-content-around align-content-center">
+        <ul>
+          <li><p>Your trip has: <strong>7 tasks</strong></p></li>
+          <li><p>Completed: <strong>4 tasks</strong></p></li>
+          <li><p>To Do: <strong>3 tasks</strong></p></li>
+        </ul>
+        <ul>
+          <li><p>You have <strong>15 Sub-Tasks</strong></p></li>
+          <li><p>Completed: <strong>5 Sub-Tasks</strong></p></li>
+          <li><p>To Do: <strong>10 Sub-Tasks</strong></p></li>
+        </ul>
       </div>
     </div>
   </div>
