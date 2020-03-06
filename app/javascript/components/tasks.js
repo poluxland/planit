@@ -1,6 +1,6 @@
 const initOpenTaskOnClick = () => {
   document.addEventListener('click', function(event) {
-  console.log(event.target.closest('.new-subtask-btn'))
+    console.log(event.target.closest('.new-subtask-btn'))
     if(event.target && event.target.classList.contains('task-down')){
       let task = event.target
       task.parentElement.children[1].classList.toggle("active");
@@ -55,6 +55,19 @@ const initOpenTaskOnClick = () => {
         task.parentElement.lastElementChild.classList.toggle('active')
         task.parentElement.lastElementChild.classList.toggle('submit-form')
       }
+
+      // if(event.target && event.target.classList.contains('edit-btn')){
+      //   let task = event.target.closest('.subtasks-col').parentElement.children[1]
+
+      //   task.classList.toggle('active')
+      //   task.classList.toggle('submit-btn')
+      //   console.log(task)
+      //   console.log(task.parentElement)
+      //   console.log(task.parentElement.lastElementChild.firstElementChild)
+      //   task.parentElement.lastElementChild.firstElementChild.reset()
+      //   task.parentElement.lastElementChild.classList.toggle('active')
+      //   task.parentElement.lastElementChild.classList.toggle('submit-form')
+      // }
 
 
 
