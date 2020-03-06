@@ -123,10 +123,10 @@ class TripsController < ApplicationController
     apps(@trip)
     transportation(@trip)
     packinglist(@trip)
-    # visa(@trip)
-    # vaccinations(@trip)
+    visa(@trip)
+    vaccinations(@trip)
     # money(@trip)
-    # last_minute(@trip)
+    last_minute(@trip)
 
     # Redirect
     redirect_to confirmation_path(@trip)
