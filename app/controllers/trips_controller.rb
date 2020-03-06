@@ -119,9 +119,9 @@ class TripsController < ApplicationController
 
     # Create Tasks
 
-    # accomodation(@trip)
-    # apps(@trip)
-    # transportation(@trip)
+    accomodation(@trip)
+    apps(@trip)
+    transportation(@trip)
     packinglist(@trip)
     # visa(@trip)
     # vaccinations(@trip)
