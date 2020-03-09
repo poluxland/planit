@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # Validation
   validates :email,  presence: :true
 
-  #after_create :send_welcome_email
+  after_create :send_welcome_email
 
 
   def send_welcome_email
