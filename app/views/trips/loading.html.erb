@@ -1,18 +1,18 @@
 <div class="container">
   <div class ="row justify-content-center mt-5">
     <div class="col-12 col-lg-8">
-      <div class="p-5 standare" style="background-color: white">
+      <div class="p-5 standare" style="background-color: white; min-height: 450px">
         <div class="d-block" style="position: relative">
 
-          <div class="d-flex justify-content-center" style="position: absolute; width: 100%; top: -100px">
-            <div class="spinner-border" role="status">
+          <div class="d-flex justify-content-center" style="position: absolute; width: 100%; top: 80px">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
 
-          <div class="text-center" style="margin-top: 100px">
+          <div class="text-center" style="position: absolute; width: 100%; top: 200px">
             <h3>We are preparing your awesome checklist</h3>
-            <br>
+            <p>Please wait a few seconds</p>
           </div>
 
           <%= render_async confirmation_path %>
@@ -24,8 +24,3 @@
     </div>
   </div>
 </div>
-
-<!-- Gather all the informaton
-Peronalize it
-Create your Task!
- -->
