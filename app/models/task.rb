@@ -7,12 +7,10 @@ class Task < ApplicationRecord
   validates :description,  presence: :true
 
   def number_of_subtasks_completed
-    # Subtask.where(task_id: Task.where(trip_id: self.trip.id), status: true).count
     self.subtasks.where(status: true).count
   end
 
   def number_of_subtasks
-    # Subtask.where(task_id: Task.where(trip_id: self.id)).count
     self.subtasks.count
   end
 
