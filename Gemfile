@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
 gem 'cloudinary', '~> 1.12.0'
+gem 'selenium-webdriver'
 gem "ferrum"
 
 gem 'autoprefixer-rails'
