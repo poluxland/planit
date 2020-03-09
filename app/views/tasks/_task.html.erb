@@ -2,6 +2,7 @@
   <div class="task-card">
     <div class='task-header d-flex'>
       <div class='check'>
+        <%= render "tasks/circular_bar" %>
         <i class='far fa-<%= task.status == true ? 'check-' : '' %>square' data-task-id = '<%= task.id %>'></i>
       </div>
       <div class='info'>
