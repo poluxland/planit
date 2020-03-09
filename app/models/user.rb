@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
   # Validation
   validates :email,  presence: :true
-  validates :first_name,  presence: :true
 
   def avatar_key
     if self.avatar.attached?
