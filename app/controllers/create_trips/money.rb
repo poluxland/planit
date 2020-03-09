@@ -82,14 +82,14 @@ def money(trip)
 
 
   #subtask
+
+
   @name = "Make sure you grab enough money"
-  @description = "We didn't find have information for the country you are going but, we would recommand check website."
-
-
-  #if @cost_of_living_for_x_day
-  #@description = "As you are traveling for #{@trip_length} day, we would recommand to take in total #{((@trip_length * @cost_of_living_for_x_day) * @rate_us).round(2)} #{@cureny_code_description_departure}"
-  #else
-  #end
+  if @cost_of_living_for_x_day
+    @description = "As you are traveling for #{@trip_length} day, we would recommand to take in total #{((@trip_length * @cost_of_living_for_x_day) * @rate_us).round(2)} #{@cureny_code_description_departure}"
+  else
+    @description = "We didn't find have information for the country you are going but, we would recommand check website."
+  end
   save_subtask
 
   @name = "Make sure to change some money"

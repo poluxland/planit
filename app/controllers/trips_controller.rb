@@ -125,7 +125,7 @@ class TripsController < ApplicationController
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
-    # money(@trip)
+    money(@trip)
     last_minute(@trip)
 
     # Redirect
