@@ -18,18 +18,26 @@ def money(trip)
 
   # What is the curency
   def currency_finder(destination)
-    url_destination = "https://restcountries.eu/rest/v2/name/#{destination}"
-    url_destination_format = URI::encode(url_destination)
-    curency_serialized = open(url_destination_format).read
-    curency_code = JSON.parse(curency_serialized).first["currencies"].first["code"]
-    curency_name = JSON.parse(curency_serialized).first["currencies"].first["name"]
-    curency_symbol = JSON.parse(curency_serialized).first["currencies"].first["symbol"]
-    curency = {
-      code: curency_code,
-      name: curency_name,
-      symbol: curency_symbol
-    }
-    return curency
+    begin
+      url_destination = "https://restcountries.eu/rest/v2/name/#{destination}"
+      url_destination_format = URI::encode(url_destination)
+      curency_serialized = open(url_destination_format).read
+      curency_code = JSON.parse(curency_serialized).first["currencies"].first["code"]
+      curency_name = JSON.parse(curency_serialized).first["currencies"].first["name"]
+      curency_symbol = JSON.parse(curency_serialized).first["currencies"].first["symbol"]
+      curency = {
+        code: curency_code,
+        name: curency_name,
+        symbol: curency_symbol
+      }
+      return curency
+    rescue Exception => e
+      {
+        code: "N/A",
+        name: "N/A",
+        symbol: "N/A"
+      }
+    end
   end
 
   #the rate
