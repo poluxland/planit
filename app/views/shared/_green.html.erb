@@ -1,5 +1,5 @@
 <div class="w-100">
-  <form accept-charset="UTF-8" id="regForm" action='loading' class="auto_create" id="auto_create" method="get">
+  <form accept-charset="UTF-8" id="regForm" action='loading' class="auto_create m-0 p-0" id="auto_create" method="get">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <div class="tab"><h4 class="text-white">Where are you going?</h4>
@@ -40,8 +40,8 @@
 
     <div style="overflow:auto;">
       <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-brand">Previous</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-brand">Next</button>
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn next-btn">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn next-btn"></button>
       </div>
     </div>
 
@@ -55,6 +55,7 @@
   </form>
 </div>
 
+
 <style>
 
 
@@ -63,10 +64,20 @@
   }
 
 
-  button {
-    opacity: 0.6;
-    margin-top: 5px;
+  .next-btn {
+    background-color: #7b83f6;
+    color: white;
+    opacity: 1;
+    padding: 7px 25px;
+    margin-top: 20px;
+
   }
+
+  .next-btn:hover{
+    scale: 1.1;
+  }
+
+
 
   #range_end {
     display: none;

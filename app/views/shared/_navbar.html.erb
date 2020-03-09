@@ -1,6 +1,6 @@
 <div id="topbar" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-      <div class=""><h2 class="m-0 p-0 text-dark"><i class="fas fa-globe-americas"></i> Planit</h2></div>
+      <div class=""><h2 class="m-0 p-0 text-white"><i class="fas fa-globe-americas"></i> Planit</h2></div>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="mobile-button">
@@ -11,13 +11,14 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active" style="text-decoration: none">
+
           <%= link_to 'Feedback', new_feedback_path, class: "nav-link text-dark" %>
         </li>
 
       <% if user_signed_in? %>
 
         <li class="nav-item active" style="text-decoration: none">
-          <%= link_to "Home", root_path, class: "nav-link text-dark" %>
+          <%= link_to "Home", root_path, class: "nav-link text-white" %>
         </li>
 
 
