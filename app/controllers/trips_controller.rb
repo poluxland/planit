@@ -38,7 +38,6 @@ class TripsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { trip: trip })
       }
     end
-
   end
 
   def new
@@ -115,7 +114,7 @@ class TripsController < ApplicationController
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
-    # money(@trip)
+    money(@trip)
     last_minute(@trip)
 
     render layout: false

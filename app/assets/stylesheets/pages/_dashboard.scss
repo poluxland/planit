@@ -51,11 +51,18 @@
     height: 200px;
     width: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 8px 8px 0px 0px;
   }
 
   h2 {
     font-size: 16px;
+    font-weight: bold;
+    margin: 16px 16px 16px 16px;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 12px;
     font-weight: bold;
     margin: 16px 16px 16px 16px;
     text-decoration: none;
@@ -66,12 +73,11 @@
     opacity: .7;
     margin: 0;
   }
-
 }
 
 .trip-overview {
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 16px;
   flex-grow: 1;
   transition: 0.2s ease;
 }

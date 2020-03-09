@@ -1,0 +1,21 @@
+<div class="card-trip">
+  <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div class='wrap row'>
+      <div class="col-12 col-lg-10">
+        <%= link_to trip_path(trip) do %>
+        <h2><%= trip.name %></h2>
+        <% end %>
+        <h3>From <strong><%= trip.start_date %></strong> To <strong><%= trip.end_date %></strong></h3>
+        <h3>Completion: <%= trip.completion %> %</h3>
+      </div>
+
+      <div class="col-12 col-lg-2">
+        <%= link_to '<i class="fas fa-trash"></i>'.html_safe, trip_path(trip), method: :delete, data: {confirm: "Are you sure?"}, class:"mr-2" %>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= trip.completion %>%"></div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
 gem 'cloudinary', '~> 1.12.0'
+gem 'selenium-webdriver'
 gem "ferrum"
 
 gem 'autoprefixer-rails'
@@ -24,6 +25,7 @@ gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'resque-status'
 gem 'render_async', '~> 2.1', '>= 2.1.4'
+gem 'letter_opener', group: :development
 
 # gem 'algolia-places-rails'
 gem "algoliasearch-rails"
