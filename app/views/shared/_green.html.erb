@@ -1,55 +1,40 @@
-<div class="container">
+<div class="w-100">
+  <form accept-charset="UTF-8" id="regForm" action='auto_create' class="auto_create p-0 m-0" id="auto_create" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-<form accept-charset="UTF-8" id="regForm" action='auto_create' class="auto_create" id="auto_create" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <div class="tab"><h4>Destination:</h4>
-      <input type="search" class="form-control" id="input-0" name="destination" placeholder="Where are you going?" style="opacity: 0.75">
+    <div class="tab"><h4 class="text-white">Where are you going?</h4>
+      <input type="search" class="form-control" id="input-0" name="destination" placeholder="> Answer here ...">
     </div>
 
-
-
-
-
     <div class="tab">
-      <div class="d-flex justify-content-center" id="cal">
+      <div class="d-flex align-items-start margin" id="cal">
         <p><input  id="range_start" type="date" class="invisible datepicker" placeholder="Dates" name="start_date" style="opacity: 0.75"></p>
         <p><input  id="range_end" type="date" class="datepicker" placeholder="End" name="end_date" style="opacity: 0.75" oninput="this.className = ''"></p>
       </div>
     </div>
 
-
-
-
-    <div class="tab"><h4>Contact Info:</h4>
+    <div class="tab"><h4 class="text-white">Contact Info:</h4>
       <div class="form-group" >
-
-      <select class="form-control" name="gender" style="opacity: 0.75" >
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
+        <select class="form-control" name="gender" style="opacity: 0.75" >
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control w-100" name="purpose" style="opacity: 0.75">
+          <option>Business</option>
+          <option>Vacations</option>
+        </select>
+      </div>
     </div>
 
-
-
-    <div class="form-group">
-      <select class="form-control" name="purpose" style="opacity: 0.75">
-        <option>Business</option>
-        <option>Vacations</option>
-      </select>
-    </div>
+    <div class="tab"><h4 class="text-white">From where are you travelling?</h4>
+      <input type="search" class="form-control" id="input-00" name="origin" placeholder="From where are you traveling?">
     </div>
 
-    <div class="tab"><h4>Origin:</h4>
-
-      <input type="search" class="form-control" id="input-00" name="origin" style="opacity: 0.75"  placeholder="From where are you traveling?" style="opacity: 0.75"oninput="this.className = ''">
-
-
-    </div>
-
-    <div class="tab"><h4>Age:</h4>
-      <input type="number" class="form-control" placeholder="Age" name="age" style="opacity: 0.75;" oninput="this.className = ''">
+    <div class="tab"><h4 class="text-white">How old are you?</h4>
+      <input type="number" class="form-control" placeholder="Age" name="age">
     </div>
 
 
@@ -67,11 +52,8 @@
       <span class="step"></span>
       <span class="step"></span>
     </div>
-
   </form>
-
 </div>
-
 
 <style>
 
@@ -95,19 +77,28 @@
     /*background-color: #ffffff;*/
     margin: 20px auto;
     padding: 40px;
-    width: 70%;
+    width: 100%;
     min-width: 300px;
   }
-
+  .margin{
+    margin-top: -60px;
+  }
   /* Style the input fields */
   input {
-    opacity: 0.75;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: 0px !important;
+    border-bottom: 1px solid white !important;
+    color: white !important;
+    padding: 0px !important;
     width: 100%;
     font-size: 17px;
-    font-family: Raleway;
     border: 1px solid #aaaaaa;
   }
+
+  input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;
+  opacity: 0.6 !important;
+}
 
   /* Mark input boxes that gets an error on validation: */
   input.invalid {
@@ -124,7 +115,7 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbbbbb;
+    background-color: white;
     border: none;
     border-radius: 50%;
     display: inline-block;
@@ -138,7 +129,12 @@
 
   /* Mark the steps that are finished and valid: */
   .step.finish {
-    background-color: grey;
+    background-color: white;
+    opacity: 1;
+  }
+
+  .form-control{
+
   }
 
 
