@@ -114,8 +114,9 @@ class TripsController < ApplicationController
     authorize @trip
 
     # Get Weather
-    @weather = get_weather
-    @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"].to_i
+    # @weather = get_weather
+    # @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"].to_i
+    @max_temp = 5
 
     # Create Tasks
 
