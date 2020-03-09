@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :subtasks, only: [:new, :create]
   end
 
-  get 'trips/:id/confirmation', to: 'trips#confirmation', as: 'confirmation'
+  get 'loading', to: 'trips#loading', as: 'loading'
+  get 'confirmation', to: 'trips#confirmation', as: 'confirmation'
+
   resources :feedbacks, only: [:new, :create]
   resources :subtasks, only: [:edit, :update, :destroy]
 
