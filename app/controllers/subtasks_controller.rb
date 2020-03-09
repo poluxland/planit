@@ -25,7 +25,7 @@ class SubtasksController < ApplicationController
       end
     end
 
-    def edit          # GET /restaurants/:id/edit
+    def edit
       @subtask = Subtask.find(params[:id])
       @task = @subtask.task
       authorize @subtask

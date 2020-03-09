@@ -33,17 +33,7 @@
 
   <div class="trip-overview">
     <% @trips.each do |trip| %>
-      <div class="card-trip">
-        <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
-        <div class="card-trip-infos">
-          <div style="display: flex; justify-content: space-between; align-items: center">
-            <%= link_to trip_path(trip) do %>
-              <h2><%= trip.name %></h2>
-            <% end %>
-            <%= link_to '<i class="fas fa-trash"></i>'.html_safe, trip_path(trip), method: :delete, data: {confirm: "Are you sure?"}, class:"mr-2" %>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/trip_card', trip: trip %>
     <% end %>
   </div>
 <br>

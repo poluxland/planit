@@ -18,4 +18,30 @@ class Trip < ApplicationRecord
       "trip"
     end
   end
+
+
+  def number_of_tasks_completed
+    self.tasks.where(status: true).count
+  end
+
+  def number_of_tasks
+    self.tasks.count
+  end
+
+  def number_of_subtasks_completed
+    Subtask.where(task_id: Task.where(trip_id: self.id), status: true).count
+  end
+
+  def number_of_subtasks
+    Subtask.where(task_id: Task.where(trip_id: self.id)).count
+  end
+
+  def completion
+    if self.number_of_subtasks.zero?
+      progress = 0
+    else
+      progress = self.number_of_subtasks_completed * 100 / self.number_of_subtasks
+    end
+  end
+
 end

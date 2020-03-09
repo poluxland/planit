@@ -38,7 +38,6 @@ class TripsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { trip: trip })
       }
     end
-
   end
 
   def new
