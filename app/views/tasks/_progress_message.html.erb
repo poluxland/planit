@@ -1,0 +1,9 @@
+<% if task.number_of_subtasks.zero? %>
+<p style="color: red; font-weight: bold;">No subtasks assigned yet</p>
+<% else %>
+<% if task.number_of_subtasks_to_do.zero? %>
+<p style="color: green; font-weight: bold;">All subtasks completed!</p>
+<% else %>
+<p style="color: red; font-weight: bold;"><%= task.number_of_subtasks_to_do %> subtasks incomplete</p>
+<% end %>
+<% end %>

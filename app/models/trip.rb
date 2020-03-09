@@ -28,12 +28,20 @@ class Trip < ApplicationRecord
     self.tasks.count
   end
 
+  def number_of_tasks_to_do
+    number_of_tasks - number_of_tasks_completed
+  end
+
   def number_of_subtasks_completed
     Subtask.where(task_id: Task.where(trip_id: self.id), status: true).count
   end
 
   def number_of_subtasks
     Subtask.where(task_id: Task.where(trip_id: self.id)).count
+  end
+
+  def number_of_subtasks_to_do
+    number_of_subtasks - number_of_subtasks_completed
   end
 
   def completion

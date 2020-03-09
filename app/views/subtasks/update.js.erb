@@ -7,3 +7,10 @@ if (checkbox.classList.value == 'far fa-check-square') {
   checkbox.classList.remove('fa-square')
   checkbox.classList.add('fa-check-square')
 }
+
+function refreshProgressMessage(innerHTML) {
+  progressMessage = document.querySelector('.progress-message[data-task-id="<%= @subtask.task.id %>"]');
+  console.log(progressMessage)
+  progressMessage.innerHTML = innerHTML
+}
+refreshProgressMessage(`<%= render "tasks/progress_message", task: @subtask.task %>`)

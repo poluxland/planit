@@ -9,6 +9,9 @@
       <div class='info'>
         <h2><%= task.name %></h2>
         <p><%= task.description %></p>
+        <div class="progress-message" data-task-id = "<%= task.id %>">
+          <%= render "tasks/progress_message", task: task %>
+        </div>
       </div>
     </div>
     <div class="task-buttons">
