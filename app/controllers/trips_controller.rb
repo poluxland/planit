@@ -94,8 +94,6 @@ class TripsController < ApplicationController
   end
 
   def confirmation
-    sleep(1)
-
     @trip = Trip.find(session[:temporary_trip])
     @trip.session = true unless user_signed_in?
     authorize @trip
