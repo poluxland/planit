@@ -15,53 +15,9 @@ newTaskBtn.classList.toggle('active')
 newTaskForm.classList.toggle('active')
 <% end %>
 
-// function OpenTasksOnClick() {
-//  taskDowns = document.querySelectorAll('.task-down');
-//  console.log(taskDowns)
-//   if (taskDowns) {
-//     taskDowns.forEach((taskDown) => {
-//       taskDown.removeEventListener('click', test)
-//       taskDown.addEventListener('click', const test = () => {
-//         taskDown.parentElement.children[1].classList.toggle("active");
-//         taskDown.classList.toggle('flip')
-//         Array.from(taskDown.children).forEach((child) => {
-//           if (taskDown.classList.contains('flip')) {
-//             child.classList.remove('fa-chevron-down')
-//             child.classList.add('fa-chevron-up')
-//           } else {
-//             child.classList.remove('fa-chevron-up')
-//             child.classList.add('fa-chevron-down')
-//           }
-
-//         });
-//       });
-//     });
-//   }
-// };
-
-// function OpenTasksOnClick() {
-//  taskDowns = document.querySelectorAll('.task-down');
-//  console.log(taskDowns)
-//   if (taskDowns) {
-//     taskDowns.forEach((taskDown) => {
-//       taskDown.removeEventListener('click', test)
-//       taskDown.addEventListener('click', const test = () => {
-//         taskDown.parentElement.children[1].classList.toggle("active");
-//         taskDown.classList.toggle('flip')
-//         Array.from(taskDown.children).forEach((child) => {
-//           if (taskDown.classList.contains('flip')) {
-//             child.classList.remove('fa-chevron-down')
-//             child.classList.add('fa-chevron-up')
-//           } else {
-//             child.classList.remove('fa-chevron-up')
-//             child.classList.add('fa-chevron-down')
-//           }
-
-//         });
-//       });
-//     });
-//   }
-// };
-
-// import { initOpenTaskOnClick } from '../../javascript/components/tasks';
-// OpenTasksOnClick();
+function refreshProgressMessage(innerHTML) {
+  progressMessage = document.querySelector('.progress-message[data-task-id="<%= @task.id %>"]');
+  console.log(progressMessage)
+  progressMessage.innerHTML = innerHTML
+}
+refreshProgressMessage(`<%= render "tasks/progress_message", task: @task %>`)
