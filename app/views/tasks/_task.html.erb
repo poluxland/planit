@@ -2,9 +2,7 @@
   <div class="task-card">
     <div class='task-header d-flex'>
       <div class='check'>
-        <%= link_to task_path(task, ajax: true), class: 'check-btn', remote: true, method: :patch do %>
         <i class='far fa-<%= task.status == true ? 'check-' : '' %>square' data-task-id = '<%= task.id %>'></i>
-        <% end %>
       </div>
       <div class='info'>
         <h2><%= task.name %></h2>

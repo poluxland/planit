@@ -1,8 +1,1559 @@
-<h1>Welcome</h1>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF;margin: 0;padding: 0;">
 
-<p>Hi,</p>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="format-detection" content="telephone=no">
+  <!-- disable auto telephone linking in iOS -->
+  <title>Planit</title>
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+  <style type="text/css">
+    html {
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    #bodyTable,
+    #bodyCell,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    #bodyTable {
+      width: 100% !important;
+      margin: auto;
+      max-width: 640px !important;
+      color: #3d3d3d;
+      font-weight: normal;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      height: auto;
+      line-height: 100%;
+    }
+
+    a {
+      text-decoration: none !important;
+      color: #3dbed8;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #5F5F5F;
+      font-weight: 500;
+      font-family: Montserrat;
+      font-size: 20px;
+      line-height: 125%;
+      text-align: Left;
+      letter-spacing: normal;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0;
+      mso-table-rspace: 0;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+      display: block;
+      outline: none;
+      text-decoration: none;
+    }
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      font-weight: normal !important;
+    }
+
+    .ExternalClass td[class=ecxflexibleContainerBox] h3 {
+      padding-top: 10px !important;
+    }
+
+    h1 {
+      display: block;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 100%;
+    }
+
+    h2 {
+      display: block;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 120%;
+    }
+
+    h3 {
+      display: block;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 110%;
+    }
+
+    h4 {
+      display: block;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 100%;
+    }
+
+    .linkRemoveBorder {
+      border-bottom: 0 !important;
+    }
+
+    .flexibleContainerCellDivider {
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    body,
+    #bodyTable {
+      background-color: #FFFFFF;
+    }
+
+    #emailHeader {
+      background-color: #f5c732;
+    }
+
+    #emailBody {
+      background-color: #ffffff;
+    }
+
+    #emailFooter {
+      background-color: #FFFFFF;
+    }
+
+    .nestedContainer {
+      background-color: #F8F8F8;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #205478;
+      border-collapse: separate;
+    }
+
+    .buttonContent {
+      color: #FFFFFF;
+      font-family: Helvetica;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #FFFFFF;
+      display: block;
+      text-decoration: none !important;
+      border: 0 !important;
+    }
+
+    .emailCalendar {
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailCalendarMonth {
+      background-color: #205478;
+      color: #FFFFFF;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .emailCalendarDay {
+      color: #205478;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 60px;
+      font-weight: bold;
+      line-height: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .imageContentText {
+      margin-top: 10px;
+      line-height: 0;
+    }
+
+    .imageContentText a {
+      line-height: 0;
+    }
+
+    #invisibleIntroduction {
+      display: none !important;
+    }
+
+    .ios-color-hack a {
+      color: #3d3d3d !important;
+      text-decoration: none !important;
+    }
+
+    .ios-color-hack2 a {
+      color: #205478 !important;
+      text-decoration: none !important;
+    }
+
+    .ios-color-hack3 a {
+      color: #8B8B8B !important;
+      text-decoration: none !important;
+    }
+
+    .a[href^=tel],
+    a[href^=sms] {
+      text-decoration: none !important;
+      color: #606060 !important;
+      pointer-events: none !important;
+      cursor: default !important;
+    }
+
+    .mobile_link a[href^=tel],
+    .mobile_link a[href^=sms] {
+      text-decoration: none !important;
+      color: #606060 !important;
+      pointer-events: auto !important;
+      cursor: default !important;
+    }
+
+    @media only screen and (max-width: 640px) {
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+
+      #emailPreHeader,
+      #emailHeader,
+      #emailBody,
+      #emailFooter,
+      .flexibleContainer,
+      .flexibleContainerCell {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+
+      .flexibleContainerBox,
+      .flexibleContainerBox table {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .imageContent img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .flexibleImage {
+        height: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .flexibleImageSmall {
+        height: auto !important;
+        width: auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .Planit_logo {
+        max-width: 107px !important;
+        max-height: 16px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .social_icon {
+        max-width: 16px !important;
+        max-height: 16px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_header_title {
+        font-size: 32px !important;
+        line-height: 34px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_header_copy {
+        line-height: 24px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      #appDownload {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_appDl_text {
+        font-size: 16px !important;
+        line-height: 25px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .templateColumnContainer {
+        display: block !important;
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .columnContentCenter {
+        text-align: center !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .columnImageFull {
+        text-align: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .threeColumnContainer {
+        display: block !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        margin: 0 auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .threeColumnContentCenter {
+        text-align: center !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingTopTen {
+        padding-top: 10px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingTopThirty {
+        padding-top: 30px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingZero {
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .text_mobile_14 {
+        font-size: 14px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .text_mobile_center {
+        text-align: center !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .button_mobile_center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 210px !important;
+        margin: 0 auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_spacing {
+        padding-top: 30px !important;
+        padding-bottom: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      u+.body .cta_align {
+        padding-left: 17px !important;
+      }
+
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      .email-container {
+        min-width: 375px !important;
+      }
+
+    }
+
+    html {
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    #bodyTable,
+    #bodyCell,
+    #bodyCell {
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    #bodyTable {
+      width: 100% !important;
+      margin: auto;
+      max-width: 640px !important;
+      color: #3d3d3d;
+      font-weight: normal;
+    }
+
+    img,
+    a img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      height: auto;
+      line-height: 100%;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #5F5F5F;
+      font-weight: 500;
+      font-family: Montserrat;
+      font-size: 20px;
+      line-height: 125%;
+      text-align: Left;
+      letter-spacing: normal;
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0;
+      mso-table-rspace: 0;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+      display: block;
+      outline: none;
+      text-decoration: none;
+    }
+
+    body,
+    table,
+    td,
+    p,
+    a,
+    li,
+    blockquote {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      font-weight: normal !important;
+    }
+
+    .ExternalClass td[class=ecxflexibleContainerBox] h3 {
+      padding-top: 10px !important;
+    }
+
+    h1 {
+      display: block;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 100%;
+    }
+
+    h2 {
+      display: block;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 120%;
+    }
+
+    h3 {
+      display: block;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 110%;
+    }
+
+    h4 {
+      display: block;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 100%;
+    }
+
+    .linkRemoveBorder {
+      border-bottom: 0 !important;
+    }
+
+    .flexibleContainerCellDivider {
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    body,
+    #bodyTable {
+      background-color: #FFFFFF;
+    }
+
+    #emailHeader {
+      background-color: #f5c732;
+    }
+
+    #emailBody {
+      background-color: #ffffff;
+    }
+
+    #emailFooter {
+      background-color: #FFFFFF;
+    }
+
+    .nestedContainer {
+      background-color: #F8F8F8;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailButton {
+      background-color: #205478;
+      border-collapse: separate;
+    }
+
+    .buttonContent {
+      color: #FFFFFF;
+      font-family: Helvetica;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 100%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .buttonContent a {
+      color: #FFFFFF;
+      display: block;
+      text-decoration: none !important;
+      border: 0 !important;
+    }
+
+    .emailCalendar {
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    .emailCalendarMonth {
+      background-color: #205478;
+      color: #FFFFFF;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .emailCalendarDay {
+      color: #205478;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 60px;
+      font-weight: bold;
+      line-height: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .imageContentText {
+      margin-top: 10px;
+      line-height: 0;
+    }
+
+    .imageContentText a {
+      line-height: 0;
+    }
+
+    #invisibleIntroduction {
+      display: none !important;
+    }
+
+    .ios-color-hack a {
+      color: #3d3d3d !important;
+      text-decoration: none !important;
+    }
+
+    .ios-color-hack2 a {
+      color: #205478 !important;
+      text-decoration: none !important;
+    }
+
+    .ios-color-hack3 a {
+      color: #8B8B8B !important;
+      text-decoration: none !important;
+    }
+
+    .a[href^=tel],
+    a[href^=sms] {
+      text-decoration: none !important;
+      color: #606060 !important;
+      pointer-events: none !important;
+      cursor: default !important;
+    }
+
+    .mobile_link a[href^=tel],
+    .mobile_link a[href^=sms] {
+      text-decoration: none !important;
+      color: #606060 !important;
+      pointer-events: auto !important;
+      cursor: default !important;
+    }
+
+    @media only screen and (max-width: 640px) {
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+
+      #emailPreHeader,
+      #emailHeader,
+      #emailBody,
+      #emailFooter,
+      .flexibleContainer,
+      .flexibleContainerCell {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+
+      .flexibleContainerBox,
+      .flexibleContainerBox table {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .imageContent img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .flexibleImage {
+        height: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .flexibleImageSmall {
+        height: auto !important;
+        width: auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .Planit_logo {
+        max-width: 107px !important;
+        max-height: 16px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .social_icon {
+        max-width: 16px !important;
+        max-height: 16px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_header_title {
+        font-size: 32px !important;
+        line-height: 34px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_header_copy {
+        line-height: 24px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      #appDownload {
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_appDl_text {
+        font-size: 16px !important;
+        line-height: 25px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .templateColumnContainer {
+        display: block !important;
+        width: 100% !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .columnContentCenter {
+        text-align: center !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .columnImageFull {
+        text-align: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .threeColumnContainer {
+        display: block !important;
+        width: 100% !important;
+        max-width: 250px !important;
+        margin: 0 auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .threeColumnContentCenter {
+        text-align: center !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingTopTen {
+        padding-top: 10px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingTopThirty {
+        padding-top: 30px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .paddingZero {
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .text_mobile_14 {
+        font-size: 14px !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .text_mobile_center {
+        text-align: center !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .button_mobile_center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 210px !important;
+        margin: 0 auto !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .mobile_spacing {
+        padding-top: 30px !important;
+        padding-bottom: 0 !important;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      u+.body .cta_align {
+        padding-left: 17px !important;
+      }
+
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      .email-container {
+        min-width: 375px !important;
+      }
+
+    }
+
+    @media screen yahoo and (max-width:640px) {
+      .cta_align {
+        padding-left: 20px !important;
+      }
+
+    }
+
+    @media screen yahoo and (max-width:640px) {
+      .Planit_logo {
+        width: 107px !important;
+        height: 16px !important;
+      }
+
+    }
+
+    @media screen yahoo and (max-width:640px) {
+      .social_icon {
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+    }
+  </style>
+</head>
+
+<body class="body" bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"
+  style="margin: 0;padding: 0;font-family: Montserrat,Arial,sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;height: 100% !important;width: 100% !important;font-weight: normal !important;">
+  <!-- CENTER THE EMAIL // -->
+  <!-- 1. The center tag should normally put all the content in the middle of the
+    email page. I added "table-layout: fixed;" style to force yahoomail which by default
+    put the content left. 2. For hotmail and yahoomail, the contents of the email starts
+    from this center, so we try to apply necessary styling e.g. background-color. -->
+  <div class="email-container">
+    <center style="background-color:#FFFFFF;">
+
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+            </table>
+            <!-- // END PRE HEADER -->
+            <!-- START HEADER -->
+            <table bgcolor="#f5c732" border="0" cellpadding="0" cellspacing="0" width="640" id="emailHeader"
+              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #f5c732;font-weight: normal !important;">
+              <tr>
+                <td align="center" valign="top"
+                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                  <!-- CENTERING TABLE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="color: #3d3d3d;border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                    <tr>
+                      <td align="center" valign="top"
+                        style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="640" class="flexibleContainer"
+                          style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                          <tr>
+                            <td align="left" valign="top" width="640" class="flexibleContainerCell"
+                              style="padding-left: 20px;padding-right: 20px;padding-top: 30px;padding-bottom: 0px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                              <!-- HEADER LOGO & SOCIAL SECTION // -->
+                              <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                <tr>
+                                  <td align="right" valign="middle"
+                                    style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                      style="max-width: 100%;border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                      <tr>
+                                        <td align="left" width="320"
+                                          style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                          <i class="fas fa-globe-americas" style="font-size: 40px; color: grey;></i>
 
 
-<p></p>
 
-<p>See ya!</p>
+                                          </a>
+                                        </td>
+                                        <td align="right" width="320"
+                                          style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="2" height="32"
+                                          style="height: 32px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <!-- END HEADER LOGO & SOCIAL SECTION -->
+                              <!-- MAIN CONTENT -->
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                <tr>
+                                  <td mc:edit="header_sub_heading" align="center" valign="top" class="textContent"
+                                    style="color: #FFFFFF;line-height: 20px;font-family: Montserrat, Arial, sans-serif;font-size: 13px;font-weight: 500 !important;margin-bottom: 5px;text-align: center;text-transform: uppercase;letter-spacing: 1px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    WELCOME ABOARD</td>
+                                </tr>
+                                <tr>
+                                  <td mc:edit="header_main_heading" class="mobile_header_title" align="center"
+                                    valign="top"
+                                    style="color: #FFFFFF;line-height: 43px;font-family: Montserrat, Tahoma, Arial;font-size: 36px;font-weight: 800 !important;margin-bottom: 5px;text-align: center;letter-spacing: 1px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    With your new account, it’s clear skies ahead.</td>
+                                </tr>
+                                <tr>
+                                  <td mc:edit="header_main_copy" align="center" valign="top" class="mobile_header_copy"
+                                    style="color: #FFFFFF;line-height: 20px;font-family: Montserrat, Arial, sans-serif;font-size: 16px;font-weight: 400 !important;margin-bottom: 5px;text-align: center;padding-top: 20px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    Learn how to keep all the things in order, just enjoy your trip and
+                                    leave the planification to the experts, be secure, and it's totally free.</td>
+                                </tr>
+                                <tr>
+                                  <td align="center"
+                                    style="padding-left: 20px;padding-right: 20px;padding-top: 20px;padding-bottom: 30px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                    <!-- Button -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                      style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                      <tr>
+                                        <td align="center"
+                                          style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                          <table class="green_button" border="0" cellspacing="0" cellpadding="0"
+                                            style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <tr>
+                                              <td mc:edit="header_button" align="center" height="35"
+                                                style="-webkit-border-radius: 5px;border-radius: 5px;line-height: 24px;height: 35px !important;white-space: nowrap !important;font-family: Montserrat, Arial, sans-serif;color: #8ccb32 !important;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                                bgcolor="#70be52">
+                                                <a href="http://www.planit.wtf/"
+                                                  target="_blank"
+                                                  style="font-size: 16px;font-weight: 500 !important;font-family: Montserrat, Arial, sans-serif;color: #FFFFFF;text-decoration: none;-webkit-border-radius: 5px;border-radius: 5px;padding-top: 5px;padding-bottom: 5px;padding-right: 30px;padding-left: 30px;border: 1px solid #70be52;display: inline-block;white-space: nowrap;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Get
+                                                  started</a>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                              <!-- END MAIN CONTENT -->
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+              <!-- FULL WIDHT IMAGE // -->
+              <tr>
+                <td align="center" valign="top"
+                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                  <!-- CENTERING TABLE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                    <tr>
+                      <td align="center" valign="top"
+                        style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="640" class="flexibleContainer"
+                          style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                          <tr>
+                            <td align="center" valign="top" width="640" class="flexibleContainerCell"
+                              style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                              <!-- CONTENT TABLE // -->
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="min-width: 100% !important;border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                <tr>
+                                  <td valign="top" class="imageContent"
+                                    style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                    <a href="http://www.planit.wtf"
+                                      target="_blank"
+                                      style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                      <img
+                                        src="http://gallery.mailchimp.com/1652dfa4e08f8de517dba89ea/images/12529876-31f9-44d2-9abd-b3ca8fad6a5f.jpg"
+                                        width="640" class="flexibleImage"
+                                        style="max-width: 640px;width: 100%;min-width: 100%!important;display: block;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                        alt="Text" title="Text">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                              <!-- // CONTENT TABLE -->
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+              <!-- // END FULL WIDTH IMAGE -->
+            </table>
+            <!-- // END HEADER -->
+            <!-- EMAIL BODY // -->
+            <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="640" id="emailBody"
+              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;font-weight: normal !important;">
+              <!-- MODULE ROW // -->
+              <tr>
+                <td align="center" valign="top"
+                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                  <!-- CENTERING TABLE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="color: #3d3d3d;border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                    bgcolor="#FFFFFF">
+                    <tr>
+                      <td align="center" valign="top"
+                        style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="640" class="flexibleContainer"
+                          style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                          <tr>
+                            <td align="center" valign="top" width="640" class="flexibleContainerCell"
+                              style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                              <div mc:repeatable="content" mc:variant="Body Copy">
+                                <!-- SECTION - BODY COPY -->
+                                <table class="full" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                  style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                  <tr>
+                                    <td class="mobile_spacing"
+                                      style="padding-top: 50px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!-- // END SECTION - BODY COPY -->
+                              </div>
+                              <!-- SECTION - TEXT RIGHT MODULE -->
+                              <!-- END SECTION - TEXT RIGHT MODULE -->
+                              <!-- SECTION - TEXT LEFT MODULE -->
+                              <!-- END SECTION - TEXT LEFT MODULE -->
+                              <!-- SECTION - TEXT RIGHT MODULE (DUPLICATE)-->
+                              <!-- END SECTION - TEXT RIGHT MODULE (DUPLICATE)-->
+                              <!-- SECTION - FULL WIDTH CTA -->
+                              <!-- END SECTION - FULL WIDTH CTA -->
+
+                                <!-- End SECTION - THREE COLUMN SECTION -->
+                              </div>
+                              <div mc:repeatable="content" mc:variant="Three Column Section">
+                                <!-- SECTION - THREE COLUMN SECTION -->
+                                <table class="full" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                  style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                  <tr>
+                                    <td class="mobile_spacer"
+                                      style="padding-top: 40px;padding-bottom: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                      align="center">
+                                      <table border="0" cellpadding="0" cellspacing="0" width="600"
+                                        class="flexibleContainer" bgcolor="#FFFFFF"
+                                        style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                        <tr>
+                                          <td align="center" colspan="3"
+                                            style="text-align: center;font-family: Montserrat, Arial, sans-serif;font-size: 20px;font-weight: 700 !important;margin-bottom: 0;color: #333333;line-height: 1.23;padding-left: 20px;padding-right: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+                                            mc:edit="three_col_title">Enjoy the trip, make a plan</td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center" width="33%" class="threeColumnContainer"
+                                            style="width: 33.33%;padding-top: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                              <tr>
+                                                <td class="threeColumnContentCenter" align="center"
+                                                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                    <img
+                                                      src="http://gallery.mailchimp.com/1652dfa4e08f8de517dba89ea/images/c2849edb-42b8-41b8-9e93-be555a2d41b7.png"
+                                                      width="63"
+                                                      style="margin-bottom: -1px;display: inline-block;width: 63px;max-width: 63px;max-height: 65px;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                                      alt="money.png" mc:edit="three_col_icon1">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="threeColumnContentCenter text_mobile_14" align="center"
+                                                  style="font-family: Montserrat, Arial, sans-serif;font-size: 16px;line-height: 1.24;color: #3dbed8;padding-left: 20px;padding-right: 20px;padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                                  mc:edit="three_col_text1">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                  Don't leave anything</a>
+
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                          <td align="center" width="33%" class="threeColumnContainer"
+                                            style="width: 33.33%;padding-top: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                              <tr>
+                                                <td class="threeColumnContentCenter" align="center"
+                                                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                    <img
+                                                      src="http://gallery.mailchimp.com/1652dfa4e08f8de517dba89ea/images/dabaf09a-e962-43c5-b9e2-1e3157883fe1.png"
+                                                      width="63"
+                                                      style="margin-bottom: -1px;display: inline-block;width: 63px;max-width: 63px;max-height: 65px;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                                      alt="pig.png" mc:edit="three_col_icon2">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="threeColumnContentCenter text_mobile_14" align="center"
+                                                  style="font-family: Montserrat, Arial, sans-serif;font-size: 16px;line-height: 1.24;color: #3dbed8;padding-left: 20px;padding-right: 20px;padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                                  mc:edit="three_col_text2">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                    Plan
+                                                    your vacations everywhere</a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                          <td align="center" width="33%" class="threeColumnContainer"
+                                            style="width: 33.33%;padding-top: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                              <tr>
+                                                <td class="threeColumnContentCenter" align="center"
+                                                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                    <img
+                                                      src="http://gallery.mailchimp.com/1652dfa4e08f8de517dba89ea/images/15d5117c-7deb-4760-bc0f-1eb8d6d8713e.png"
+                                                      style="margin-bottom: -1px;display: inline-block;width: 63px;max-width: 63px;max-height: 65px;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                                      alt="house.png" mc:edit="three_col_icon3">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="threeColumnContentCenter text_mobile_14" align="center"
+                                                  style="font-family: Montserrat, Arial, sans-serif;font-size: 16px;line-height: 1.24;color: #3dbed8;padding-left: 20px;padding-right: 20px;padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                                  mc:edit="three_col_text3">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">Be aware
+                                                    of different roules!</a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <!-- End SECTION - THREE COLUMN SECTION -->
+                              </div>
+                              <!-- TODO: Add Edit Merge Tags Below -->
+                              <div mc:repeatable="content" mc:variant="Full Width Blue CTA">
+                                <!-- Two column blue section -->
+                                <table class="full" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                  style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                  <tr>
+                                    <td class="mobile_spacer" align="center"
+                                      style="padding-top: 40px;padding-bottom: 0px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                      <table border="0" cellpadding="0" cellspacing="0" width="600"
+                                        class="flexibleContainer" bgcolor="#2b479e" dir="rtl"
+                                        style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                        <tr>
+                                          <td height="25" colspan="2"
+                                            style="height: 25px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="center" valign="middle" width="50%" class="templateColumnContainer"
+                                            dir="ltr"
+                                            style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                              <tr>
+                                                <td class="columnContentCenter"
+                                                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                  <table border="0" cellpadding="0" cellspacing="0" align="center"
+                                                    style="max-width: 100%;border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                    <tr>
+                                                      <td class="text_mobile_center" width="50%" align="left"
+                                                        style="padding-left: 25px;padding-right: 25px;color: #FFFFFF;font-family: Montserrat, Arial, sans-serif;font-size: 20px;font-weight: 700 !important;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+                                                        valign="middle" mc:edit="blue_two_col_title">Let’s make it
+                                                        official. Download our free app.</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td align="left"
+                                                        style="padding-left: 20px;padding-right: 20px;padding-top: 15px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                        <!-- Button -->
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                                          style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                          <tr>
+                                                            <td class="cta_align" align="left"
+                                                              style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                              <table class="green_button button_mobile_center"
+                                                                border="0" cellspacing="0" cellpadding="0"
+                                                                style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                                <tr>
+                                                                  <td align="center" height="35" width="210"
+                                                                    style="-webkit-border-radius: 5px;border-radius: 5px;line-height: 24px;height: 35px !important;white-space: nowrap !important;font-family: Montserrat, Arial, sans-serif;color: #FFFFFF !important;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;"
+                                                                    bgcolor="#70be52" mc:edit="blue_two_col_button">
+                                                                    <a href="http://www.planit.wtf"
+                                                                      target="_blank"
+                                                                      style="font-size: 16px;font-weight: 500 !important;font-family: Montserrat, Arial, sans-serif;color: #FFFFFF;text-decoration: none;-webkit-border-radius: 5px;border-radius: 5px;padding-top: 5px;padding-bottom: 5px;padding-right: 30px;padding-left: 30px;border: 1px solid #70be52;display: inline-block;white-space: nowrap;text-align: center;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Get
+                                                                      it now</a>
+                                                                  </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td height="20"
+                                                                    style="height: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                                     </td>
+                                                                </tr>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                          <td align="center" valign="middle" width="50%" class="templateColumnContainer"
+                                            dir="ltr"
+                                            style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                              <tr>
+                                                <td class="columnContentCenter paddingTopThirty"
+                                                  style="text-align: center;font-family: Montserrat, Arial, sans-serif;font-size: 14px;margin-bottom: 0;color: #3d3d3d;line-height: 20px;padding-left: 10px;padding-right: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                                  <a href="http://www.planit.wtf"
+                                                    target="_blank"
+                                                    style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                                    <img
+                                                      src="http://gallery.mailchimp.com/1652dfa4e08f8de517dba89ea/images/acd3a524-a44a-4bb7-85a7-873681977d92.png"
+                                                      alt="Phone" width="144"
+                                                      style="margin-bottom: -1px;display: inline-block;width: 144px;max-width: 144px;max-height: 180px;vertical-align: bottom;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                                      mc:edit="blue_two_col_img">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <!-- End two column blue section -->
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+              <!-- // MODULE ROW -->
+            </table>
+            <!-- // END EMAIL BODY -->
+            <!-- EMAIL FOOTER // -->
+            <!-- The table "emailBody" is the email's container. Its width can be set to 100%
+              for a color band that spans the width of the page. -->
+            <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="640" id="emailFooter"
+              style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;font-weight: normal !important;">
+              <!-- DOWNLOAD APP ROW // -->
+              <tr>
+                <td align="center" valign="top"
+                  style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                  <!-- CENTERING TABLE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                    <tr>
+                      <td align="center" valign="top"
+                        style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+              <!-- END DOWNLOAD APP ROW -->
+              <!-- FOOTER ROW // -->
+              <tr>
+                <td align="center" valign="top"
+                  style="padding-left: 20px;padding-right: 20px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                  <!-- CENTERING TABLE // -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                    <tr>
+                      <td align="center" valign="top"
+                        style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer"
+                          style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                          <tr>
+                            <td align="center" valign="top" width="500" class="flexibleContainerCell"
+                              style="mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="border-collapse: collapse;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+
+                                <tr>
+                                  <td valign="center" bgcolor="#FFFFFF"
+                                    style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                    <div
+                                      style="font-family:Montserrat, Arial, sans-serif;font-size:12px;color:#3d3d3d;text-align:center;line-height:20px;">
+                                      <span class="ios-color-hack">Planit | Av. Cnel. Niceto Vega 4866 | Buenos Aires, C1414 CABA</span>
+
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td valign="top" bgcolor="#FFFFFF"
+                                    style="padding-top: 20px;padding-bottom: 40px;mso-table-lspace: 0;mso-table-rspace: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-weight: normal !important;">
+                                    <div
+                                      style="font-family:Montserrat, Arial, sans-serif;font-size:12px;color:#3d3d3d;text-align:center;line-height:20px;">
+                                      <a href="http://www.Planit.wtf"
+                                        target="_blank"
+                                        style="color: #3dbed8;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-decoration: none !important;font-weight: normal !important;">
+                                        <i class="fas fa-globe-americas"
+
+                                         width="140"
+                                          height="22"
+                                          style="display: inline;border: 0;outline: none;text-decoration: none;height: auto;line-height: 100%;-ms-interpolation-mode: bicubic;"
+                                          alt="Planit Logo"> </i>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // FLEXIBLE CONTAINER -->
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // CENTERING TABLE -->
+                </td>
+              </tr>
+              <!-- END FOOTER ROW -->
+            </table>
+            <!-- // END -->
+          </td>
+        </tr>
+      </table>
+    </center>
+  </div>
+  <img src="http://Planit.us2.list-manage.com/track/open.php?u=1652dfa4e08f8de517dba89ea&id=6e2fb32b6f&e=7dd34ea0f6"
+    height="1" width="1">
+</body>
+<script src="http://kit.fontawesome.com/b249420b78.js" crossorigin="anonymous"></script>
+</html>

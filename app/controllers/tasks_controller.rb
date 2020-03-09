@@ -10,6 +10,7 @@ class TasksController < ApplicationController
     authorize @task
     @trip = Trip.find(params[:trip_id])
     @task.trip = @trip
+    @task.status = false
 
     if @task.save
       respond_to do |format|
@@ -31,7 +32,12 @@ class TasksController < ApplicationController
 
   def update        # PATCH /restaurants/:id
     @task = Task.find(params[:id])
-    unless @task.status
+    # unless @task.status
+    #   @task.status = true
+    # else
+    #   @task.status = false
+    # end
+    if @task.number_of_subtasks_to_do.zero?
       @task.status = true
     else
       @task.status = false

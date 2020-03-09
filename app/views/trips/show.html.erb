@@ -1,7 +1,7 @@
 
 
 <div class="container-fluid">
-  <div class="title"><h1 class='text-center mt-4'><%= @trip.name %></h1></div>
+  <div class="trip-title"><h1 class='text-center'><%= @trip.name %></h1></div>
   <div class="row">
     <!-- <div class="col-xs-12 col-lg-2">
       <div class="tasks row justify-content-center">
@@ -37,18 +37,10 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
-      <div class="d-flex tasks-overview mt-3 p-3 justify-content-around align-content-center">
-        <ul>
-          <li><p>Your trip has: <strong><%= @trip.number_of_tasks %> tasks</strong></p></li>
-          <li><p>Completed: <strong><%= @trip.number_of_tasks_completed %> tasks</strong></p></li>
-          <li><p>To Do: <strong><%= @trip.number_of_tasks_to_do %> tasks</strong></p></li>
-        </ul>
-        <ul>
-          <li><p>You have <strong><%= @trip.number_of_subtasks %> Sub-Tasks</strong></p></li>
-          <li><p>Completed: <strong><%= @trip.number_of_subtasks_completed %> Sub-Tasks</strong></p></li>
-          <li><p>To Do: <strong><%= @trip.number_of_subtasks_to_do %> Sub-Tasks</strong></p></li>
-        </ul>
+      <div class="overview-grab">
+        <%= render 'tasks/overview', trip: @trip %>
       </div>
+
     </div>
   </div>
 </div>
