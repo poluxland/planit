@@ -24,6 +24,7 @@ gem "animate-rails"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'resque-status'
+gem 'render_async', '~> 2.1', '>= 2.1.4'
 gem 'letter_opener', group: :development
 
 # gem 'algolia-places-rails'

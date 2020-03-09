@@ -29,6 +29,14 @@ class TripPolicy < ApplicationPolicy
     true
   end
 
+  def loading?
+    true
+  end
+
+  def finished?
+    true
+  end
+
   def background_create?
     true
   end
