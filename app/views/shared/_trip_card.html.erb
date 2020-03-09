@@ -1,6 +1,7 @@
 <div class="card-trip" style="position: relative">
-  <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
-
+  <%= link_to trip_path(trip) do %>
+    <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <div class="card-trip-infos">
 
     <div style="display: flex; justify-content: space-between; margin-bottom: 70px">
