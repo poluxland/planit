@@ -22,10 +22,8 @@ const addMarkersToMap = (map, markers, center) => {
 
 
     newMarker.getElement().addEventListener('click', (e) => {
-      console.log(newMarker.getElement())
       map.flyTo({ center: [ marker.lng, marker.lat + 2], zoom:5});
     })
-    console.log(center)
     popup.on('close', function(e) {
      map.flyTo({ center: [center._sw.lng +40, center._ne.lat - 20], zoom:2});
     })

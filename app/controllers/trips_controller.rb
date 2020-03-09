@@ -10,7 +10,7 @@ require_relative './create_trips/money'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: [:auto_create, :confirmation, :background_create]
+  skip_before_action :authenticate_user!, only: [:finished, :auto_create, :confirmation, :background_create, :loading]
 
   def show
     @trip = Trip.find(params[:id])
@@ -74,50 +74,39 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
-
     redirect_to trips_path
   end
 
-  def background_create
-    @trip = Trip.new
-    authorize @trip
-    auto_id = AutoCreateJob.create
-    status = Resque::Plugins::Status::Hash.get(auto_id)
-    raise
-  end
-
-  def auto_create
-    # Calculate all available variables
-
+  def loading
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date
     @trip_length = (@end_date - @start_date).to_i
+    @origin = params[:origin]
 
     @destination = params[:destination]
 
-    @origin = params[:origin]
-
-    # @purpose = params[:purpose]
-
-    # @gender = params[:gender]
-
-    # @birth = params[:birth].to_date
-    # birthday = @birth.year
-    # @age = Date.today.year - birthday
-    # @age -= 1 if Date.today < birthday + @age.years
-
-    # Create Trip
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "You are traveling for #{@trip_length} to #{@destination}. Happy travels!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
     @trip.user = current_user if user_signed_in?
     @trip.save
+
+    session[:temporary_trip] = @trip.id
+    authorize @trip
+  end
+
+  def confirmation
+    sleep(1)
+
+    @trip = Trip.find(session[:temporary_trip])
+    @trip.session = true unless user_signed_in?
     authorize @trip
 
-    # Get Weather
-    # @weather = get_weather
-    # @max_temp = @weather[(@start_date.month - 1)]["absMaxTemp"].to_i
-    @max_temp = 5
+    @start_date = @trip.start_date.to_date
+    @end_date = @trip.end_date.to_date
+    @trip_length = (@end_date - @start_date).to_i
+    @origin = @trip.origin
 
-    # Create Tasks
+    # Get Weather
+    @max_temp = get_weather
 
     accomodation(@trip)
     apps(@trip)
@@ -128,17 +117,7 @@ class TripsController < ApplicationController
     money(@trip)
     last_minute(@trip)
 
-    # Redirect
-    redirect_to confirmation_path(@trip)
-  end
-
-  def confirmation
-    @trip = Trip.find(params[:id])
-    @trip.user = current_user
-    @trip.save
-    authorize @trip
-    session[:temporary_trip] = @trip.id unless user_signed_in?
-    @trip.session = true unless user_signed_in?
+    render layout: false
   end
 
   private
