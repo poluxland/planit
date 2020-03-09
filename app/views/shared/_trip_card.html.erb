@@ -13,7 +13,7 @@
 
 
     <div style="position: absolute; bottom: 0px; width: 100%">
-      <p class="">From <strong><%= trip.start_date %></strong> To <strong><%= trip.end_date %></strong></p>
+      <p class="">From <strong><%= trip.start_date&.to_formatted_s(:long) %></strong> To <strong><%= trip.end_date&.to_formatted_s(:long) %></strong></p>
       <p class="">Completion: <%= trip.completion %> %</p>
       <div class="progress" style="margin-top: 10px">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= trip.completion %>%"></div>
