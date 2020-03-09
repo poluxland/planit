@@ -7,3 +7,9 @@ function scrollFunction() {
     if (document.getElementById("topbar") != null) document.getElementById("topbar").classList.remove("bg-white");
   }
 }
+
+let button = document.getElementById("mobile-button");
+
+button.addEventListener("click", function() {
+ document.getElementById("topbar").classList.toggle("bg-white");
+});
