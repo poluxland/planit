@@ -1,7 +1,12 @@
 <div class="card-trip" style="position: relative">
   <%= link_to trip_path(trip) do %>
-    <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+    <% if trip.photo_key == "trip" %>
+      <%= image_tag "https://source.unsplash.com/weekly?#{trip.location}", height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
+
   <div class="card-trip-infos">
 
     <div style="display: flex; justify-content: space-between; margin-bottom: 70px">
@@ -15,7 +20,7 @@
     <div style="position: absolute; bottom: 0px; width: 100%">
       <p class="">From <strong><%= trip.start_date&.to_formatted_s(:long) %></strong> To <strong><%= trip.end_date&.to_formatted_s(:long) %></strong></p>
       <p class="">Completion: <%= trip.completion %> %</p>
-      <div class="progress" style="margin-top: 10px">
+      <div class="progress" style="margin-top: 10px; height: 10px">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= trip.completion %>%"></div>
       </div>
     </div>
