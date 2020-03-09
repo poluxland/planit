@@ -46,6 +46,48 @@
 //   content
 // }
 
-.test {
-  width: 100% !important;
+.small-girl{
+  width: 135px
+}
+
+
+// Small devices (landscape phones, 576px and up)
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 300px) {
+  #slogan{
+    font-size: 40px;
+    margin-top: 75px;
+  }
+
+  #regForm{
+    margin-bottom: 0px !important;
+  }
+
+  .small-girl{
+  }
+
+  .cal{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #a258fe46-239e-41b2-ae9b-c22059e5ba3c{
+    width: 120%;
+    height: auto;
+    margin-top: inherit;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #a258fe46-239e-41b2-ae9b-c22059e5ba3c{
+    width: 150%;
+    height: auto;
+    margin-top: 79px;
+  }
 }
