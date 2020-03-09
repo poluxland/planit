@@ -23,6 +23,7 @@ gem "animate-rails"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'resque-status'
+gem 'letter_opener', group: :development
 
 # gem 'algolia-places-rails'
 gem "algoliasearch-rails"
