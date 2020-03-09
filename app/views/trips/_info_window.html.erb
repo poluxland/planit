@@ -1,6 +1,10 @@
  <%= link_to trip_path(trip) do %>
    <div class="card-trip">
-    <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+        <% if trip.photo_key == "trip" %>
+      <%= image_tag "https://source.unsplash.com/weekly?#{trip.location}", height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= cl_image_tag trip.photo_key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2><%= trip.name %></h2>

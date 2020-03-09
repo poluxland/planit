@@ -26,7 +26,6 @@
 }
 
 .nav-white {
-  background: rgb(255,137,102);
-  background: linear-gradient(103deg, rgba(255,137,102,0.7329525560224089) 0%, rgba(255,162,102,1) 100%);
-
+    background: rgb(255,137,102);
+  background: linear-gradient(103deg, $color1 0%, $color3 100%);
 }

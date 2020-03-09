@@ -41,7 +41,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: 0.2s ease;
-  border-radius: 8px;
+  border-radius: 4px;
 
   &:hover {
     transform: scale(1.05);
@@ -51,7 +51,7 @@
     height: 200px;
     width: 100%;
     object-fit: cover;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   h2 {
