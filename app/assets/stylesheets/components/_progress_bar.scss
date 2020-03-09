@@ -1,15 +1,6 @@
-.progress {
-  width: 100%;
-  height: 20px;
-}
-.progress-wrap {
-  background: #f80;
-  margin: 20px 0;
-  margin-left: 20px;
-  position: relative;
+div.progress {
+  height: 30px;
   .progress-bar {
-    background: #ddd;
-    position: relative;
-
+    height: 30px;
   }
 }
