@@ -1,4 +1,5 @@
 checkbox = document.querySelector('[data-subtask-id="<%= @subtask.id %>"]');
+taskCheckbox = document.querySelector('[data-task-id="<%= @subtask.task.id %>"]');
 
 if (checkbox.classList.value == 'far fa-check-square') {
   checkbox.classList.remove('fa-check-square')
@@ -10,7 +11,22 @@ if (checkbox.classList.value == 'far fa-check-square') {
 
 function refreshProgressMessage(innerHTML) {
   progressMessage = document.querySelector('.progress-message[data-task-id="<%= @subtask.task.id %>"]');
-  console.log(progressMessage)
   progressMessage.innerHTML = innerHTML
 }
+
+function refreshTaskOverview(innerHTML) {
+  taskOverview = document.querySelector('.overview-grab');
+  taskOverview.innerHTML = innerHTML
+}
+
+
+
+refreshTaskOverview(`<%= render 'tasks/overview', trip: @subtask.task.trip %>`)
 refreshProgressMessage(`<%= render "tasks/progress_message", task: @subtask.task %>`)
+
+function refreshTaskCheckBox(innerHTML) {
+  taskCheckbox = document.querySelector('[data-task-id="<%= @subtask.task.id %>"]').parentElement;
+  taskCheckbox.innerHTML = innerHTML
+}
+
+refreshTaskCheckBox(`<i class='far fa-<%= @subtask.task.status == true ? 'check-' : '' %>square' data-task-id = '<%= @subtask.task.id %>'></i>`)

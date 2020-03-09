@@ -1,0 +1,24 @@
+<div class="tasks-overview mt-3 p-3 justify-content-around align-content-center">
+  <div class="row">
+    <div class="col-12 col-lg-12">
+      <h2 class="overview-title text-center mb-3">Overview:</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <ul>
+        <li><p>Your trip has: <strong><%= trip.number_of_tasks %> tasks</strong></p></li>
+        <li><p>Completed: <strong><%= trip.number_of_tasks_completed %> tasks</strong></p></li>
+        <li><p>To Do: <strong><%= trip.number_of_tasks_to_do %> tasks</strong></p></li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-6">
+      <ul>
+        <li><p>You have <strong><%= trip.number_of_subtasks %> Sub-Tasks</strong></p></li>
+        <li><p>Completed: <strong><%= trip.number_of_subtasks_completed %> Sub-Tasks</strong></p></li>
+        <li><p>To Do: <strong><%= trip.number_of_subtasks_to_do %> Sub-Tasks</strong></p></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

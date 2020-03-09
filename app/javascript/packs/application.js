@@ -24,7 +24,3 @@ initAutocomplete();
 import { initAutocompletes } from "../plugins/init_autocomplete";
 initAutocompletes();
 
-// import { moveProgressBar } from "../components/progress_bar";
-// moveProgressBar();
-
-// import { refreshProgressMessage } from '../components/progress_of_tasks';

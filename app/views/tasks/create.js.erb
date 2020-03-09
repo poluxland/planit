@@ -17,7 +17,13 @@ newTaskForm.classList.toggle('active')
 
 function refreshProgressMessage(innerHTML) {
   progressMessage = document.querySelector('.progress-message[data-task-id="<%= @task.id %>"]');
-  console.log(progressMessage)
   progressMessage.innerHTML = innerHTML
 }
+
+function refreshtaskOverview(innerHTML) {
+  taskOverview = document.querySelector('.overview-grab');
+  taskOverview.innerHTML = innerHTML
+}
+
+refreshtaskOverview(`<%= render 'tasks/overview', trip: @trip %>`)
 refreshProgressMessage(`<%= render "tasks/progress_message", task: @task %>`)

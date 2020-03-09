@@ -32,31 +32,33 @@ class SubtasksController < ApplicationController
     end
 
     def update        # PATCH /restaurants/:id
-     @subtask = Subtask.find(params[:id])
-     unless @subtask.status
-      @subtask.status = true
-    else
-      @subtask.status = false
-    end
-    authorize @subtask
+      @subtask = Subtask.find(params[:id])
+      @task = @subtask.task
 
-    respond_to do |format|
-
-      if params[:ajax].present?
-        if @subtask.save
-          format.js
-        end
+      unless @subtask.status
+        @subtask.status = true
       else
-        if @subtask.update(subtask_params)
-          format.html { redirect_to trip_path(@subtask.task.trip) }
+        @subtask.status = false
+      end
+
+      authorize @subtask
+
+      respond_to do |format|
+        if params[:ajax].present?
+          if @subtask.save
+            format.js
+          end
         else
-          format.html { redirect_to :edit }
+          if @subtask.update(subtask_params)
+            format.html { redirect_to trip_path(@subtask.task.trip) }
+          else
+            format.html { redirect_to :edit }
+          end
         end
       end
+      @task.status = @task.number_of_subtasks_to_do.zero? ? true : false
+      @task.save
     end
-
-
-  end
 
     def destroy       # DELETE /restaurants/:id
      @subtask = Subtask.find(params[:id])
