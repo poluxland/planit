@@ -3,6 +3,7 @@ def vaccinations(trip)
   @task = Task.new(tip: nil, name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}. Check with your doctor.")
   @task.trip = trip
   @task.save
+  @max_temp = get_weather
 
   def save_subtask
     subtask = Subtask.new(name: @name,description: @description)
@@ -11,31 +12,43 @@ def vaccinations(trip)
   end
 
   # Create Subtask S
-  @name = "Yellow Fever"
-  @description = "Highly recommended for warmer countries"
-  save_subtask
 
-  @name = "Measles-mumps-rubella"
-  @description = "Highly recommended"
-  save_subtask
 
-  @name = "Diphtheria-tetanus-pertussis"
-  @description = "Highly recommended"
-  save_subtask
+  if @max_temp > 23
 
-  @name = "Varicella (chickenpox)"
-  @description = "Highly recommended"
-  save_subtask
+    @name = "Yellow Fever"
+    @description = "Highly recommended"
+    save_subtask
 
-  @name = "Polio"
-  @description = "Highly recommended"
-  save_subtask
+    @name = "Dengue fever"
+    @description = "Only recommended for people who had the disease"
+    save_subtask
 
-  @name = "Influenza"
-  @description = "Highly recommended"
+    @name = "Typhoid fever"
+    @description = "Recommended if you plan to travel to rural areas"
+    save_subtask
+
+    @name = "Hepatitis A"
+    @description = "Recommended if you plan to travel to rural areas"
+    save_subtask
+
+  elsif @max_temp < 16
+
+    @name = "Influenza"
+    @description = "Highly recommended"
+    save_subtask
+
+
+  end
+
+
+  @name = "Hepatitis B"
+  @description = "Only if you have risk to be in contact with blood or sexual fluids"
   save_subtask
 
   @name = "Rabies"
   @description = "Optional, but recoomended if you are planning to get in contact with animals (e.g. stray dogs)"
   save_subtask
+
+
 end

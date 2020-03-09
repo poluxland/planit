@@ -11,5 +11,12 @@ def transportation(trip)
   end
 
   # Create Subtasks
+    @name = "Ticker from #{@origin} to #{@destination}."
+    @description = "Buy your ticket with time!"
+    save_subtask
+
+    @name = "Ticker from #{@destination} to #{@origin}."
+    @description = "Buy your ticket with time!"
+    save_subtask
 
 end

@@ -11,5 +11,8 @@ def accomodation(trip)
   end
 
   # Create Subtask S
+  @name = "Accommodation upon arrival in #{@destination}."
+  @description = "At least for the first night!"
+  save_subtask
 
 end
