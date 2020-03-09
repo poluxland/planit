@@ -1,16 +1,16 @@
 <div class="tasks-overview p-3 justify-content-around align-content-center">
   <div class="row">
     <div class="col-12 col-lg-12">
-      <h2 class="overview-title text-center mb-3">Overview:</h2>
+      <h2 class="overview-title text-center mb-1">Overview:</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-12 col-lg-6">
-      <h3>Tasks</h3>
-      <div class="progress" style="margin: 10px; border-radius: 8px; border: 1px solid black;">
-        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.number_of_tasks_completed / trip.number_of_tasks  %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= trip.number_of_tasks_completed * 100   / trip.number_of_tasks %>%"></div>
+      <div class="d-flex justify-content-between align-content-center"><p>Tasks</p><p><%= trip.number_of_tasks_completed %> / <%= trip.number_of_tasks %></p></div>
+      <div class="progress" style="height: 20px; margin: 10px; border-radius: 8px; border: 1px solid black;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.number_of_tasks_completed / trip.number_of_tasks  %>" aria-valuemin="0" aria-valuemax="100" style="height: 20px; width: <%= trip.number_of_tasks_completed * 100   / trip.number_of_tasks %>%;"></div>
       </div>
-      <p><%= trip.number_of_tasks_completed %> / <%= trip.number_of_tasks %></p>
+
       <!-- <ul>
         <li><p>Your trip has: <strong><%= trip.number_of_tasks %> tasks</strong></p></li>
         <li><p>Completed: <strong><%= trip.number_of_tasks_completed %> tasks</strong></p></li>
@@ -18,11 +18,11 @@
       </ul> -->
     </div>
     <div class="col-12 col-lg-6">
-      <h3>SubTasks</h3>
-      <div class="progress" style="margin: 10px; border-radius: 8px; border: 1px solid black;">
-        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= trip.completion %>%"></div>
+      <div class="d-flex justify-content-between align-content-center"><p>SubTasks</p><p><%= trip.number_of_subtasks_completed %> / <%= trip.number_of_subtasks %></p></div>
+      <div class="progress" style="height: 20px; margin: 10px; border-radius: 8px; border: 1px solid black;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= trip.completion %>" aria-valuemin="0" aria-valuemax="100" style="height: 20px; width: <%= trip.completion %>%;"></div>
       </div>
-      <p><%= trip.number_of_subtasks_completed %> / <%= trip.number_of_subtasks %></p>
+
       <!-- <ul>
         <li><p>You have <strong><%= trip.number_of_subtasks %> Sub-Tasks</strong></p></li>
         <li><p>Completed: <strong><%= trip.number_of_subtasks_completed %> Sub-Tasks</strong></p></li>
