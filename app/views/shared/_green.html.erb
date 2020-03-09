@@ -1,13 +1,13 @@
 <div class="w-100">
-  <form accept-charset="UTF-8" id="regForm" action='loading' class="auto_create m-0 p-0" id="auto_create" method="get">
+  <form accept-charset="UTF-8" id="regForm" action='loading' class="auto_create p-0" id="auto_create" method="get">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <div class="tab"><h4 class="text-white">Where are you going?</h4>
-      <input type="search" class="form-control" id="input-0" name="destination" placeholder="> Answer here ...">
+      <input type="search" class="form-control" id="input-0" style="outline: none;" name="destination" placeholder="> Answer here ...">
     </div>
 
     <div class="tab">
-      <div class="d-flex align-items-start margin" id="cal">
+      <div class="d-flex justify-content-center justify-content-md-start" id="cal">
         <p><input  id="range_start" type="date" class="invisible datepicker" placeholder="Dates" name="start_date" style="opacity: 0.75"></p>
         <p><input  id="range_end" type="date" class="datepicker" placeholder="End" name="end_date" style="opacity: 0.75" oninput="this.className = ''"></p>
       </div>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="tab"><h4 class="text-white">From where are you travelling?</h4>
-      <input type="search" class="form-control" id="input-00" name="origin" placeholder="From where are you traveling?">
+      <input type="search" class="form-control" style="outline: none;" id="input-00" name="origin" placeholder="From where are you traveling?">
     </div>
 
     <div class="tab"><h4 class="text-white">How old are you?</h4>
@@ -62,7 +62,9 @@
   #cal {
 
   }
-
+  .algolia-places:focus {
+  outline: none !important;
+}
 
   .next-btn {
     background-color: #7b83f6;
@@ -74,10 +76,9 @@
   }
 
   .next-btn:hover{
-    scale: 1.1;
+    background-color: #5e69ff !important;
+    color: white;
   }
-
-
 
   #range_end {
     display: none;
@@ -130,7 +131,7 @@
     border: none;
     border-radius: 50%;
     display: inline-block;
-    opacity: 0.5;
+    opacity: 0.2;
   }
 
   /* Mark the actives step: */
@@ -141,7 +142,7 @@
   /* Mark the steps that are finished and valid: */
   .step.finish {
     background-color: white;
-    opacity: 1;
+    opacity: 0.7;
   }
 
   .form-control{
