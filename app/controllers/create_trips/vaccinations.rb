@@ -2,9 +2,11 @@ def vaccinations(trip)
   # Create Task
   @destination = @trip.location.split(', ')[-1].downcase.capitalize!
 
+
+
   if @max_temp_c > 23
     @notice = ", as it is really hot there at that time"
-  elsif condition
+  elsif @max_temp_c < 16
     @notice = ", as it is really cold there at that time"
   else
     @notice = ""

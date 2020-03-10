@@ -44,6 +44,23 @@
     margin-right: 10px;
     margin: 0 10px;
   }
+  .overview-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+    .info-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      img {
+        width: 50px;
+        margin: auto 0px;
+
+      }
+    }
+  }
 }
 
 .trip-title {
@@ -152,3 +169,5 @@
     width: 50px;
   }
 }
+
+

@@ -109,9 +109,14 @@ class TripsController < ApplicationController
 
     @max_temp_c = @weather["absMaxTemp"].to_i
     @max_temp_f = @weather["absMaxTemp_F"].to_i
-    @min_temp_c = @weather["absMinTemp"].to_i
-    @min_temp_f = @weather["absMinTemp_F"].to_i
-    @rainfall = @weather["avgDailyRainfall"].to_i
+    @min_temp_c = @weather["avgMinTemp"].to_i
+    @min_temp_f = @weather["avgMinTemp_F"].to_i
+    @rainfall = @weather["avgDailyRainfall"].to_f
+
+    @trip.max_temp = @max_temp_c
+    @trip.min_temp = @min_temp_c
+    @trip.precipitation = @rainfall
+    @trip.save
 
     # @max_temp = get_weather
 
