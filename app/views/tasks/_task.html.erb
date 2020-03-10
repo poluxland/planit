@@ -9,8 +9,8 @@
         <i class='far fa-<%= task.status == true ? 'check-' : '' %>square' data-task-id = '<%= task.id %>'></i>
       </div>
       <div class='info'>
-        <h2><%= task.name %></h2>
-        <p><%= task.description %></p>
+        <h2 class="mb-0 py-0"><%= task.name %></h2>
+        <p class="mt-0 pt-0"><%= task.description %></p>
         <div class="progress-message" data-task-id = "<%= task.id %>">
           <%= render "tasks/progress_message", task: task %>
         </div>

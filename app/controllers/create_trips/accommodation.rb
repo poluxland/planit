@@ -4,6 +4,8 @@ def accommodation(trip)
   @task.trip = trip
   @task.save
 
+  @arrival_destination = @trip.location.split(', ')[0].downcase.capitalize!
+
   def save_subtask
     subtask = Subtask.new(name: @name, description: @description)
     subtask.task = @task
@@ -11,7 +13,7 @@ def accommodation(trip)
   end
 
   # Create Subtask S
-  @name = "Accommodation upon arrival in #{@destination}."
+  @name = "Book accommodation upon arrival in #{@arrival_destination}."
   @description = "At least for the first night!"
   save_subtask
 

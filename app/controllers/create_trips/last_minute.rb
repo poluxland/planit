@@ -17,10 +17,10 @@ def last_minute(trip)
   save_subtask
 
   @name = "Prepare the flat / house"
-  @description = "Make sure windows are closed, oven and lights are switched off"
+  @description = "Make sure windows are closed, oven and lights are switched off."
   save_subtask
 
   @name = "Charge your phone"
-  @description = "Make sure your phone is charged when you leave"
+  @description = "Make sure your phone is charged when you leave."
   save_subtask
 end

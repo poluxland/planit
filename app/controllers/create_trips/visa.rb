@@ -1,10 +1,6 @@
 require 'csv'
 def visa(trip)
   # Create Task
-  @task = Task.new(tip: nil, name: "Get your visa", description: "You might need a visa for #{@destination}. Check with your foreign minstry.", category: 'visa')
-  @task.trip = trip
-  @task.save
-
 
   def save_subtask
     subtask = Subtask.new(name: @name,description: @description)
@@ -52,7 +48,7 @@ def visa(trip)
       code = row['Code']
 
       if code.to_s.scan(/\D/).empty?
-        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination} you can travel for #{code} days without a Visa.")
+        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you can travel for #{code} days without a Visa.")
         @task.trip = trip
         @task.save
 
@@ -60,7 +56,7 @@ def visa(trip)
         @description = "Check the expiration date"
         save_subtask
       else
-        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination} you need a Visa")
+        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you need a Visa")
         @task.trip = trip
         @task.save
 

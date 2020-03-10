@@ -1,6 +1,16 @@
 def vaccinations(trip)
   # Create Task
-  @task = Task.new(tip: nil, name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}. Check with your doctor.", category: 'vaccinations')
+  @destination = @trip.location.split(', ')[-1].downcase.capitalize!
+
+  if @max_temp_c > 23
+    @notice = ", as it is really hot there at that time"
+  elsif condition
+    @notice = ", as it is really cold there at that time"
+  else
+    @notice = ""
+  end
+
+  @task = Task.new(tip: nil, name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}#{@notice}. Check with your doctor.", category: 'vaccinations')
   @task.trip = trip
   @task.save
 
