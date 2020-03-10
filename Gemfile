@@ -10,7 +10,10 @@ gem 'rails', '6.0.2.1'
 gem 'redis'
 gem 'cloudinary', '~> 1.12.0'
 gem 'selenium-webdriver'
-gem "ferrum"
+gem 'capybara'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
+gem 'launchy'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
