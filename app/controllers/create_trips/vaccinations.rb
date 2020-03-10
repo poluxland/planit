@@ -3,7 +3,6 @@ def vaccinations(trip)
   @task = Task.new(tip: nil, name: "Get vaccinated", description: "You might need to get vaccinated for #{@destination}. Check with your doctor.")
   @task.trip = trip
   @task.save
-  @max_temp = get_weather
 
   def save_subtask
     subtask = Subtask.new(name: @name,description: @description)
@@ -14,7 +13,7 @@ def vaccinations(trip)
   # Create Subtask S
 
 
-  if @max_temp > 23
+  if @max_temp_c > 23
 
     @name = "Yellow Fever"
     @description = "Highly recommended"
@@ -32,7 +31,7 @@ def vaccinations(trip)
     @description = "Recommended if you plan to travel to rural areas"
     save_subtask
 
-  elsif @max_temp < 16
+  elsif @max_temp_c < 16
 
     @name = "Influenza"
     @description = "Highly recommended"

@@ -18,17 +18,17 @@ def packinglist(trip)
     save_subtask
 
     @name = "Underwear"
-    @description = "Recommendation: #{@trip_length}x"
+    @description = "Recommendation: #{@trip_length > 7 ? 7 : @trip_length} pairs"
     save_subtask
 
     @name = "Trousers"
-    @description = "Recommendation: #{@trip_length / 3}x"
+    @trousers = (@trip_length / 3.to_f).ceil
+    @description = "Recommendation: #{@trousers > 3 ? 3 : @trousers} pairs"
     save_subtask
 
     @name = "Tshirts"
-    @description = "Recommendation: #{@trip_length}x"
+    @description = "Recommendation: #{@trip_length > 7 ? 7 : @trip_length} pairs"
     save_subtask
-
 
     @name = "Passport"
     @description = "Highly important"
@@ -68,11 +68,11 @@ def packinglist(trip)
     save_subtask
 
     @name = "Toiletries"
-    @description = "Toothpase, toothbrush, suncreen, shampoo, soap and all the other stuff you might need"
+    @description = "Toothpase, toothbrush, shampoo, soap and all the other stuff you might need"
     save_subtask
 
 
-    if @max_temp > 20
+    if @max_temp_c > 20
 
       @name = "Sunglases"
       @description = "We expect warm weather"
@@ -82,23 +82,44 @@ def packinglist(trip)
       @description = "We expect warm weather"
       save_subtask
 
+      @name = "Sunscreen"
+      @description = "We expect warm weather"
+      save_subtask
+
       @name = "Bathing suit"
       @description = "We expect warm weather"
       save_subtask
 
-    elsif @max_temp < 10
 
-      @name = "Snowsuit"
-      @description = "We expect cold weather"
-      save_subtask
+    elsif @max_temp_c > 10
 
       @name = "Winter jacket"
       @description = "We expect cold weather"
       save_subtask
 
       @name = "Pullover"
-      @description = "Recommendation: #{@trip_length / 3}x"
+      @pullover = (@trip_length / 3.to_f).ceil
+      @description = "Recommendation: #{@pullover > 3 ? 3 : @pullover} pullovers"
       save_subtask
+
+    elsif @min_temp_c > 0
+
+      @name = "Winter gloves"
+      @description = "We expect cold weather"
+      save_subtask
+
+    end
+
+    if @min_temp_c <= 0 && @rainfall > 0.5
+
+      @name = "Snow Jacket"
+      @description = "We expect below zero temperatures"
+      save_subtask
+
+      @name = "Snow Boots"
+      @description = "You may be walking on snow"
+      save_subtask
+
     end
 
 end

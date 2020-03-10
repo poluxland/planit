@@ -10,7 +10,7 @@ def get_weather
   # if !JSON.parse(weather_serialized)["data"]["error"].empty?
   if true
     output = JSON.parse(weather_serialized)["data"]["ClimateAverages"][0]["month"]
-    output = output[(@start_date.month - 1)]["absMaxTemp"].to_i
+    # output = output[(@start_date.month - 1)]["absMaxTemp"].to_i
   else
     output = 0
   end
