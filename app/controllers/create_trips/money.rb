@@ -52,17 +52,6 @@ def money(trip)
   #cost of leaving
   def cost_of_living(destination)
     ScraperHelper.get_average_cost(destination)
-    # browser.goto("https://nomadlist.com/cost-of-living/in/#{destination}")
-    # test = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last
-    # if test.nil?
-    #   return false
-    # else
-    #   cost_expat = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last.text
-    #   cost_nomad = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(1) > td").last.text.split(" / ")[0].gsub(/[$,]/, "").to_f
-    #   avr_cost_pd = ((cost_expat+cost_nomad)/2)/30
-    #   return avr_cost_pd
-    #   browser.quit
-    # end
   end
 
 
