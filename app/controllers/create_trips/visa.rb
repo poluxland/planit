@@ -18,7 +18,7 @@ def visa(trip)
 
 
   if @departure_destination == @arrival_destination
-    @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination} you don't need a Visa because you are in the same country")
+    @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination} you don't need a Visa because you are in the same country", category: 'visa')
     @task.trip = trip
     @task.save
 
@@ -30,7 +30,7 @@ def visa(trip)
 
 
     if row.nil?
-      @task = Task.new(tip: nil, name: "Visa requirements", description: "You need to check the requirements with the country")
+      @task = Task.new(tip: nil, name: "Visa requirements", description: "You need to check the requirements with the country", category: 'visa')
       @task.trip = trip
       @task.save
 
@@ -48,7 +48,7 @@ def visa(trip)
       code = row['Code']
 
       if code.to_s.scan(/\D/).empty?
-        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you can travel for #{code} days without a Visa.")
+        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you can travel for #{code} days without a Visa.", category: 'visa')
         @task.trip = trip
         @task.save
 
@@ -56,7 +56,7 @@ def visa(trip)
         @description = "Check the expiration date"
         save_subtask
       else
-        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you need a Visa")
+        @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you need a Visa", category: 'visa')
         @task.trip = trip
         @task.save
 
