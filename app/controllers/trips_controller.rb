@@ -83,8 +83,9 @@ class TripsController < ApplicationController
     @trip_length = (@end_date - @start_date).to_i
     @origin = params[:origin]
     @destination = params[:destination]
+    @destination_short = @destination.split(', ')[0].downcase.capitalize!
 
-    @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "You are traveling for #{@trip_length} to #{@destination}. Happy travels!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
+    @trip = Trip.new(name: "#{@destination_short} - #{@start_date.year}", description: "You are traveling for #{@trip_length} to #{@destination}. Happy travels!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
     @trip.user = current_user if user_signed_in?
     @trip.save
 
@@ -121,7 +122,7 @@ class TripsController < ApplicationController
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
-    money(@trip)
+    # money(@trip)
     last_minute(@trip)
 
     render layout: false
