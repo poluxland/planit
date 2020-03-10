@@ -4,19 +4,19 @@
 
 </div>
 
-<div style="position: absolute; width: 100%; top: 200px; background-color: white">
+<div style="position: absolute; width: 100%; top: 200px; background-color: white; padding: 8px">
   <% if user_signed_in? %>
-    <div class="text-center" id="btn-apear">
-      <h3 class="">Checklist created!</h3>
-      <p class="mt-5">Thank you for already beeing a member!</p>
+    <div class="text-center">
+      <h3 class="m-0 p-0">Checklist created!</h3>
+      <p class="mt-0">Thank you for already beeing a member!</p>
       <%= link_to "See my checklist", trip_path(@trip), class:"btn btn-primary w-50 mt-2" %>
     </div>
 
   <% else %>
 
-    <div class="text-center" id="btn-apear">
+    <div class="text-center">
       <h3 class="mt-5">Checklist created!</h3>
-      <p class="mt-5">We found <%= @trip.tasks.length %> tasks for you! Please log in or register to see your tasks!</p>
+      <p class="mt-0">We found <%= @trip.tasks.length %> tasks for you! Please log in or register to see your tasks!</p>
       <%= link_to "Login or Register", trip_path(@trip), class:"btn btn-primary w-50 mt-2" %>
     </div>
 

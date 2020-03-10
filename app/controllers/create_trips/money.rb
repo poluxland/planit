@@ -1,8 +1,6 @@
 require 'json'
 require 'open-uri'
 require "nokogiri"
-require "ferrum"
-
 
 def money(trip)
   # Create Task
@@ -47,24 +45,24 @@ def money(trip)
     rate_departure_currency = JSON.parse(exchange_rate_serialized)["rates"][departure_currency]
     rate_arrival_currency = JSON.parse(exchange_rate_serialized)["rates"][arival_curency]
     # 1 unity of the dep currency is = to x of the arri => answer in forgein curency
-    rate = (rate_arrival_currency/rate_departure_currency)
+    rate = (rate_arrival_currency/rate_departure_currency) rescue 1
     return rate
   end
 
   #cost of leaving
   def cost_of_living(destination)
-    browser = Ferrum::Browser.new
-    browser.goto("https://nomadlist.com/cost-of-living/in/#{destination}")
-    test = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last
-    if test.nil?
-      return false
-    else
-      cost_expat = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last.text.split(" / ")[0].gsub(/[$,]/, "").to_f
-      cost_nomad = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(1) > td").last.text.split(" / ")[0].gsub(/[$,]/, "").to_f
-      avr_cost_pd = ((cost_expat+cost_nomad)/2)/30
-      return avr_cost_pd
-      browser.quit
-    end
+    ScraperHelper.get_average_cost(destination)
+    # browser.goto("https://nomadlist.com/cost-of-living/in/#{destination}")
+    # test = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last
+    # if test.nil?
+    #   return false
+    # else
+    #   cost_expat = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(2) > td").last.text
+    #   cost_nomad = browser.css(".tab-cost-of-living .details > tbody > tr:nth-child(1) > td").last.text.split(" / ")[0].gsub(/[$,]/, "").to_f
+    #   avr_cost_pd = ((cost_expat+cost_nomad)/2)/30
+    #   return avr_cost_pd
+    #   browser.quit
+    # end
   end
 
 
@@ -86,15 +84,14 @@ def money(trip)
   @rate_us = exchange_rate("USD",@cureny_code_description_departure)
 
 
-  @cost_of_living_for_x_day = cost_of_living(@city_arival_destination)
-
+  @cost_of_living_for_x_day = ScraperHelper::get_average_cost(@city_arival_destination)
 
   #subtask
 
 
   @name = "Make sure you grab enough money"
   if @cost_of_living_for_x_day
-    @description = "As you are traveling for #{@trip_length} day(S), we would recommend to take in total #{((@trip_length * @cost_of_living_for_x_day) * @rate_us).round(2)} #{@cureny_code_description_departure}"
+    @description = "As you are traveling for #{@trip_length} day(s), we would recommend to take in total #{(@trip_length * @cost_of_living_for_x_day * @rate_us).round(0)} #{@cureny_code_description_departure}"
   else
     @description = "We didn't find have information for the country you are going but, we would recommend check website."
   end

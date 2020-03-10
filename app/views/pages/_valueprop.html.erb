@@ -1,9 +1,11 @@
 <h2 style="color: white;">Why use Planit?</h2>
+<p style="color: white">Save yourself from reading countless sources to prepare for your next trip. Planit does it for you to tell you exactly how to prepare.</p>
+
 
 <div class="trip-overview">
 
   <div class="landing-value standare" style="margin: 0px">
-    <%= image_tag "free", width: 100, crop: :fill %>
+    <%= cl_image_tag "free.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>100% free</h4>
       <p>No hidden costs, we make money from helpful adds, which are clearly marked as such.</p>
@@ -11,7 +13,7 @@
   </div>
 
   <div class="landing-value standare" style="margin: 0px">
-    <%= image_tag "privacy", width: 100, crop: :fill %>
+    <%= cl_image_tag "privacy.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Privacy protected</h4>
       <p>We respect your privacy. No Google or Facebook tracking, 100% control over your data.</p>
@@ -19,7 +21,7 @@
   </div>
 
   <div class="landing-value standare" style="margin: 0px">
-    <%= image_tag "community", width: 100, crop: :fill %>
+    <%= cl_image_tag "community.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Constantly improving</h4>
       <p>Planit is constantly improving taking into account the feedback of our users.</p>
@@ -34,15 +36,15 @@
 <div class="trip-overview" style="margin-bottom: 100px; ">
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "user", width: 100, crop: :fill %>
+    <%= cl_image_tag "user.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Your Input</h4>
-      <p>Most imporatanty: Your input. How long you are going, for what purpose, etc.</p>
+      <p>Most importantly: Your input. How long you are going, for what purpose, etc.</p>
     </div>
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "weather", width: 100, crop: :fill %>
+    <%= cl_image_tag "weather.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Weather Data</h4>
       <p>Expected weather at your destination. For example to create the perfect packing list.</p>
@@ -50,7 +52,7 @@
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "visa", width: 100, crop: :fill %>
+    <%= cl_image_tag "visa.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Visa Requirements</h4>
       <p>Based on your residency and travel time, we evaluate your visa requirements.</p>
@@ -58,7 +60,7 @@
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "feedback", width: 100, crop: :fill %>
+    <%= cl_image_tag "feedback.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Community Feedback</h4>
       <p>Tips from other travellers that have been to your destination before.</p>
@@ -66,7 +68,7 @@
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "exchange", width: 100, crop: :fill %>
+    <%= cl_image_tag "exchange.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Exchange Rates</h4>
       <p>Current exchange rate of your destination to give you an idea how to translate prices.</p>
@@ -74,7 +76,7 @@
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "money", width: 100, crop: :fill %>
+    <%= cl_image_tag "money.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Money Needs</h4>
       <p>Cost of living tables to evaluate how much money you should bring.</p>
@@ -82,11 +84,52 @@
   </div>
 
   <div class="landing-value" style="margin: 0px">
-    <%= image_tag "health", width: 100, crop: :fill %>
+    <%= cl_image_tag "health.svg", width: 150, crop: :fill %>
     <div style="padding: 8px;">
       <h4>Health Recommendations</h4>
-      <p>Vaccination recoomendations and more to suggest how to best protect yourself.</p>
+      <p>Vaccination recommendations and more to suggest how to best protect yourself.</p>
     </div>
   </div>
+
+</div>
+
+
+<h2 style="margin-top: 100px; color: white;">Who is behind Planit?</h2>
+<p style="color: white">Planit was developed in 2020 by four guys at Le Wagon Coding Bootcamp in Buenos Aires.</p>
+
+<div class="trip-overview" style="padding-bottom: 300px; position: relative;">
+
+  <div class="landing-value" style="margin: 0px; height: 70px">
+    <%= image_tag "https://avatars3.githubusercontent.com/u/59752068?s=460&v=4", width: 100, crop: :fill, class:"avatar-big" %>
+    <div style="padding: 8px;">
+      <h4>Morgan</h4>
+      <p>Likes to swear a lot during coding.</p>
+    </div>
+  </div>
+
+  <div class="landing-value" style="margin: 0px; height: 70px">
+    <%= image_tag "https://avatars3.githubusercontent.com/u/40840106?s=460&v=4", width: 100, crop: :fill, class:"avatar-big"  %>
+    <div style="padding: 8px;">
+      <h4>Jose</h4>
+      <p>Drinks roughly 2 liters of Coke Light per day.</p>
+    </div>
+  </div>
+
+  <div class="landing-value" style="margin: 0px; height: 70px">
+    <%= image_tag "https://avatars3.githubusercontent.com/u/12211921?s=460&v=4", width: 100, crop: :fill, class:"avatar-big"  %>
+    <div style="padding: 8px;">
+      <h4>Manuel</h4>
+      <p>Works with a laptop crashing every hour.</p>
+    </div>
+  </div>
+
+  <div class="landing-value" style="margin: 0px; height: 70px">
+    <%= image_tag "https://avatars0.githubusercontent.com/u/58520441?s=460&v=4", width: 100, crop: :fill, class:"avatar-big"  %>
+    <div style="padding: 8px;">
+      <h4>Ben</h4>
+      <p>Still owes Sebas a bottle of Fernet.</p>
+    </div>
+  </div>
+
 
 </div>

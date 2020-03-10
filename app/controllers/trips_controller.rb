@@ -82,7 +82,6 @@ class TripsController < ApplicationController
     @end_date = params[:end_date].to_date
     @trip_length = (@end_date - @start_date).to_i
     @origin = params[:origin]
-
     @destination = params[:destination]
 
     @trip = Trip.new(name: "#{@destination} - #{@start_date.year}", description: "You are traveling for #{@trip_length} to #{@destination}. Happy travels!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
@@ -118,6 +117,7 @@ class TripsController < ApplicationController
     accommodation(@trip)
     apps(@trip)
     transportation(@trip)
+    # lonelyplanet(@trip)
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
