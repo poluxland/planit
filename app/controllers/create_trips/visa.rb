@@ -1,6 +1,10 @@
+require 'csv'
 def visa(trip)
   # Create Task
-  require 'csv'
+  @task = Task.new(tip: nil, name: "Get your visa", description: "You might need a visa for #{@destination}. Check with your foreign minstry.", category: 'visa')
+  @task.trip = trip
+  @task.save
+
 
   def save_subtask
     subtask = Subtask.new(name: @name,description: @description)
@@ -68,7 +72,7 @@ def visa(trip)
         @description = "Check the requirements with the embassy"
         save_subtask
 
-        end
       end
+    end
   end
 end
