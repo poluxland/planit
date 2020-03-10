@@ -45,7 +45,7 @@ def money(trip)
     rate_departure_currency = JSON.parse(exchange_rate_serialized)["rates"][departure_currency]
     rate_arrival_currency = JSON.parse(exchange_rate_serialized)["rates"][arival_curency]
     # 1 unity of the dep currency is = to x of the arri => answer in forgein curency
-    rate = (rate_arrival_currency/rate_departure_currency)
+    rate = (rate_arrival_currency/rate_departure_currency) rescue 1
     return rate
   end
 
