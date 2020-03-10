@@ -1,7 +1,7 @@
 <div class="task-container">
   <div class="task-card">
     <div class="cat-icon">
-      <%= cl_image_tag "icon_#{ task.category.nil? ? 'default' : task.category }", width: 50, height: 50, crop: :fit %>
+      <%= cl_image_tag "icon_#{ task.category.nil? ? 'default' : task.category }", width: 512, height: 512, crop: :fit %>
     </div>
     <div class='task-header d-flex'>
       <div class='check'>
