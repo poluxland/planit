@@ -94,9 +94,9 @@ def money(trip)
 
   @name = "Make sure you grab enough money"
   if @cost_of_living_for_x_day
-    @description = "As you are traveling for #{@trip_length} day, we would recommand to take in total #{((@trip_length * @cost_of_living_for_x_day) * @rate_us).round(2)} #{@cureny_code_description_departure}"
+    @description = "As you are traveling for #{@trip_length} day(S), we would recommend to take in total #{((@trip_length * @cost_of_living_for_x_day) * @rate_us).round(2)} #{@cureny_code_description_departure}"
   else
-    @description = "We didn't find have information for the country you are going but, we would recommand check website."
+    @description = "We didn't find have information for the country you are going but, we would recommend check website."
   end
   save_subtask
 
