@@ -1,5 +1,5 @@
 <div id="topbar" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand text-white" do %>
+  <%= link_to root_path, class: "navbar-brand text-dark" do %>
       <div class=""><h2 class="m-0 p-0"><i class="fas fa-globe-americas"></i> Planit</h2></div>
     <% end %>
 
@@ -11,18 +11,18 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item" style="text-decoration: none">
-          <%= link_to 'Feedback', new_feedback_path, class: "nav-link text-white" %>
+          <%= link_to 'Feedback', new_feedback_path, class: "nav-link" %>
         </li>
 
       <% if user_signed_in? %>
 
         <li class="nav-item" style="text-decoration: none">
-          <%= link_to "Home", root_path, class: "nav-link text-white" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
 
 
         <li class="nav-item">
-          <%= link_to "Dashboard", trips_path, class: "nav-link mr-2 text-white" %>
+          <%= link_to "Dashboard", trips_path, class: "nav-link mr-2" %>
         </li>
 
         <li class="nav-item dropdown">
