@@ -1,0 +1,5 @@
+meta_product_name: "Planit"
+meta_title: "Planit - Prepared for everything"
+meta_description: "Planit helps you to prepare for your next trip by creating personalized checklists."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@planit.wtf"   # required for Twitter Cards

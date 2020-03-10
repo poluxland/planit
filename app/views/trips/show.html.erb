@@ -40,7 +40,7 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
-      <div class="overview-grab">
+      <div class="overview-grab mb-5">
         <%= render 'tasks/overview', trip: @trip %>
       </div>
 

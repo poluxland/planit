@@ -74,7 +74,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     authorize @trip
     @trip.destroy
-    redirect_to trips_path
+    redirect_to "/trips#section2"
   end
 
   def loading
