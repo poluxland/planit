@@ -104,7 +104,16 @@ class TripsController < ApplicationController
     @origin = @trip.origin
 
     # Get Weather
-    @max_temp = get_weather
+    @weather = get_weather
+    @weather = @weather[(@start_date.month - 1)]
+
+    @max_temp_c = @weather["absMaxTemp"].to_i
+    @max_temp_f = @weather["absMaxTemp_F"].to_i
+    @min_temp_c = @weather["absMinTemp"].to_i
+    @min_temp_f = @weather["absMinTemp_F"].to_i
+    @rainfall = @weather["avgDailyRainfall"].to_i
+
+    # @max_temp = get_weather
 
     accomodation(@trip)
     apps(@trip)

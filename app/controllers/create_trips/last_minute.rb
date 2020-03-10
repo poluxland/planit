@@ -13,10 +13,10 @@ def last_minute(trip)
   # Create Subtask S
 
   @name = "Make sure you have all documents with you"
-  @description = "Passport, Credit card, cash, booking confirmations and visa!"
+  @description = "Passport, credit card, cash, booking confirmations and visa!"
   save_subtask
 
-  @name = "Prepare the flat/ house"
+  @name = "Prepare the flat / house"
   @description = "Make sure windows are closed, oven and lights are switched off"
   save_subtask
 

@@ -13,14 +13,14 @@ def apps(trip)
   # Create Subtask S
 
   @name = "MapsMe"
-  @description = "Great offlien maps for your trip - You can download #{@destination} before"
+  @description = "Great offline maps for your trip - You can download #{@destination} before"
   save_subtask
 
   @name = "Uber"
   @description = "Works like a charm in #{@destination}"
   save_subtask
 
-  @name = "Tripadivsor"
+  @name = "Tripadvisor"
   @description = "Great for reviews and to find things to do"
   save_subtask
 end
