@@ -7,6 +7,7 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/benbenisuper/ck7ddd5hb0gl81io0t1h1bcrz'
+    // style: 'mapbox://styles/mapbox/light-v10'
   });
 };
 

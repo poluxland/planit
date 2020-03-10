@@ -17,9 +17,21 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .mobile-hide {
     visibility: hidden;
+    display: none;
   }
 }
 
+@media screen and (max-width: 992px) {
+  .mobile-full {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mobile-full {
+    width: auto !important;
+  }
+}
