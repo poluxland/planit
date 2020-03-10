@@ -1,4 +1,4 @@
-require_relative './create_trips/accomodation'
+require_relative './create_trips/accommodation'
 require_relative './create_trips/apps'
 require_relative './create_trips/transportation'
 require_relative './create_trips/packinglist'
@@ -115,7 +115,7 @@ class TripsController < ApplicationController
 
     # @max_temp = get_weather
 
-    accomodation(@trip)
+    accommodation(@trip)
     apps(@trip)
     transportation(@trip)
     packinglist(@trip)

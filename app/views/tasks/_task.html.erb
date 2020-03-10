@@ -1,5 +1,8 @@
 <div class="task-container">
   <div class="task-card">
+    <div class="cat-icon">
+      <%= cl_image_tag "icon_#{ task.category.nil? ? 'default' : task.category }", width: 50, height: 50, crop: :fit %>
+    </div>
     <div class='task-header d-flex'>
       <div class='check'>
         <%= render "tasks/circular_bar" %>

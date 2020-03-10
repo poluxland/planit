@@ -1,6 +1,6 @@
 def visa(trip)
   # Create Task
-  @task = Task.new(tip: nil, name: "Get your visa", description: "You might need a visa for #{@destination}. Check with your foreign minstry.")
+  @task = Task.new(tip: nil, name: "Get your visa", description: "You might need a visa for #{@destination}. Check with your foreign minstry.", category: 'visa')
   @task.trip = trip
   @task.save
 

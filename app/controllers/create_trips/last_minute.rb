@@ -1,6 +1,6 @@
 def last_minute(trip)
   # Create Task
-  @task = Task.new(tip: nil, name: "Last minute preparations", description: "Some recommended last minute checks before leaving.")
+  @task = Task.new(tip: nil, name: "Last minute preparations", description: "Some recommended last minute checks before leaving.", category: 'last_minute')
   @task.trip = trip
   @task.save
 
