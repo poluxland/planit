@@ -4,7 +4,7 @@ def vaccinations(trip)
 
   if @max_temp_c > 23
     @notice = ", as it is really hot there at that time"
-  elsif condition
+  elsif @max_temp_c < 16
     @notice = ", as it is really cold there at that time"
   else
     @notice = ""
