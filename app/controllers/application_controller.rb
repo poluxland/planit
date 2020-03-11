@@ -17,10 +17,12 @@ class ApplicationController < ActionController::Base
   def add_temporary_trip
     unless session["temporary_trip"].nil?
       flash[:alert] = "A trip was successfully linked to your account"
-      @trip = Trip.find(session["temporary_trip"])
-      @trip.session = false
-      @trip.user = current_user
-      @trip.save
+      @trip = Trip.find(session["temporary_trip"]) rescue nil
+      unless @trip == nil
+        @trip.session = false
+        @trip.user = current_user
+        @trip.save
+      end
     end
   end
 

@@ -23,4 +23,5 @@ def last_minute(trip)
   @name = "Charge your phone"
   @description = "Make sure your phone is charged when you leave."
   save_subtask
+
 end
