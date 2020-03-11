@@ -11,6 +11,21 @@ class Trip < ApplicationRecord
   validates :description,  presence: :true
   validates :location, presence: :true
 
+  before_validation :assign_unique_code
+
+  validates! :code, uniqueness: true
+
+
+  CODE = (100_000_000..999_999_999)
+
+  def assign_unique_code
+    self.code = loop do
+      code = rand(CODE)
+      break code unless Trip.exists?(code: code)
+
+    end
+  end
+
   def photo_key
     if self.photo.attached?
       self.photo.key
