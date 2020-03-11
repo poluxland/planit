@@ -84,6 +84,9 @@ class TripsController < ApplicationController
     @origin = params[:origin]
     @destination = params[:destination]
     @destination_short = @destination.split(', ')[0].downcase.capitalize!
+    @gender = params[:gender]
+    @purpose = params[:purpose]
+    @age = params[:age]
 
     @trip = Trip.new(name: "#{@destination_short} - #{@start_date.year}", description: "You are traveling for #{@trip_length} to #{@destination}. Happy travels!", location: @destination, start_date: @start_date, end_date: @end_date, gender: @gender, age: @age, origin: @origin, purpose: @purpose)
     @trip.user = current_user if user_signed_in?
@@ -102,6 +105,9 @@ class TripsController < ApplicationController
     @end_date = @trip.end_date.to_date
     @trip_length = (@end_date - @start_date).to_i
     @origin = @trip.origin
+    @gender = @trip.gender
+    @age = @trip.age
+    @purpose = @trip.purpose
 
     # Get Weather
     @weather = get_weather
