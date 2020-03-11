@@ -31,7 +31,7 @@ const initOpenTaskOnClick = () => {
 
       if(event.target && event.target.classList.contains('new-subtask-btn')){
         let task = event.target
-
+        console.log(task)
         task.classList.toggle('active')
         task.classList.toggle('submit-btn')
         task.parentElement.lastElementChild.firstElementChild.reset()
@@ -39,9 +39,9 @@ const initOpenTaskOnClick = () => {
         task.parentElement.lastElementChild.classList.toggle('submit-form')
       }
 
-      if(event.target && event.target.classList.contains('grab-btn')){
+      if(event.target && event.target.classList.contains('grab-subtask-btn')){
         let task = event.target.closest('.new-subtask-btn')
-
+        console.log(task)
         task.classList.toggle('active')
         task.classList.toggle('submit-btn')
         task.parentElement.lastElementChild.firstElementChild.reset()
