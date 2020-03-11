@@ -4,7 +4,7 @@ require "nokogiri"
 
 def safety(trip)
 
-  @task = Task.new(tip: nil, name: "Stay safe", description: "Make sur to know level of safety of your destination", category: 'safety')
+  @task = Task.new(tip: nil, name: "Stay safe", description: "Make sure to check the level of safety of your destination", category: 'safety')
   @task.trip = trip
   @task.save
 
