@@ -2,9 +2,9 @@ require 'open-uri'
 require "nokogiri"
 
 
-def safty(trip)
+def safety(trip)
 
-  @task = Task.new(tip: nil, name: "Stay safe", description: "Make sur to know level of safty of your destination", category: 'safty')
+  @task = Task.new(tip: nil, name: "Stay safe", description: "Make sure to check the level of safety of your destination", category: 'safety')
   @task.trip = trip
   @task.save
 
@@ -31,13 +31,9 @@ def safty(trip)
       end
       return score
     rescue Exception => e
-      p e
       return false
     end
   end
-
-  # p safty_test(@safty_arrival).to_i
-  # p safty_test(@safty_departure).to_i
 
   if safty_test(@ar_country) == false || safty_test(@de_country) == false
     @name = "No information about your country!"
@@ -46,33 +42,31 @@ def safty(trip)
   else
     @safty_arrival = safty_test(@ar_country).to_i
     @safty_departure = safty_test(@de_country).to_i
-  end
 
+    if @safty_arrival < @safty_departure
+      @country_comparison = "#{@ar_country.capitalize} is less safe than #{@de_country.capitalize}"
+    else
+      @country_comparison = "#{@ar_country.capitalize} is more safe than #{@de_country.capitalize}"
+    end
 
-
-  if @safty_arrival < @safty_departure
-    @country_comparison = "#{@ar_country.capitalize} is less safe than #{@de_country.capitalize}"
-  else
-    @country_comparison = "#{@ar_country.capitalize} is more safe than #{@de_country.capitalize}"
-  end
-
-  case @safty_arrival
-  when 0..40
-    @name = "Be carefull!"
-    @description = "#{@country_comparison}. #{@ar_country.capitalize} is considered unsafe, it's score is #{@safty_arrival}/100. So you should think twice and try not to travel alone"
-    save_subtask
-  when 41..60
-    @name = "Be carefull!"
-    @description = "#{@country_comparison}. #{@ar_country.capitalize} is not too safe but it's ok, it's score is #{@safty_arrival}/100. Travelling alone might not be a good idea"
-    save_subtask
-  when 61..80 then
-    @name = "You should be ok!"
-    @description = "#{@country_comparison}. #{@ar_country.capitalize} is pretty safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself"
-    save_subtask
-  when 80..100
-    @name = "Safety won't be an issue!"
-    @description = "#{@country_comparison}. #{@ar_country.capitalize} is a super safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself"
-    save_subtask
+    case @safety_arrival
+    when 0..40
+      @name = "Be carefull!"
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is considered unsafe, it's score is #{@safty_arrival}/100. So you should think twice and try not to travel alone"
+      save_subtask
+    when 41..60
+      @name = "Be carefull!"
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is not too safe but it's ok, it's score is #{@safty_arrival}/100. Travelling alone might not be a good idea"
+      save_subtask
+    when 61..80 then
+      @name = "You should be ok!"
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is pretty safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself"
+      save_subtask
+    when 80..100
+      @name = "Safety won't be an issue!"
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is a super safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself"
+      save_subtask
+    end
   end
 
 
