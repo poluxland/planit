@@ -7,6 +7,7 @@ require_relative './create_trips/vaccinations'
 require_relative './create_trips/weatherdata'
 require_relative './create_trips/last_minute'
 require_relative './create_trips/money'
+require_relative './create_trips/safty'
 
 class TripsController < ApplicationController
   before_action :authenticate_user!
@@ -122,6 +123,7 @@ class TripsController < ApplicationController
     packinglist(@trip)
     visa(@trip)
     vaccinations(@trip)
+    safty(@trip)
     money(@trip)
     last_minute(@trip)
 
