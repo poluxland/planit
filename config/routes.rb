@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  get 'share', to: 'pages#share', as: 'share'
+  post 'share_ref', to: 'pages#share_ref', as: 'share_ref'
+
   resources :trips do
     resources :tasks, only: [:new, :create]
   end
