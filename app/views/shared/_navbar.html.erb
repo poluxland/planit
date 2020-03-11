@@ -11,15 +11,14 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item" style="text-decoration: none">
-          <%= link_to 'Feedback', new_feedback_path, class: "nav-link" %>
-        </li>
+        <%= link_to 'Feedback', new_feedback_path, class: "nav-link" %>
+      </li>
 
       <% if user_signed_in? %>
 
         <li class="nav-item" style="text-decoration: none">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-
 
         <li class="nav-item">
           <%= link_to "Dashboard", trips_path, class: "nav-link mr-2" %>
