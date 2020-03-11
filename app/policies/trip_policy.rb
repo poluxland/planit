@@ -40,4 +40,8 @@ class TripPolicy < ApplicationPolicy
   def background_create?
     true
   end
+
+  def share_ref?
+    true
+  end
 end
