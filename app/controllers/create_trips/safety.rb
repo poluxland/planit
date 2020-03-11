@@ -11,13 +11,13 @@ def safety(trip)
   @ar_country = @trip.location.split(', ')[-1].gsub(/ /, '-').downcase
   @de_country = @trip.origin.split(', ')[-1].gsub(/ /, '-').downcase
 
-  # if @ar_country == "people's-republic-of-china"
-  #   @ar_country = "china"
-  # end
+  if @ar_country == "people's-republic-of-china"
+    @ar_country = "china"
+  end
 
-  # if @de_country == "people's-republic-of-china"
-  #   @de_country = "china"
-  # end
+  if @de_country == "people's-republic-of-china"
+    @de_country = "china"
+  end
 
 
   def safty_test(country)
@@ -49,7 +49,7 @@ def safety(trip)
       @country_comparison = "#{@ar_country.capitalize} is more safe than #{@de_country.capitalize}"
     end
 
-    case @safety_arrival
+    case @safty_arrival
     when 0..40
       @name = "Be carefull!"
       @description = "#{@country_comparison}. #{@ar_country.capitalize} is considered unsafe, it's score is #{@safty_arrival}/100. So you should think twice and try not to travel alone"
@@ -58,7 +58,7 @@ def safety(trip)
       @name = "Be carefull!"
       @description = "#{@country_comparison}. #{@ar_country.capitalize} is not too safe but it's ok, it's score is #{@safty_arrival}/100. Travelling alone might not be a good idea"
       save_subtask
-    when 61..80 then
+    when 61..80
       @name = "You should be ok!"
       @description = "#{@country_comparison}. #{@ar_country.capitalize} is pretty safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself"
       save_subtask
