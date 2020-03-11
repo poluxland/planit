@@ -3,5 +3,5 @@
 //   $("#btn-apear").show();
 // },5100);
 
-$('#btn-apear').hide().delay(13000).fadeIn(700);
+$('#btn-apear').hide().delay(18000).fadeIn(700);
 
