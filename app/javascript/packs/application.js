@@ -24,3 +24,4 @@ initAutocomplete();
 import { initAutocompletes } from "../plugins/init_autocomplete";
 initAutocompletes();
 
+import '../components/tasks';

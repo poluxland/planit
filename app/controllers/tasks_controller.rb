@@ -62,9 +62,15 @@ class TasksController < ApplicationController
 
   def destroy
    @task = Task.find(params[:id])
+   @trip = @task.trip
    authorize @task
-   @task.destroy
-   redirect_to trip_path(@task.trip)
+
+   if @task.destroy
+      respond_to do |format|
+        format.html { redirect_to trip_path(@task.trip) }
+        format.js
+      end
+    end
   end
 
   private

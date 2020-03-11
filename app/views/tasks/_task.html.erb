@@ -1,11 +1,10 @@
-<div class="task-container">
+<div class="task-container" id="<%= "#{task.id}" %>">
   <div class="task-card">
     <div class="cat-icon">
       <%= cl_image_tag "icon_#{ task.category.nil? ? 'default' : task.category }", width: 512, height: 512, crop: :fit %>
     </div>
     <div class='task-header d-flex'>
-      <div class='check'>
-        <%= render "tasks/circular_bar" %>
+      <div class='check' id="check-<%= "#{task.id}" %>">
         <i class='far fa-<%= task.status == true ? 'check-' : '' %>square' data-task-id = '<%= task.id %>'></i>
       </div>
       <div class='info'>
@@ -20,27 +19,13 @@
       <%= link_to edit_task_path(task), class: 'btn' do %>
       <i class="far fa-edit"></i>
       <% end %>
-      <%= link_to task_path(task), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= link_to task_path(task), class: 'btn', method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
       <i class="far fa-trash-alt"></i>
       <% end %>
     </div>
   </div>
   <div class="subtasks">
-    <div class="subtasks-col">
-      <% task.subtasks.each do |subtask| %>
-
-      <%= render "subtasks/subtask", task: task, subtask: subtask %>
-
-      <% end %>
-    </div>
-    <div class="new-subtask-btn active">
-      <div class='btn' id='new-subtask-btn'>
-        <div class="grab-btn d-flex align-items-center text-center"><i class="grab-btn fas fa-plus py-auto"></i><h2 class='grab-btn btn-lbl pl-2'>Add Subtask</h2></div>
-      </div>
-    </div>
-    <div class="new-subtask-form">
-      <%= render 'subtasks/create_form', task: task, subtask: Subtask.new %>
-    </div>
+    <%= render "subtasks/subtasks", task: task %>
   </div>
 
   <div class="task-down">

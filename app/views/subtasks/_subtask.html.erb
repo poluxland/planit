@@ -1,5 +1,5 @@
 
-  <div class="subtask-card">
+  <div class="subtask-card" id="<%= "#{subtask.task.id}-#{subtask.id}" %>">
     <div class='subtask-header d-flex'>
       <div class='check'>
         <%= link_to subtask_path(subtask, ajax: true), class: 'check-btn', remote: true, method: :patch do %>
@@ -15,7 +15,7 @@
       <%= link_to edit_subtask_path(subtask), class: 'edit-btn btn' do %>
       <i class="far fa-edit"></i>
       <% end %>
-      <%= link_to subtask_path(subtask), class: 'btn', method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= link_to subtask_path(subtask), class: 'btn', remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
       <i class="far fa-trash-alt"></i>
       <% end %>
     </div>
