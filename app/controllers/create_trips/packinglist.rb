@@ -12,6 +12,48 @@ def packinglist(trip)
 
   # Create Subtask S
 
+
+  @arrival_destination = @trip.location.split(', ')[-1].downcase.capitalize!
+  @departure_destination = @trip.origin.split(', ')[-1].downcase.capitalize!
+
+  plug_table = CSV.parse(File.read("#{Rails.root}/public/volt.csv"), headers: true)
+  #row = plug_table.find {|row| row["country"] == "Chile"}
+  row = plug_table.find {|i| i[0] == "#{@arrival_destination}"}
+  row2 = plug_table.find {|i| i[0] == "#{@departure_destination}"}
+
+  if row.nil?
+  @name = "Plug adapter"
+  @description = "We recommend brind a plug adapter"
+  save_subtask
+
+  elsif @departure_destination == @arrival_destination
+  @name = "Plug adapter"
+  @description = "You are traveling in the same country but can be differents clases of plugs"
+  save_subtask
+
+  else
+  count = row[0]
+  volt = row[1]
+  freq = row[2]
+  plug = row[3]
+  count_o = row2[0]
+  volt_o = row2[1]
+  freq_o = row2[2]
+  plug_o = row2[3]
+
+    if plug == plug_o && freq == freq_o
+      @name = "Plug adapter"
+      @description = "In #{count} and in #{count_o} have the same kind of plug #{plug} and same #{volt_o}V but if you plan to travel to another country after bring you plug adapter"
+      save_subtask
+    else
+
+    @name = "Plug adapter"
+    @description = "In #{count} use #{volt}V #{freq}Hz and #{plug} kind of plug and in #{count_o} use #{volt_o}V #{freq_o}Hz and #{plug_o} kind of plug bring your adapter https://www.worldstandards.eu/electricity/plugs-and-sockets/"
+    save_subtask
+    end
+  end
+
+
     # Basics
     @name = "Shoes"
     @description = "Recommendation: 2x pairs"
@@ -121,5 +163,46 @@ def packinglist(trip)
       save_subtask
 
     end
+
+
+
+
+
+
+
+
+    # if row.nil?
+
+    #   @name = "Get your passport!"
+    #   @description = "Check the expiration date"
+    #   save_subtask
+
+    #   @name = "Get your Visa!"
+    #   @description = "Check the requirements with the embassy"
+    #   save_subtask
+    # else
+    #   code = row['Code']
+
+    #   if code.to_s.scan(/\D/).empty?
+    #     @name = "Get your passport!"
+    #     @description = "Check the expiration date"
+    #     save_subtask
+    #   else
+    #     @name = "Get your passport!"
+    #     @description = "Check the expiration date"
+    #     save_subtask
+
+    #     @name = "Get your Visa!"
+    #     @description = "Check the requirements with the embassy"
+    #     save_subtask
+    #   end
+    # end
+
+
+
+
+
+
+
 
 end

@@ -1,0 +1,258 @@
+﻿A,B,C,D
+Afghanistan,220,50,CF
+Albania,230,50,CF
+Algeria,230,50,CF
+American Samoa,120,60,ABFI
+Andorra,230,50,CF
+Angola,220,50,C
+Anguilla,110,60,AB
+Antigua and Barbuda,230,60,AB
+Argentina,220,50,CI
+Armenia,230,50,CF
+Aruba,120,60,ABF
+Australia,240,50,I
+Austria,230,50,CF
+Azerbaijan,220,50,CF
+Azores,230,50,BCF
+Bahamas,120,60,AB
+Bahrain,230,50,G
+Balearic Islands,230,50,CF
+Bangladesh,220,50,ACDGK
+Barbados,115,50,AB
+Belarus,220,50,CF
+Belgium,230,50,CE
+Belize,110 220,60,ABG
+Benin,220,50,CE
+Bermuda,120,60,AB
+Bhutan,230,50,CDG
+Bolivia,230,50,AC
+Bonaire,127,50,AC
+Bosnia & Herzegovina,230,50,CF
+Botswana,230,50,DG
+Brazil,127 220,60,CN
+Britishirgin Islands,110,60,AB
+Brunei,240,50,G
+Bulgaria,230,50,CF
+Burkina Faso,220,50,CE
+Myanmar,230,50,ACDGI
+Burundi,220,50,CE
+Cambodia,230,50,ACG
+Cameroon,220,50,CE
+Canada,120,60,AB
+Canary Islands,230,50,CEF
+Capeerde,230,50,CF
+Cayman Islands,120,60,AB
+Central African Republic,220,50,CE
+Chad,220,50,CDEF
+Channel Islands,230,50,CG
+Chile,220,50,CL
+China, People’s Republic of,220,50,ACI
+Christmas Island,230,50,I
+Cocos Islands,230,50,I
+Colombia,110,60,AB
+Comoros,220,50,CE
+Congo, Dmocratic Republic of the,220,50,CDE
+Congo, Republic of the,230,50,CE
+Cook Islands,240,50,I
+Costa Rica,120,60,AB
+Côte d’Ivoire,220,50,CE
+Croatia,230,50,CF
+Cuba,110 220,60,ABCL
+Curaçao,127,50,AB
+Cyprus,230,50,G
+Cyprus, North,230,50,G
+Czechia,230,50,CE
+Dnmark,230,50,CEFK
+Dibouti,220,50,CE
+Dminica,230,50,DG
+Dminican Republic,120,60,ABC
+Dbai,230,50,G
+East Timor,220,50,CEFI
+Ecuador,120,60,AB
+Egypt,220,50,CF
+El Salvador,120,60,AB
+England,230,50,G
+Equatorial Guinea,220,50,CE
+Eritrea,230,50,CL
+Estonia,230,50,CF
+Ethiopia,220,50,CFG
+Faeroe Islands,230,50,CEFK
+Falkland Islands,240,50,G
+Fiji,240,50,I
+Finland,230,50,CF
+France,230,50,CE
+French Guiana,220,50,CDE
+Gabon (Gabonese Republic),220,50,C
+Gambia,230,50,G
+Gaza Strip (Gaza),230,50,CH
+Georgia,220,50,CF
+Germany,230,50,CF
+Ghana,230,50,DG
+Gibraltar,230,50,G
+Great Britain (GB),230,50,G
+Greece,230,50,CF
+Greenland,230,50,CEFK
+Grenada,230,50,G
+Guadeloupe,230,50,CE
+Guam,110,60,AB
+Guatemala,120,60,AB
+Guinea,220,50,CFK
+Guinea-Bissau,220,50,C
+Guyana,120 240,60,ABDG
+Haiti,110,60,AB
+Netherlands,230,50,CF
+Honduras,120,60,AB
+Hong Kong,220,50,G
+Hungary,230,50,CF
+Iceland,230,50,CF
+India,230,50,CDM
+Indonesia,230,50,CF
+Iran,230,50,CF
+Iraq,230,50,CDG
+Ireland,230,50,G
+Northern Ireland,230,50,G
+Isle of Man,230,50,CG
+Israel,230,50,CH
+Italy,230,50,CFL
+Jamaica,110,50,AB
+Japan,100,50 60,AB
+Jordan,230,50,CDFGJ
+Kazakhstan,220,50,CF
+Kenya,240,50,G
+Kiribati,240,50,I
+Korea, North,220,50,C
+Korea, South,220,60,F
+Kosovo,230,50,CF
+Kuwait,240,50,G
+Kyrgyzstan,220,50,CF
+Laos,230,50,ABCEF
+Latvia,230,50,CF
+Lebanon,230,50,CDG
+Lesotho,220,50,M
+Liberia,120 220,60,ABCF
+Libya,230,50,CL
+Liechtenstein,230,50,CJ
+Lithuania,230,50,CF
+Luxembourg,230,50,CF
+Macau,220,50,G
+Macedonia, North,230,50,CF
+Madagascar,220,50,CE
+Madeira,230,50,CF
+Malawi,230,50,G
+Malaysia,240,50,G
+Maldives,230,50,CDGJKL
+Mali,220,50,CE
+Malta,230,50,G
+Marshall Islands,120,60,AB
+Martinique,220,50,CDE
+Mauritania,220,50,C
+Mauritius,230,50,CG
+Mayotte,230,50,CE
+Mexico,120,60,AB
+Micronesia, Federated States of,120,60,AB
+Moldova,230,50,CF
+Monaco,230,50,CEF
+Mongolia,230,50,CE
+Montenegro,230,50,CF
+Montserrat,230,60,AB
+Morocco,220,50,CE
+Mozambique,220,50,CFM
+Myanmar (formerly Burma),230,50,ACDGI
+Namibia,220,50,DM
+Nauru,240,50,I
+Nepal,230,50,CDM
+Netherlands,230,50,CF
+New Caledonia,220,50,CF
+New Zealand,230,50,I
+Nicaragua,120,60,AB
+Niger,220,50,CDEF
+Nigeria,230,50,DG
+Niue,230,50,I
+Norfolk Island,230,50,I
+North Cyprus,230,50,G
+Northern Ireland,230,50,G
+North Korea,220,50,C
+North Macedonia,230,50,CF
+Norway,230,50,CF
+Oman,240,50,G
+Pakistan,230,50,CDPalau,120,60,AB
+Palestine,230,50,CH
+Panama,120,60,AB
+Papua New Guinea,240,50,I
+Paraguay,220,50,C
+Peru,220,60,ABC
+Philippines,220,60,ABC
+Pitcairn Islands,230,50,I
+Poland,230,50,CE
+Portugal,230,50,CF
+Puerto Rico,120,60,AB
+Qatar,240,50,G
+Réunion,230,50,CE
+Romania,230,50,CF
+Russia,220,50,CF
+Rwanda,230,50,CEFG
+Saba,110,60,AB
+Saint Barthélemy,230,60,CE
+Saint Kitts and Nevis,230,60,DG
+Saint Lucia,230,50,G
+Saint Martin,220,60,CE
+Saint Helena,230,50,G
+Sint Eustatius,110 220,60,ABCF
+Sint Maarten,110,60,AB
+Saintincent and the Grenadines,110,50,ABG
+Samoa,230,50,I
+San Marino,230,50,CFL
+São Tomé and Príncipe,230,50,CF
+Saudi Arabia,220,60,G
+Scotland,230,50,G
+Senegal,230,50,CDEK
+Serbia,230,50,CF
+Seychelles,240,50,G
+Sierra Leone,230,50,DG
+Singapore,230,50,G
+Slovakia,230,50,CE
+Slovenia,230,50,CF
+Solomon Islands,230,50,GI
+Somalia,220,50,G
+Somaliland,220,50,G
+South Africa,230,50,CM
+South Korea,220,60,F
+South Sudan,230,50,CDSpain,230,50,CF
+Sri Lanka,230,50,G
+Sudan,230,50,CDSuriname,127 220,60,ABCF
+Swaziland,230,50,M
+Sweden,230,50,CF
+Switzerland,230,50,CJ
+Syria,220,50,CEL
+Tahiti,220,50 60,CE
+Taiwan,110,60,AB
+Tajikistan,220,50,CF
+Tanzania,230,50,DG
+Thailand,230,50,ABCO
+Togo,220,50,C
+Tokelau,230,50,I
+Tonga,240,50,I
+Trinidad & Tobago,115,60,AB
+Tunisia,230,50,CE
+Turkey,230,50,CF
+Turkmenistan,220,50,CF
+Turks and Caicos Islands,120,60,AB
+Tuvalu,230,50,I
+Uganda,240,50,G
+Ukraine,230,50,CF
+United Arab Emirates,230,50,G
+United Kingdom,230,50,G
+United States of America,120,60,AB
+United States Virgin Islands,110,60,AB
+Uruguay,220,50,CFL
+Uzbekistan,220,50,CF
+Vanuatu,230,50,I
+Vatican City,230,50,CFL
+Venezuela,120,60,AB
+Vietnam,220,50,ABC
+Virgin Islands,110,60,AB
+Wales,230,50,G
+Western Sahara,220,50,CE
+Yemen,230,50,ADG
+Zambia,230,50,CDG
+Zimbabwe,240,50,DG
