@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: impromaq
+    environment:
+      - APPLICATION_PORT=3310
+      - DATABASE_URL=postgres://howyeoidkwxfds:4f28ef84bf8fd9f90cff0f49ce2cf69bef0af72d2db2a8b17fba7762ef1f59ad@ec2-54-247-169-129.eu-west-1.compute.amazonaws.com:5432/d8fqd7j0vspk52
+      - DATABASE_SCHEMA=public
+      - DATABASE_SSL=true
+      - FOREST_AUTH_SECRET=811157a70990818fc835d7d837dc0d265449a1e79bfc1eda0509674b3736ebf3348e9da57f7daf6edf2e4684b181dd10
+      - FOREST_ENV_SECRET=d9f50c8213e8ce19ad23c4ef6b28c83ec18363c5fd280805b25456538c4fc4e0
+    ports:
+      - "3310:3310"
+    volumes:
+      - ./:/usr/src/app
