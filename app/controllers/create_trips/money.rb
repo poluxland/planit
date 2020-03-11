@@ -8,17 +8,17 @@ def money(trip)
   @task.trip = trip
   @task.save
 
-  @arival_destination = @trip.location.split(', ')[-1].downcase
-  @city_arival_destination = @trip.location.split(', ')[0].gsub(/ /, '-').downcase
+  @arrival_country = @trip.location.split(', ')[-1]
+  @city_arrival = @trip.location.split(', ')[0].gsub(/ /, '-').downcase
 
-  @departure_destination = @trip.origin.split(', ')[-1].downcase
+  @departure_country = @trip.origin.split(', ')[-1]
 
 
   # What is the curency
-  def currency_finder(destination)
+  def currency_finder(country)
     begin
-      url_destination = "https://restcountries.eu/rest/v2/name/#{destination}"
-      url_destination_format = URI::encode(url_destination)
+      url_country = "https://restcountries.eu/rest/v2/name/#{country}"
+      url_destination_format = URI::encode(url_country)
       curency_serialized = open(url_destination_format).read
       curency_code = JSON.parse(curency_serialized).first["currencies"].first["code"]
       curency_name = JSON.parse(curency_serialized).first["currencies"].first["name"]
@@ -61,19 +61,19 @@ def money(trip)
     subtask.save
   end
 
-  @cureny_code_description_arrival = currency_finder(@arival_destination)[:code]
-  @cureny_code_description_departure = currency_finder(@departure_destination)[:code]
+  @cureny_code_description_arrival = currency_finder(@arrival_country)[:code]
+  @cureny_code_description_departure = currency_finder(@departure_country)[:code]
 
-  @cureny_name_description_arrival = currency_finder(@arival_destination)[:name]
+  @cureny_name_description_arrival = currency_finder(@arrival_country)[:name]
 
-  @cureny_symbol_description_arrival = currency_finder(@arival_destination)[:symbol]
+  @cureny_symbol_description_arrival = currency_finder(@arrival_country)[:symbol]
 
   @rate = exchange_rate(@cureny_code_description_departure, @cureny_code_description_arrival)
 
   @rate_us = exchange_rate("USD",@cureny_code_description_departure)
 
 
-  @cost_of_living_for_x_day = ScraperHelper::get_average_cost(@city_arival_destination)
+  @cost_of_living_for_x_day = ScraperHelper::get_average_cost(@city_arrival)
 
   #subtask
 
@@ -87,7 +87,7 @@ def money(trip)
   save_subtask
 
   @name = "Make sure to change some money"
-  @description = "In #{@arival_destination}, they use the #{@cureny_name_description_arrival} (#{@cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
+  @description = "In #{@arrival_country}, they use the #{@cureny_name_description_arrival} (#{@cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
   Today for for 10 #{@cureny_code_description_departure} you will have #{(@rate * 10).round(2)} #{@cureny_code_description_arrival}."
   save_subtask
 
