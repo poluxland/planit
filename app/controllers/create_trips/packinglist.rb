@@ -26,6 +26,11 @@ def packinglist(trip)
   @description = "We recommend brind a plug adapter"
   save_subtask
 
+  elsif row2.nil?
+  @name = "Plug adapter"
+  @description = "We recommend brind a plug adapter"
+  save_subtask
+
   elsif @departure_destination == @arrival_destination
   @name = "Plug adapter"
   @description = "You are traveling in the same country but can be differents clases of plugs"
