@@ -1,0 +1,11 @@
+subtask = document.getElementById('<%= "#{@subtask.task.id}-#{@subtask.id}" %>')
+console.log(subtask)
+subtask.remove()
+
+refresh('.overview-grab',`<%= render 'tasks/overview', trip: @trip %>`)
+
+refresh('.progress-message[data-task-id="<%= @task.id %>"]',`<%= render "tasks/progress_message", task: @task %>`)
+
+console.log(document.getElementById('check-<%= "#{@subtask.task.id}" %>'))
+refreshById('check-<%= "#{@subtask.task.id}" %>',`<i class='far fa-<%= @subtask.task.status == true ? 'check-' : '' %>square' data-task-id = '<%= @subtask.task.id %>'></i>`)
+
