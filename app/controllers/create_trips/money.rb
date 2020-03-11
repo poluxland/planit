@@ -4,7 +4,7 @@ require "nokogiri"
 
 def money(trip)
   # Create Task
-  @task = Task.new(tip: nil, name: "Let's speak monney ", description: "We have prepared some helpful apps for your trip.", category: 'money')
+  @task = Task.new(tip: nil, name: "Let's speak money ", description: "We have prepared some helpful apps for your trip.", category: 'money')
   @task.trip = trip
   @task.save
 
