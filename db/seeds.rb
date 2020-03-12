@@ -41,3 +41,5 @@ Task.create!({
   tip: "tip"
 })
 
+chatroom = ChatRoom.create(name: 'chatroom')
+
