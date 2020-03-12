@@ -50,9 +50,9 @@ def money(trip)
   end
 
   #cost of leaving
-  def cost_of_living(destination)
-    ScraperHelper.get_average_cost(destination)
-  end
+  # def cost_of_living(destination)
+  #   ScraperHelper.get_average_cost(destination)
+  # end
 
 
   def save_subtask
@@ -73,18 +73,22 @@ def money(trip)
   @rate_us = exchange_rate("USD",@cureny_code_description_departure)
 
 
-  @cost_of_living_for_x_day = ScraperHelper::get_average_cost(@city_arrival)
+  @cost_of_living_for_x_day = ScraperHelper::get_average_cost(@city_arrival)[:cost_of_leaving]
+  @suggested_atm_city = ScraperHelper::get_suggested_atm(@city_arrival)[:suggested_atm]
 
-  #subtask
 
 
-  @name = "Make sure you grab enough money"
   if @cost_of_living_for_x_day
+    @name = "Make sure you grab enough money"
     @description = "As you are traveling for #{@trip_length} day(s), we would recommend to take in total #{(@trip_length * @cost_of_living_for_x_day * @rate_us).round(0)} #{@cureny_code_description_departure}"
-  else
-    @description = "We didn't find have information for the country you are going but, we would recommend check website."
+    save_subtask
   end
-  save_subtask
+
+  if @suggested_atm_city
+    @name = "Make sure to wiwdrow the right amount"
+    @description ="In #{@arrival_country} we recommend to wiwdrow #{(@suggested_atm_city * @rate_us).round(0)} #{@cureny_code_description_departure} at once."
+    save_subtask
+  end
 
   @name = "Make sure to change some money"
   @description = "In #{@arrival_country}, they use the #{@cureny_name_description_arrival} (#{@cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).

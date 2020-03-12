@@ -10,24 +10,41 @@ module ScraperHelper
   end
 
   def self.get_average_cost(arrival)
+    content_hash = {}
+
     browser = ScraperHelper.build
-    p arrival
     cost_of_leaving_url = "https://nomadlist.com/cost-of-living/in/#{arrival.downcase}"
     browser.visit(cost_of_leaving_url)
     cost_of_leaving = browser.all(".tab-cost-of-living table tr:nth-child(1)").first
 
-    # nomad_guide_url = "https://nomadlist.com/nomad-guide/#{arrival.downcase}"
-    # browser.visit(nomad_guide_url)
-
-    p cost_of_leaving
 
     if cost_of_leaving.nil?
-      return false
+      content_hash[:cost_of_leaving] = false
     else
       nomad_cost_data = browser.all(".tab-cost-of-living table tr:nth-child(1)").first.text.gsub(",","").match(/\d+/)[0].to_i
       expat_cost_data = browser.all(".tab-cost-of-living table tr:nth-child(2)").first.text.gsub(",","").match(/\d+/)[0].to_i
-      return (nomad_cost_data + expat_cost_data).fdiv(60)
+      content_hash[:cost_of_leaving] = (nomad_cost_data + expat_cost_data).fdiv(60)
     end
+
+    return content_hash
+  end
+
+  def self.get_suggested_atm(arrival)
+    content_hash = {}
+    browser = ScraperHelper.build
+
+    nomad_guide_url = "https://nomadlist.com/nomad-guide/#{arrival.downcase}"
+    browser.visit(nomad_guide_url)
+    suggested_atm = browser.find_all("tr", text:/Suggested ATM?/i).first
+
+    if suggested_atm.nil?
+      content_hash[:suggested_atm] = false
+    else
+      suggested_atm_data = browser.find_all("tr", text:/Suggested ATM?/i).first.find(".value").text.gsub(/\D/, "").to_i
+      content_hash[:suggested_atm] = suggested_atm_data
+    end
+
+    return content_hash
   end
 
 end
