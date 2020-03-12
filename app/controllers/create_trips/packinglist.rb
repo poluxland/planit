@@ -23,17 +23,17 @@ def packinglist(trip)
 
   if row.nil?
   @name = "Plug adapter"
-  @description = "We recommend brind a plug adapter"
+  @description = "We recommend bringing a plug adapter"
   save_subtask
 
   elsif row2.nil?
   @name = "Plug adapter"
-  @description = "We recommend brind a plug adapter"
+  @description = "We recommend bringing a plug adapter"
   save_subtask
 
   elsif @departure_destination == @arrival_destination
   @name = "Plug adapter"
-  @description = "You are traveling in the same country but can be differents clases of plugs"
+  @description = "You are traveling in the same country, so nothing to worry about"
   save_subtask
 
   else
@@ -48,12 +48,12 @@ def packinglist(trip)
 
     if plug == plug_o && freq == freq_o
       @name = "Plug adapter"
-      @description = "In #{count} and in #{count_o} have the same kind of plug #{plug} and same #{volt_o}V but if you plan to travel to another country after bring you plug adapter"
+      @description = "In #{count} and in #{count_o}, they have the same kind of plug #{plug} and same #{volt_o}V but if you plan to travel to another country after bring you plug adapter"
       save_subtask
     else
 
     @name = "Plug adapter"
-    @description = "In #{count} use #{volt}V #{freq}Hz and #{plug} kind of plug and in #{count_o} use #{volt_o}V #{freq_o}Hz and #{plug_o} kind of plug bring your adapter https://www.worldstandards.eu/electricity/plugs-and-sockets/"
+    @description = "In #{count}, they use #{volt}V #{freq}Hz and #{plug} kind of plug and in #{count_o}, they use #{volt_o}V #{freq_o}Hz and #{plug_o} kind of plug: Bring your adapter https://www.worldstandards.eu/electricity/plugs-and-sockets/"
     save_subtask
     end
   end

@@ -79,20 +79,20 @@ def money(trip)
 
 
   if @cost_of_living_for_x_day
-    @name = "Make sure you grab enough money"
-    @description = "As you are traveling for #{@trip_length} day(s), we would recommend to take in total #{(@trip_length * @cost_of_living_for_x_day * @rate_us).round(0)} #{@cureny_code_description_departure}"
+    @name = "Make sure you bring enough cash"
+    @description = "As you are travelling for #{@trip_length} day(s), we would recommend to take a total of #{(@trip_length * @cost_of_living_for_x_day * @rate_us).round(0)} #{@cureny_code_description_departure}"
     save_subtask
   end
 
   if @suggested_atm_city
-    @name = "Make sure to wiwdrow the right amount"
-    @description ="In #{@arrival_country} we recommend to wiwdrow #{(@suggested_atm_city * @rate_us).round(0)} #{@cureny_code_description_departure} at once."
+    @name = "Make sure to withdraw the right amount"
+    @description ="In #{@arrival_country}, we recommend to withdraw not more than #{(@suggested_atm_city * @rate_us).round(0)} #{@cureny_code_description_departure} at once."
     save_subtask
   end
 
   @name = "Make sure to change some money"
   @description = "In #{@arrival_country}, they use the #{@cureny_name_description_arrival} (#{@cureny_symbol_description_arrival} #{@cureny_code_description_arrival}).
-  Today for for 10 #{@cureny_code_description_departure} you will have #{(@rate * 10).round(2)} #{@cureny_code_description_arrival}."
+  Today, for 10 #{@cureny_code_description_departure} you will have #{(@rate * 10).round(2)} #{@cureny_code_description_arrival}."
   save_subtask
 
 end
