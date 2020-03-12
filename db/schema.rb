@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_060239) do
+ActiveRecord::Schema.define(version: 2020_03_12_141814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,8 @@ ActiveRecord::Schema.define(version: 2020_03_12_060239) do
     t.integer "min_temp"
     t.float "precipitation"
     t.integer "code"
+    t.bigint "chat_room_id"
+    t.index ["chat_room_id"], name: "index_trips_on_chat_room_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -124,5 +126,6 @@ ActiveRecord::Schema.define(version: 2020_03_12_060239) do
   add_foreign_key "messages", "users"
   add_foreign_key "subtasks", "tasks"
   add_foreign_key "tasks", "trips"
+  add_foreign_key "trips", "chat_rooms"
   add_foreign_key "trips", "users"
 end

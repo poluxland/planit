@@ -21,20 +21,20 @@
   <div class="overview-cards">
 
     <% if trip.precipitation > 1 %>
-        <div class="info-card">
-          <%= cl_image_tag "icon_rain", width: 512, height: 512, crop: :fit %>
-          <p>Rainy</p>
-        </div>
+    <div class="info-card">
+      <%= cl_image_tag "icon_rain", width: 512, height: 512, crop: :fit %>
+      <p>Rainy</p>
+    </div>
     <% elsif trip.precipitation > 0.5 %>
-        <div class="info-card">
-          <%= cl_image_tag "icon_cloudy", width: 512, height: 512, crop: :fit %>
-          <p>Cloudy</p>
-        </div>
-        <% else %>
-        <div class="info-card">
-          <%= cl_image_tag "icon_sunny", width: 512, height: 512, crop: :fit %>
-          <p>Sunny</p>
-        </div>
+    <div class="info-card">
+      <%= cl_image_tag "icon_cloudy", width: 512, height: 512, crop: :fit %>
+      <p>Cloudy</p>
+    </div>
+    <% else %>
+    <div class="info-card">
+      <%= cl_image_tag "icon_sunny", width: 512, height: 512, crop: :fit %>
+      <p>Sunny</p>
+    </div>
     <% end %>
 
     <% if trip.max_temp > 30 %>
@@ -52,21 +52,30 @@
     <% end %>
 
     <% if trip.min_temp <= 5 %>
-        <div class="info-card">
-          <%= cl_image_tag "icon_cold", width: 512, height: 512, crop: :fit %>
-          <p><%= trip.min_temp %> °C / <%= (trip.min_temp * 1.8 + 32).to_i %> °F</p>
-        </div>
-        <% if trip.precipitation > 1 && trip.min_temp < 0 %>
-            <div class="info-card">
-              <%= cl_image_tag "icon_snow", width: 512, height: 512, crop: :fit %>
-              <p>May Snow</p>
-            </div>
-        <% end %>
+    <div class="info-card">
+      <%= cl_image_tag "icon_cold", width: 512, height: 512, crop: :fit %>
+      <p><%= trip.min_temp %> °C / <%= (trip.min_temp * 1.8 + 32).to_i %> °F</p>
+    </div>
+    <% if trip.precipitation > 1 && trip.min_temp < 0 %>
+    <div class="info-card">
+      <%= cl_image_tag "icon_snow", width: 512, height: 512, crop: :fit %>
+      <p>May Snow</p>
+    </div>
+    <% end %>
     <% end %>
 
 
 
 
   </div>
+</div>
+<div class="chat_room">
+  <% if @trip.chat_room_id.nil? %>
+    <%= link_to trip_chat_rooms_path(@trip), id: 'chat-btn', class: 'btn btn-primary mt-5 btn-block ', method: :post do %>
+      <i class="fas fa-plus py-auto"></i><h2 class='btn-lbl pl-2'>Chat with other Travellers</h2>
+    <% end %>
+  <% else %>
+    <%= link_to "Chat with other Travellers who share your destination", chat_room_path(@trip.chat_room_id), id: 'chat-btn', class: 'btn btn-primary mt-5 btn-block ' %>
+  <% end %>
 </div>
 

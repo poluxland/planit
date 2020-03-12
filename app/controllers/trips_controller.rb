@@ -50,11 +50,13 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     authorize @trip
     @trip.user = current_user if user_signed_in?
+
     if @trip.save
       redirect_to trip_path @trip
     else
       render :new
     end
+
   end
 
   def edit

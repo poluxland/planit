@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :tasks, only: [:new, :create]
+    resources :chat_rooms, only: [ :create ]
   end
   resources :tasks, only: [:edit, :update, :destroy] do
     resources :subtasks, only: [:new, :create]
