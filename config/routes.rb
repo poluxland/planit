@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
 
-  get '*path' => redirect('/')
+  #get '*path' => redirect('/')
 
 
 end
