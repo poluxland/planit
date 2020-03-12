@@ -2,6 +2,7 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
     authorize @chat_room
+    session[:previous_request_url] = session[:current_request_url]
   end
 
   def create

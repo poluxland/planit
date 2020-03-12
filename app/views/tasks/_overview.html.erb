@@ -71,9 +71,7 @@
 </div>
 <div class="chat_room">
   <% if @trip.chat_room_id.nil? %>
-    <%= link_to trip_chat_rooms_path(@trip), id: 'chat-btn', class: 'btn btn-primary mt-5 btn-block ', method: :post do %>
-      <i class="fas fa-plus py-auto"></i><h2 class='btn-lbl pl-2'>Chat with other Travellers</h2>
-    <% end %>
+    <%= link_to "Chat with other Travellers who share your destination", trip_chat_rooms_path(@trip), id: 'chat-btn', class: 'btn btn-primary mt-5 btn-block', method: :post %>
   <% else %>
     <%= link_to "Chat with other Travellers who share your destination", chat_room_path(@trip.chat_room_id), id: 'chat-btn', class: 'btn btn-primary mt-5 btn-block ' %>
   <% end %>
