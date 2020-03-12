@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :trips, dependent: :delete_all
   has_many :feedbacks, dependent: :delete_all
+  has_many :messages, dependent: :destroy
 
   # Validation
   validates :email,  presence: :true
