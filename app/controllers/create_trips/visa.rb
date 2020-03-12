@@ -18,7 +18,7 @@ def visa(trip)
 
 
   if @departure_destination == @arrival_destination
-    @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination} you don't need a Visa because you are in the same country.", category: 'visa')
+    @task = Task.new(tip: nil, name: "Visa requirements", description: "If you are from #{@departure_destination} and you travel to #{@arrival_destination}, you don't need a Visa because you are in the same country.", category: 'visa')
     @task.trip = trip
     @task.save
 

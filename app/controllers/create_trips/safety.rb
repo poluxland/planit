@@ -70,28 +70,28 @@ def safety(trip)
     case @city_arrival_air_quality
     when 0..50
       @name = "The air quality is good"
-      @description = "The polution level in #{@city_arrival_nice} is considered good with a score of #{@city_arrival_air_quality} (the lower the better).
+      @description = "The pollution level in #{@city_arrival_nice} is considered good with a score of #{@city_arrival_air_quality} (the lower the better).
       In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}."
       save_subtask
     when 51..100
       @name = "The air quality is modarate"
-      @description = "The polution level in #{@city_arrival_nice} is considered modarate with a score of #{@city_arrival_air_quality} (the lower the better).
+      @description = "The pollution level in #{@city_arrival_nice} is considered moderate with a score of #{@city_arrival_air_quality} (the lower the better).
       In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}."
       save_subtask
     when 101..150
-      @name = "The air quality is bad, be carfull"
-      @description = "The polution level in #{@city_arrival_nice} is considered unhealthy with a score of #{@city_arrival_air_quality} (the lower the better).
+      @name = "The air quality is bad, be careful"
+      @description = "The pollution level in #{@city_arrival_nice} is considered unhealthy with a score of #{@city_arrival_air_quality} (the lower the better).
       In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}. A mask can be a good idea."
       save_subtask
     when 151..200
-      @name = "The air quality is really bad, be carfull"
-      @description = "The polution level in #{@city_arrival_nice} is considered really unhealthy with a score of #{@city_arrival_air_quality} (the lower the better).
+      @name = "The air quality is really bad, be careful"
+      @description = "The pollution level in #{@city_arrival_nice} is considered really unhealthy with a score of #{@city_arrival_air_quality} (the lower the better).
       In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}. We higly recommend to wear a mask."
       save_subtask
     when 201..250
-      @name = "The air quality is terrible, be carfull"
-      @description = "The polution level in #{@city_arrival_nice} is considered very bad with a score of #{@city_arrival_air_quality} (the lower the better).
-      In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}. We recommend to weear a mask, really!"
+      @name = "The air quality is terrible, be careful"
+      @description = "The pollution level in #{@city_arrival_nice} is considered very bad with a score of #{@city_arrival_air_quality} (the lower the better).
+      In comparison, #{@city_departure_nice} has a score of #{@city_departure_air_quality}. We recommend to wear a mask, really!"
       save_subtask
     end
   end
@@ -100,7 +100,7 @@ def safety(trip)
 
   if safty_test(@ar_country) == false || safty_test(@de_country) == false
     @name = "No information about your country!"
-    @description = "We couldn't find information about this country, make sure to description you research"
+    @description = "We couldn't find information about this country, make sure to look the information up yourself!"
     save_subtask
   else
     @safty_arrival = safty_test(@ar_country).to_i
@@ -109,7 +109,7 @@ def safety(trip)
     if @safty_arrival < @safty_departure
       @country_comparison = "#{@ar_country.capitalize} is less safe than #{@de_country.capitalize}."
     else
-      @country_comparison = "#{@ar_country.capitalize} is more safe than #{@de_country.capitalize}."
+      @country_comparison = "#{@ar_country.capitalize} is safer than #{@de_country.capitalize}."
     end
 
     case @safty_arrival
@@ -119,15 +119,15 @@ def safety(trip)
       save_subtask
     when 41..60
       @name = "Be carefull!"
-      @description = "#{@country_comparison}. #{@ar_country.capitalize} is not too safe, but it's ok, it's score is #{@safty_arrival}/100. Travelling alone might not be a good idea."
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is not too safe, but it's ok. It's score is #{@safty_arrival}/100. Travelling alone might not be a good idea."
       save_subtask
     when 61..80
       @name = "You should be ok!"
-      @description = "#{@country_comparison}. #{@ar_country.capitalize} is pretty safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself."
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is a pretty safe place. It's score is #{@safty_arrival}/100. You can definitely travel by yourself."
       save_subtask
     when 80..100
       @name = "Safety won't be an issue!"
-      @description = "#{@country_comparison}. #{@ar_country.capitalize} is a super safe place, it's score is #{@safty_arrival}/100. You can definitly travel by yourself."
+      @description = "#{@country_comparison}. #{@ar_country.capitalize} is a super safe place, it's score is #{@safty_arrival}/100. You can definitely travel by yourself."
       save_subtask
     end
   end
