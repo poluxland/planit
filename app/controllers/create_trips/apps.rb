@@ -41,7 +41,6 @@ def apps(trip)
     @name = "Lyft"
     @description = "Get where you need to go, fast and comfortable."
     save_subtask
-
   else
 
 
